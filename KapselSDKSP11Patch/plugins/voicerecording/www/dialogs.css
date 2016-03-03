@@ -1,0 +1,71 @@
+
+.vrDialog {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.vrDark {
+    color: #333333;
+}
+
+.vrLight {
+    color: #707070;
+}
+
+.vrDialogHeader {
+    border-top: 4px solid #009de0;
+    background-color: #fff !important;
+}
+
+.vrDialogSection {
+    background-color: #f6fbfc;
+    padding-top: 46px;
+    padding-bottom: 68px;
+}
+
+.vrDialogSectionSmall {
+    background-color: #f6fbfc;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.vrStatusField {
+    font-size: 24px;
+}
+
+.vrStatusFieldMargin {
+    margin-bottom: 48px;
+}
+
+.vrFileName {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    font-size: 16px;
+}
+
+.vrTimerContainer {
+    width: 100%;
+    margin-top: 42px;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.vrSmall {
+    margin-bottom: 8px !important;
+    margin-top:8px !important;
+}
+
+.vrTwoTimers {
+    width: 50%;
+}
+.vrOneTimer {
+    width: 100%;
+}
+
+.vrSeekBar {
+    margin-bottom: -31px;
+}
+
+.iconCache {
+    position: absolute;
+    opacity: 0.0;
+}

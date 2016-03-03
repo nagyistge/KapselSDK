@@ -1,0 +1,161 @@
+{
+	"resources":[
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "ActionUtil-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ActionUtil.js"
+		},
+		{
+			"name": "BaseViewController-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "BaseViewController.js"
+		},
+		{
+			"name": "MessageUtil-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "MessageUtil.js"
+		},
+		{
+			"name": "TemplateComponent-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "TemplateComponent.js"
+		},
+		{
+			"name": "ViewUtil-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ViewUtil.js"
+		},
+		{
+			"name": "library-all-dbg.js",
+			"isDebug":true,
+			"merged":true
+		},
+		{
+			"name": "library-all.js",
+			"merged":true
+		},
+		{
+			"name": "library-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "library-preload.json",
+			"merged":true
+		},
+		{
+			"name": "library.dependencies.json"
+		},
+		{
+			"name": "library.dependencies.xml"
+		},
+		{
+			"name": "library.js"
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "messagebundle.properties"
+		},
+		{
+			"name": "themes/base/.theming",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/Sample.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-RTL.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug":true,
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-parameters.json",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/shared.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/sap_bluecrystal/.theming",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/Sample.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug":true,
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/shared.less",
+			"theme":"sap_bluecrystal"
+		}
+	]
+}

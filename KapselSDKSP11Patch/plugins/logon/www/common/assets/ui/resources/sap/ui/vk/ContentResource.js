@@ -1,0 +1,7 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+        (c) Copyright 2009-2015 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["jquery.sap.global","./library","sap/ui/base/ManagedObject"],function(q,l,M){"use strict";var C=M.extend("sap.ui.vk.ContentResource",{metadata:{properties:{source:"sap.ui.core.URI",sourceType:"string",sourceId:"string",localMatrix:"sap.ui.vk.TransformationMatrix",name:"string"},aggregations:{contentResources:"sap.ui.vk.ContentResource"}},isTreeBinding:function(n){return n==="contentResources";},constructor:function(i,s,S){M.apply(this,arguments);this._loaded=false;this._file=null;this._nodeProxy=null;},destroy:function(){this._nodeProxy=null;this._file=null;M.prototype.destroy.call(this);},setFile:function(f){this._file=f;this.setSource(f.name);var i=f.name.lastIndexOf(".");if(i>=0&&i<f.name.length-1){this.setSourceType(f.name.substr(i+1));}else{this.setSourceType(undefined);}return this;},getFile:function(){return this._file;},setLoaded:function(){if(this._loaded){q.sap.log.warning("Content resource can be marked as loaded only once.");}this._loaded=true;return this;},getLoaded:function(){return this._loaded;},_setNodeProxy:function(n){this._nodeProxy=n;return this;},getNodeProxy:function(){return this._nodeProxy;},setProperty:function(n,v,s){if(this._loaded){q.sap.log.warning("Content resource's property "+n+" cannot be changed after the content resource has been loaded.");}else{M.prototype.setProperty.apply(this,arguments);}return this;}});return C;});

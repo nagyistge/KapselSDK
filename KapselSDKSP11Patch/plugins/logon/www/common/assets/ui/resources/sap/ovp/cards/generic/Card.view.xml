@@ -1,0 +1,20 @@
+<mvc:View
+        controllerName="sap.ovp.cards.generic.Card"
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+    <template:if test="{= ${ovpCardProperties>/contentPosition} === 'Right'}" >
+
+        <template:then>
+            <core:Fragment fragmentName="sap.ovp.cards.generic.ContentRight" type="XML"/>
+        </template:then>
+
+        <template:else>
+            <core:Fragment fragmentName="sap.ovp.cards.generic.ContentMiddle" type="XML"/>
+        </template:else>
+
+    </template:if>
+
+</mvc:View>

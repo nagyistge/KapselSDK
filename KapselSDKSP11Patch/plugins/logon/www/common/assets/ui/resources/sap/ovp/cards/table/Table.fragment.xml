@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+
+    <Table id="ovpTable" items="{path: 'entitySet>', formatter: 'sap.ovp.cards.AnnotationHelper.formatItems'}">
+
+        <template:with path='ovpCardProperties>/annotationPath' helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='lineItem'>
+
+                <columns>
+                    <Column>
+                        <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getFirstDataFieldName'}"/>
+                    </Column>
+                    <Column>
+                        <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getSecondDataFieldName'}"/>
+                    </Column>
+                    <Column>
+                        <template:if test="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getDataPointsCount'} > 0}" >
+                            <template:then>
+                                <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getFirstDataPointName'}"/>
+                            </template:then>
+                            <template:else>
+                                <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getThirdDataFieldName'}"/>
+                            </template:else>
+                        </template:if>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem
+                            type="Active"
+                            press="onColumnListItemPress">
+                        <cells>
+                            <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataFieldValue'}"/>
+                            <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatSecondDataFieldValue'}"/>
+                            <template:if test="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getDataPointsCount'} > 0}" >
+                                <template:then>
+                                    <ObjectNumber
+                                            number="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointValue'}"
+                                            state="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointState'}" />
+                                </template:then>
+                                <template:else>
+                                    <Text text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatThirdDataFieldValue'}"/>
+                                </template:else>
+                            </template:if>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+        </template:with>
+    </Table>
+
+
+</core:FragmentDefinition>

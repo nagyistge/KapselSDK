@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+
+    <VBox id="ovpCardHeader" class="sapOvpCardHeader">
+        <template:if test="{ovpCardProperties>/category}">
+            <FlexBox alignItems="Start" justifyContent="SpaceBetween">
+                <Text text="{ovpCardProperties>/category}" class="sapOvpCardCategory" tooltip="{ovpCardProperties>/category}"/>
+            </FlexBox>
+        </template:if>
+        <template:if test="{ovpCardProperties>/title}">
+            <Text text="{ovpCardProperties>/title}" class="sapOvpCardTitle" tooltip="{ovpCardProperties>/title}"/>
+        </template:if>
+        <template:if test="{ovpCardProperties>/headerExtensionFragment}">
+            <core:Fragment fragmentName="{ovpCardProperties>/headerExtensionFragment}" type="XML" />
+        </template:if>
+        <template:if test="{ovpCardProperties>/description}">
+            <FlexBox class="sapOvpCardSubtitleContainer">
+                <Text text="{ovpCardProperties>/description}" class="sapOvpCardSubtitle" tooltip="{ovpCardProperties>/description}"/>
+            </FlexBox>
+        </template:if>
+    </VBox>
+
+</core:FragmentDefinition>

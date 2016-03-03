@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="restriction_title_appID">Application ID</string>
+    <string name="restriction_description_appID">The appID used to identify the application to the data vault. If you are
+            using SMP, this should be consistent with the appID of the target application. Note that
+            this value is distinct from the packageName, which is mainly used to identify your
+            application in app stores.</string>
+
+    <string name="restriction_title_fioriURL">Fiori Server URL</string>
+    <string name="restriction_description_fioriURL">The full URL of the target application. If your application does not
+            use SMP, it will navigate directly to this URL once logon is completed. If your app
+            does use SMP, this URL is parsed and used in the following way:
+               1. The URL scheme (which must be http or https) determines the inital value
+                  of the \'https\' flag in the registration dialog. Similarly, the host and port
+                  in the URL determine their corresponding initial values in the registration dialog,
+                  with port defaulting to 443 if it\'s not specified.
+               2. The URL suffix (everything after the host and port) is appended to the URL that
+                  the user registers to. Though this is likely to be the same as the scheme, host and
+                  port from 1., the user has the opportunity to change these values. In contrast,
+                  the suffix can\'t be changed.
+             If you are using SMP, you will ultimately want to specify the scheme, host and port of
+             your SMP server, followed by the suffix of the Fiori endpoint. For example:
+
+             \'https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html\'</string>
+
+     <string name="restriction_title_appName">Application Name</string>
+     <string name="restriction_description_appName">An optional property used to customize the Fiori application name shown on logon screen. By default, the app name is "SAP Fiori Client".  When this field is blank the default is used.</string>
+
+     <string name="restriction_title_fioriURLIsSMP">Fiori Server URL is an SMP server</string>
+     <string name="restriction_description_fioriURLIsSMP">Set this to true if your are using SMP. If set to true, the application will perform SMP registration.</string>
+
+    <string name="restriction_title_certificate">Client Certificate Provider</string>
+    <string name="restriction_description_certificate">Client Certificate Provider</string>
+
+    <string name="restriction_title_autoSelectSingleCert">Automatically Select Client Certificate Provider</string>
+    <string name="restriction_description_autoSelectSingleCert">Automatically select the client certificate for mutual authentication
+            if only one client certificate is available.</string>
+
+    <string name="restriction_title_passcodePolicyExpirationDays">Passcode Policy Expiration Days</string>
+    <string name="restriction_description_passcodePolicyExpirationDays">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyHasDigits">Passcode Policy Has Digits</string>
+    <string name="restriction_description_passcodePolicyHasDigits">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyHasLowerCaseLetters">Passcode Policy Has Lower Case Letters</string>
+    <string name="restriction_description_passcodePolicyHasLowerCaseLetters">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyHasSpecialLetters">Passcode Policy Has Special Letters</string>
+    <string name="restriction_description_passcodePolicyHasSpecialLetters">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyHasUpperCaseLetters">Passcode Policy Has Upper Case Letters</string>
+    <string name="restriction_description_passcodePolicyHasUpperCaseLetters">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyDefaultAllowed">Passcode Policy Default Allowed</string>
+    <string name="restriction_description_passcodePolicyDefaultAllowed">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyLockTimeout">Passcode Policy Lock Timeout</string>
+    <string name="restriction_description_passcodePolicyLockTimeout">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyMinLength">Passcode Policy Minimum Length</string>
+    <string name="restriction_description_passcodePolicyMinLength">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyMinUniqueChars">Passcode Policy Minimun Unique Chars</string>
+    <string name="restriction_description_passcodePolicyMinUniqueChars">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+
+    <string name="restriction_title_passcodePolicyRetryLimit">Passcode Policy Retry Limit</string>
+    <string name="restriction_description_passcodePolicyRetryLimit">The passcodePolicy of the data vault. Note: if you
+            are using SMP, the passcodePolicy is determined by the server.</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-appupdate"
+    version="3.11.4">
+
+	<name>AppUpdate</name>
+	<dependency id="kapsel-plugin-corelibs"/>
+    <dependency id="kapsel-plugin-inappbrowser"/>
+	<dependency id="kapsel-plugin-authproxy"/>
+	<dependency id="kapsel-plugin-logon"/>
+	<dependency id="kapsel-plugin-i18n"/>
+	<dependency id="cordova-plugin-dialogs"/>
+
+	<js-module name="AppUpdate" src="www/appupdate.js">
+		<clobbers target="sap.AppUpdate"/>
+	</js-module>
+
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_en.properties" src="www/messages_en.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_ar.properties" src="www/messages_ar.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_de.properties" src="www/messages_de.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_es.properties" src="www/messages_es.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_fr.properties" src="www/messages_fr.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_ja.properties" src="www/messages_ja.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_pt.properties" src="www/messages_pt.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_ru.properties" src="www/messages_ru.properties"/>
+	<asset target="plugins/kapsel-plugin-appupdate/www/messages_zh_CN.properties" src="www/messages_zh_CN.properties"/>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/widget">
+			<feature name="AppUpdate">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.appUpdate.AppUpdate"/>
+				<param name="onload" value="true"/>
+			</feature>
+		</config-file>
+		<source-file src="android/libs/appupdate-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+			<feature name="AppUpdate">
+				<param name="ios-package" value="SMPAppUpdatePlugin"/>
+				<param name="onload" value="true"/>
+			</feature>
+		</config-file>
+		<source-file framework="true" src="ios/libs/libSMPAppUpdatePlugin.a"/>
+	</platform>
+</plugin>

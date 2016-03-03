@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-settings"
+    version="3.11.4">
+
+	<name>Settings</name>
+    <dependency id="kapsel-plugin-corelibs" />
+    <dependency id="kapsel-plugin-inappbrowser" />
+    <dependency id="kapsel-plugin-logon" />
+    <dependency id="kapsel-plugin-logger" />
+
+    <js-module name="Settings" src="www/settings.js">
+		<clobbers target="sap.Settings"/>
+	</js-module>
+
+    <js-module name="AppSettings" src="www/appsettings.js">
+		<merges target="sap.Settings"/>
+	</js-module>
+     <platform name="android">
+	<config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="SMPSettingsExchangePlugin" onload="true" >
+                <param name="android-package" value="com.sap.mp.settingsexchange.SettingsExchange" />
+            </feature>
+	</config-file>
+        <source-file src="android/libs/settingsexchange-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+     </platform>
+
+     <platform name="ios">
+       <config-file target="config.xml" parent="/widget">
+          <feature name="SMPSettingsExchangePlugin" onload="true"  >
+                <param name="ios-package" value="SMPSettingsExchangePlugin" />
+            </feature>
+       </config-file>
+       <source-file framework="true" src="ios/libs/libSMPSettingsExchangePlugin.a"/>
+     </platform>
+
+	 <platform name="windows">
+		<js-module src="windows/src/settings_proxy_win.js" name="settings_proxy_win">
+          <merges target="settings_proxy_win" />
+        </js-module>
+	 </platform>
+
+</plugin>

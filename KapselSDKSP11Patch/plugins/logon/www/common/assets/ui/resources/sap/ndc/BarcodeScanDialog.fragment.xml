@@ -1,0 +1,17 @@
+<Dialog xmlns="sap.m" title="{i18n>BARCODE_DIALOG_TITLE}" class="sapUiContentPadding">
+	<content>
+		<Input
+			id="inp_barcode"
+			value="{/barcode}"
+			valueLiveUpdate="true"
+			placeholder="{i18n>BARCODE_DIALOG_PLACEHOLDER}"
+			liveChange="onLiveChange"/>
+		<Text text="{i18n>BARCODE_DIALOG_MSG}" visible="{/isNoScanner}" />
+	</content>
+	<beginButton>
+		<Button id="btn_barcode_ok" text="{i18n>BARCODE_DIALOG_OK}" press="onOK" />
+	</beginButton>
+	<endButton>
+		<Button text="{i18n>BARCODE_DIALOG_CANCEL}" press="onCancel" />
+	</endButton>
+</Dialog>

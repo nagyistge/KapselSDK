@@ -1,0 +1,39 @@
+{
+	"resources":[
+		{
+			"name": "Action.fragment.xml"
+		},
+		{
+			"name": "ActionsFooter.fragment.xml"
+		},
+		{
+			"name": "Card-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "Card.controller.js"
+		},
+		{
+			"name": "Card.view.xml"
+		},
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "ContentMiddle.fragment.xml"
+		},
+		{
+			"name": "ContentRight.fragment.xml"
+		},
+		{
+			"name": "CountFooter.fragment.xml"
+		},
+		{
+			"name": "Header.fragment.xml"
+		}
+	]
+}

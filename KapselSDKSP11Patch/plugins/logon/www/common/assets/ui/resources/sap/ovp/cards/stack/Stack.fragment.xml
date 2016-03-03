@@ -1,0 +1,10 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+    <VBox id="stackContent" class="sapOvpStackCardContent" justifyContent="SpaceBetween">
+        <Label id="stackSize"/>
+        <core:Icon class="sapOvpStackCardIcon" src="sap-icon://dimension" useIconTooltip="false"></core:Icon>
+    </VBox>
+</core:FragmentDefinition>

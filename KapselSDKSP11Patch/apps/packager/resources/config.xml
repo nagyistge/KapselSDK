@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.sap.mobile.fioripackaged" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>LocalLaunchPad</name>
+    <content src="index.html" />
+    <allow-navigation href="*" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="ios">
+        <preference name="Orientation" value="all" />
+        <icon height="40" src="res/ios/icons/icon-40.png" width="40" />
+        <icon height="80" src="res/ios/icons/icon-40@2x.png" width="80" />
+        <icon height="50" src="res/ios/icons/icon-50.png" width="50" />
+        <icon height="100" src="res/ios/icons/icon-50@2x.png" width="100" />
+        <icon height="60" src="res/ios/icons/icon-60.png" width="60" />
+        <icon height="120" src="res/ios/icons/icon-60@2x.png" width="120" />
+        <icon height="72" src="res/ios/icons/icon-72.png" width="72" />
+        <icon height="144" src="res/ios/icons/icon-72@2x.png" width="144" />
+        <icon height="76" src="res/ios/icons/icon-76.png" width="76" />
+        <icon height="152" src="res/ios/icons/icon-76@2x.png" width="152" />
+        <icon height="29" src="res/ios/icons/icon-small.png" width="29" />
+        <icon height="58" src="res/ios/icons/icon-small@2x.png" width="58" />
+        <icon height="57" src="res/ios/icons/icon.png" width="57" />
+        <icon height="114" src="res/ios/icons/icon@2x.png" width="114" />
+        <splash height="480" src="res/ios/splash/Default~iphone.png" width="320" />
+        <splash height="960" src="res/ios/splash/Default@2x~iphone.png" width="640" />
+        <splash height="1024" src="res/ios/splash/Default-Portrait~ipad.png" width="768" />
+        <splash height="2048" src="res/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
+        <splash height="768" src="res/ios/splash/Default-Landscape~ipad.png" width="1024" />
+        <splash height="1536" src="res/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+        <splash height="1136" src="res/ios/splash/Default-568h@2x~iphone.png" width="640" />
+        <splash height="1334" src="res/ios/splash/Default-667h@2x.png" width="750" />
+        <splash height="2208" src="res/ios/splash/Default-Portrait-736h@3x.png" width="1242" />
+        <splash height="1242" src="res/ios/splash/Default-Landscape-736h@3x.png" width="2208" />
+    </platform>
+    <platform name="android">
+        <allow-navigation href="*" />
+        <preference name='android-minSdkVersion' value='14' />
+        <icon src="res/android/drawable/icon.png" />
+        <icon density="hdpi" src="res/android/drawable-hdpi/icon.png" />
+        <icon density="ldpi" src="res/android/drawable-ldpi/icon.png" />
+        <icon density="mdpi" src="res/android/drawable-mdpi/icon.png" />
+        <icon density="xhdpi" src="res/android/drawable-xhdpi/icon.png" />
+        <icon density="xxhdpi" src="res/android/drawable-xxhdpi/icon.png" />
+        <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+        <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />
+        <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
+        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+    </platform>
+    <plugin name="kapsel-plugin-corelibs" spec="*" />
+    <plugin name="kapsel-plugin-logon" spec="*" />
+    <plugin name="kapsel-plugin-logger" spec="*" />
+    <plugin name="kapsel-plugin-apppreferences" spec="*" />
+    <plugin name="kapsel-plugin-settings" spec="*" />
+    <plugin name="kapsel-plugin-authproxy" spec="*" />
+    <plugin name="kapsel-plugin-cachemanager" spec="*" />
+    <plugin name="kapsel-plugin-encryptedstorage" spec="*" />
+    <plugin name="kapsel-plugin-voicerecording" spec="*" />
+    <plugin name="kapsel-plugin-e2etrace" spec="*" />
+    <plugin name="kapsel-plugin-barcodescanner" spec="*" />
+    <plugin name="kapsel-plugin-attachmentviewer" spec="*" />
+    <plugin name="kapsel-plugin-push" spec="*" />
+    <plugin name="kapsel-plugin-calendar" spec="*" />
+    <plugin name="de.appplant.cordova.plugin.printer" spec="*" />
+    <plugin name="kapsel-plugin-odata" spec="*" />
+    <plugin name="kapsel-plugin-fioriclient" spec="*" />
+    <plugin name="kapsel-plugin-multidex" spec="*" />
+    <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
+    <plugin name="cordova-plugin-camera" spec="1.1.0" />
+    <plugin name="cordova-plugin-contacts" spec="1.0.0" />
+    <plugin name="cordova-plugin-file" spec="2.0.0" />
+    <plugin name="cordova-plugin-geolocation" spec="1.0.0" />
+    <plugin name="cordova-plugin-statusbar" spec="1.0.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="2.0.0" />
+    <plugin name="cordova-plugin-network-information" spec="1.0.0" />
+    <plugin name="cordova-plugin-crosswalk-webview" spec="1.4.0" />
+    <engine name="ios" />
+    <engine name="android" />
+</widget>

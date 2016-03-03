@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+    <string name="restriction_title_appID">"ID da aplicação"</string>
+    <string name="restriction_description_appID">"O ID de app utilizado para identificar a aplicação no cofre de dados. Se você estiver utilizando SMP, isto deve ser consistente com o ID de app da aplicação de destino. Considere que este valor é distinto do nome do pacote que é utilizado principalmente para identificar a sua aplicação em lojas de apps."</string>
+
+    <string name="restriction_title_fioriURL">"URL de servidor Fiori"</string>
+    <string name="restriction_description_fioriURL">"O URL completo da aplicação de destino. Se a sua aplicação não utilizar SMP, ela navega diretamente para este URL logo que o logon esteja concluído. Se o seu app utilizar SMP, este URL é analisado sintaticamente e utilizado da seguinte forma: 1. O esquema de URL (que deve ser HTTP ou HTTPS) determina o valor inicial do flag \'https\' no diálogo de registro. De mesmo modo, o host e a porta no URL determinam os seus valores iniciais correspondentes no diálogo de registro, com procedimento para proposta de porta como 443, se não estiver indicada. 2. O sufixo de URL (tudo após o host e a porta) é anexado ao URL em que o usuário se registra. Embora este seja provavelmente o mesmo que o esquema, host e porta de 1., o usuário pode modificar esses valores. Contudo, o sufixo não pode ser modificado. Se você estiver utilizando SMP, indique o esquema, o host e a porta do seu servidor SMP, seguido pelo sufixo do ponto de acesso Fiori. Por exemplo: \'https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html\'"</string>
+
+     <string name="restriction_title_appName">"Nome do aplicativo"</string>
+     <string name="restriction_description_appName">"Uma propriedade opcional utilizada para personalizar o nome da aplicação Fiori exibido na tela de logon. Por padrão, o nome do app é SAP Fiori Client. Quando esse campo está em branco, é utilizado o padrão."</string>
+
+     <string name="restriction_title_fioriURLIsSMP">"O URL de servidor Fiori é um servidor SMP"</string>
+     <string name="restriction_description_fioriURLIsSMP">"Se você estiver utilizando SMP, defina como verdadeiro para executar o registro."</string>
+
+    <string name="restriction_title_certificate">"Provedor do certificado do client"</string>
+    <string name="restriction_description_certificate">"Provedor do certificado do client"</string>
+
+    <string name="restriction_title_autoSelectSingleCert">"Selecionar automaticamente provedor de certificado do client"</string>
+    <string name="restriction_description_autoSelectSingleCert">"Selecionar automaticamente esse certificado para autenticação mútua se só estiver disponível um certificado do client."</string>
+
+    <string name="restriction_title_passcodePolicyExpirationDays">"Dias de expiração de política de códigos"</string>
+    <string name="restriction_description_passcodePolicyExpirationDays">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyHasDigits">"A política de códigos tem dígitos"</string>
+    <string name="restriction_description_passcodePolicyHasDigits">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyHasLowerCaseLetters">"A política de códigos tem minúsculas"</string>
+    <string name="restriction_description_passcodePolicyHasLowerCaseLetters">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyHasSpecialLetters">"A política de códigos tem letras especiais"</string>
+    <string name="restriction_description_passcodePolicyHasSpecialLetters">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyHasUpperCaseLetters">"A política de códigos tem maiúsculas"</string>
+    <string name="restriction_description_passcodePolicyHasUpperCaseLetters">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyDefaultAllowed">"Padrão da política de códigos permitido"</string>
+    <string name="restriction_description_passcodePolicyDefaultAllowed">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyLockTimeout">"Timeout de bloqueio de política de códigos"</string>
+    <string name="restriction_description_passcodePolicyLockTimeout">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyMinLength">"Comprimento mínimo de política de códigos"</string>
+    <string name="restriction_description_passcodePolicyMinLength">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyMinUniqueChars">"Caracteres únicos mínimos de política de códigos"</string>
+    <string name="restriction_description_passcodePolicyMinUniqueChars">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+
+    <string name="restriction_title_passcodePolicyRetryLimit">"Limite de repetição de política de códigos"</string>
+    <string name="restriction_description_passcodePolicyRetryLimit">"A política de códigos do cofre de dados. Nota: se SMP estiver sendo utilizado, a política de códigos é determinada pelo servidor."</string>
+</resources>

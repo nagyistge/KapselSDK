@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-multidex"
+    version="3.11.4">
+
+    <name>Multidex</name>
+
+    <!-- android -->
+    <platform name="android">
+        <framework src="android/multidex.gradle" custom="true" type="gradleReference"/>
+        <hook type="after_plugin_install" src="hooks/after_plugin_install/addMultiDexApplication.js"/>
+    </platform>
+</plugin>

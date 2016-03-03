@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:suite="sap.suite.ui.commons" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:dataSet="sap.viz.ui5.data" xmlns:feed="sap.viz.ui5.controls.common.feeds">
+
+	<template:with path="ovpCardProperties>/chartAnnotationPath"
+		helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='chart'>
+		<template:with path="ovpCardProperties>/selectionAnnotationPath"
+			helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='selVar'>
+			<template:with path="ovpCardProperties>/presentationAnnotationPath"
+				helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='preVar'>
+				<viz:VizFrame id="lineChartCard" uiConfig="{applicationSet:'fiori'}"
+					vizType="line" width="100%">
+					<viz:dataset>
+						<dataSet:FlattenedDataset
+							data="{parts: [{path:'entitySet>'}, {path:'selVar>'}, {path:'preVar>'}, {path:'chart>DimensionAttributes'}, {path:'chart>MeasureAttributes'}], formatter: 'sap.ovp.cards.charts.Utils.formatItems'}">
+							<dataSet:dimensions>
+								<template:repeat list="{chart>DimensionAttributes}">
+									<dataSet:DimensionDefinition name="{path: 'chart>Dimension/PropertyPath'}"
+										value="{path: 'chart>Dimension/PropertyPath', formatter: 'sap.ovp.cards.charts.Utils.formDimensionPath'}">
+									</dataSet:DimensionDefinition>
+								</template:repeat>
+							</dataSet:dimensions>
+							<dataSet:measures>
+								<template:repeat list="{chart>MeasureAttributes}">
+									<dataSet:MeasureDefinition name="{path: 'chart>Measure/PropertyPath'}"
+										value="{path: 'chart>Measure/PropertyPath', formatter: 'sap.ovp.cards.charts.Utils.wrapInBraces'}">
+									</dataSet:MeasureDefinition>
+								</template:repeat>
+							</dataSet:measures>
+						</dataSet:FlattenedDataset>
+					</viz:dataset>
+					<viz:feeds>
+						<feed:FeedItem uid="valueAxis" type="Measure"	values="{path: 'chart>MeasureAttributes', formatter: 'sap.ovp.cards.charts.Utils.LineChart.getValueAxisFeed'}" />
+						<feed:FeedItem uid="categoryAxis" type="Dimension"	values="{path: 'chart>DimensionAttributes', formatter: 'sap.ovp.cards.charts.Utils.LineChart.getCategoryAxisFeed'}" />
+						<template:if test="{path: 'chart>DimensionAttributes', formatter: 'sap.ovp.cards.charts.Utils.LineChart.testColorFeed'}">
+							<feed:FeedItem uid="color" type="Dimension"	values="{path: 'chart>DimensionAttributes', formatter: 'sap.ovp.cards.charts.Utils.LineChart.getColorFeed'}" />
+						</template:if>
+					</viz:feeds>
+				</viz:VizFrame>
+			</template:with>
+		</template:with>
+	</template:with>
+
+</core:FragmentDefinition>

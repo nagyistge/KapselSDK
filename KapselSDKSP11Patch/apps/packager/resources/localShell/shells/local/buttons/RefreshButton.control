@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd" >
+
+	<name>local/RefreshButton</name>
+
+	<documentation>Add your documentation for the newui/footerbar/RefreshButton</documentation>
+
+	<baseType>sap.m/Button</baseType>
+
+</control>

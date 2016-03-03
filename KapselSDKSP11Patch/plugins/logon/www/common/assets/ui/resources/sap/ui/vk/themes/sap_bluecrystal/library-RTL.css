@@ -1,0 +1,11 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+        (c) Copyright 2009-2015 SAP SE. All rights reserved
+    
+ */
+ 
+/*!
+ * ${copyright}
+ */
+ .sapVizKitViewer{touch-action:none;-ms-touch-action:none;background-color:#f2f2f2}.sapVizKitViewport{width:100%;height:100%;padding:0;margin:0;background-image:linear-gradient(to bottom,#000000,#ffffff)}.sapVizKitViewport canvas{display:block;width:100%;height:100%;padding:0;margin:0}.sapUiVkOverlay{border:none;width:100%;height:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.sapVizKitNativeViewport{display:inline-block;width:100%;height:100%;background-color:white;overflow:hidden}.sapRULTSceneTree{width:100%;height:100%;-webkit-transform:translate3d(0,0,0)}.sapUiVkTitle{width:100%;height:100%;padding:0.5em 0.5em 0 0}*:focus{outline:1px dotted #007cc0}.sapVizKitStepNavigationStepItem{border:none;padding:0.1875em}.sapVizKitStepNavigationStepItem.selected{border:0.1875em solid;padding:0;border-color:#007cc0}.sapVizKitStepNavigationStepItem:hover:not(.selected){border:0.1875em solid;padding:0;border-color:#bfbfbf}.sapVizKitStepNavigationPopoverStepInfo{width:"20%";height:"15%"}.sapVizKitStepNavigationPopoverContent{padding:1rem}.sapVizKitStepNavigationPlayOptionsSelect{width:15em}.sapVizKitStepNavigationProcedureList{width:30%}.sapUiFlexControl{float:right;position:relative;display:block;overflow:hidden}.sapUiFlexCellStacked{display:block;width:100%;height:100%;position:absolute;overflow:auto}.sapUiFlexCellVertical{display:block;width:100%;position:static;overflow:auto}.sapUiCheckEye input[type="checkbox"]{display:none}.sapUiCheckEye input[type="checkbox"] + label:before{content:"\e1ea";font-family:"SAP-icons";font-size:1.5em;color:#dddddd}.sapUiCheckEye input[type="checkbox"]:checked + label:before{content:"\e1e9";font-family:"SAP-icons";font-size:1.5em;color:#777777}

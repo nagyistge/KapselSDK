@@ -1,0 +1,21 @@
+{
+	"resources":[
+		{
+			"name": "BubbleChart-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "BubbleChart.controller.js"
+		},
+		{
+			"name": "BubbleChart.fragment.xml"
+		},
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		}
+	]
+}

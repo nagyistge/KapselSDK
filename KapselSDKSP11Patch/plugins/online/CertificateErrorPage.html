@@ -1,0 +1,191 @@
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+	
+		<link rel="icon" 
+      		type="image/png" 
+      		href="file:///android_res/drawable/icon.png" />
+      		
+			<style type="text/css">
+				body {
+					margin: 0.5em;
+					font-family: Arial;
+				}
+				
+				div#errorSection {
+					padding : 0.3em 0.3em 0.5em 0.3em;
+				}
+				
+				div#errorSection > div#errorTitle {
+					
+					margin-bottom: 0.5em;
+					font-weight: bold;
+					font-size: 1.2em;
+				}
+				
+				div#errorSection > div#errorDescription {
+					font-size: 0.9em;
+				}
+				
+				div#errorTitle > img {
+					border-style: solid;
+					border-width: 1px;
+					
+				}
+				
+				div#helpSection {
+					padding : 0.3em 0.3em 0.3em 0.3em;
+					font-weight: normal;
+					font-size: 1em;
+					
+				}
+				
+				div.title {
+					margin-bottom: 1.0em;
+					margin-top: 0.5em;
+					margin-left: 0.2em;
+					font-size:0.8em;
+				}
+				
+				div.details {
+					margin-bottom: 0.2em;
+					margin-top: 0.2em;
+					margin-left: 0.3em;
+					font-size: 0.8em;
+				}
+				
+				span.details {
+					font-size: 1.0em;
+				}
+				
+				span.emphasize {
+					font-weight: bolder;
+					font-size: 1.0em;
+				}
+				
+				#hostname {
+					margin: 2px;
+				}
+				
+				div#footerSection {
+					padding : 0.3em 0.3em 0.5em 0.3em;
+					font-size: x-small;
+					font-style: italic;
+                    
+					/* to prevent overflowing for long url */
+					overflow-wrap: break-word;
+				}
+				
+				
+		
+			</style>
+
+	        <!-- load jquery and sap-ui-core to get localization functionality. -->
+            <script src="smp/logon/ui/resources/sap-ui-core.js" type="text/javascript"
+            		id="sap-ui-bootstrap"
+            		data-sap-ui-theme="sap_bluecrystal"
+            		data-sap-ui-libs="sap.m">
+            </script>
+	        <script type="text/javascript" src="errorHandling.js"></script> 
+                    
+            <script type="text/javascript">
+            
+                function getErrorMessage(){
+                	var params = getGETParameters();
+                	return params['errorMessage'];
+                }
+                
+                function getCertDetails(){
+                	var params = getGETParameters();
+                	return params['cert'];
+                }
+                
+                function updateErrorMessage(){
+                	var error = getErrorMessage();
+                	if (!error){
+                		error = "The certificate is invalid. Further details are not available";
+                	}
+                	document.getElementById('errorMessageSpan').innerHTML = decodeURIComponent(error);
+                	
+                	var certDetails = getCertDetails();
+                	if (!certDetails){
+                		certDetails : "N/A";
+                	}
+               		document.getElementById('certificateDetailsSpan').innerHTML = decodeURIComponent(certDetails);
+                }
+                
+        
+                function onLoad(){	
+                	updatePageUrl();
+                	updateErrorMessage();
+                	buildErrorPageContents();
+                	document.addEventListener("deviceready", onDeviceReady, false);
+
+                }
+
+                function onDeviceReady() {
+                    document.addEventListener(
+                         "onSapResumeSuccess",
+                         function() {
+                             var failingPage = decodeURIComponent(getPageUrl());
+                             window.location.replace(failingPage);
+                         },
+                         false
+                    );
+
+                    sap.AppPreferences.setPreferenceValue('failingUrl', decodeURIComponent(getPageUrl()), null, null);
+                }
+
+                function buildErrorPageContents() {
+                    var errorType = decodeURIComponent(getErrorType());
+
+			        if (errorType == 'Err_Type_ServerCertificateNotTrust') {
+						document.getElementById("errorTitle").innerHTML += getLocalizedString("CERTIFICATE_ERROR_SERVER_CERTIFICATE_NOT_TRUST_TITLE");
+						document.getElementById("errorDescription").innerHTML = getLocalizedString("CERTIFICATE_ERROR_SERVER_CERTIFICATE_NOT_TRUST_DESCRIPTION");
+					} else if (errorType == 'Err_Type_ServerCertificateCommonNameDoesNotMatchURL') {
+			            document.getElementById("errorTitle").innerHTML += getLocalizedString("CERTIFICATE_ERROR_SERVER_CERTIFICATE_COMMON_NAME_DOES_NOT_MATCH_URL_TITLE");
+			            document.getElementById("errorDescription").innerHTML = getLocalizedString("CERTIFICATE_ERROR_SERVER_CERTIFICATE_COMMON_NAME_DOES_NOT_MATCH_URL_DESCRIPTION");
+					} else { //general certificate errors
+						document.getElementById("errorTitle").innerHTML += getLocalizedString("CERTIFICATE_ERROR_TITLE");
+						document.getElementById("errorDescription").innerHTML = getLocalizedString("CERTIFICATE_ERROR_DESCRIPTION");
+					}
+						document.getElementById("contactHelp").innerHTML = getLocalizedString("CERTIFICATE_ERROR_CONTACT_HELP");
+						document.getElementById("errorCause").innerHTML = getLocalizedString("CERTIFICATE_ERROR_CAUSE");
+						document.getElementById("certificateInformation").innerHTML = getLocalizedString("CERTIFICATE_ERROR_CERTIFICATE_INFORMATION");
+						var footerSectionInnerHTML = document.getElementById("footerSection").innerHTML;
+						document.getElementById("footerSection").innerHTML = getLocalizedString("CERTIFICATE_ERROR_PAGE_ADDRESS") + footerSectionInnerHTML;
+                }
+
+            </script>
+
+
+	</head>
+	<body onload='onLoad()'>
+	
+		<div id='errorSection'>
+		
+		<div id='errorTitle'> 
+
+		<div id='errorDescription'></div>
+		</div>
+		
+		<div id='helpSection'>
+			
+			<hr/>
+			<div class='title' id='contactHelp'></div>
+			<div >
+				<div class='details'> <span class='emphasize' id='errorCause'></span> <span id='errorMessageSpan' class='details'> </div>
+				<div class='details'> <span class='emphasize' id='certificateInformation'></span><br/><span id='certificateDetailsSpan' class='details'> </span></div>
+			</div>
+			
+		</div>
+		
+		<hr/>
+		<div id='footerSection'>
+			<span id='pageAddressSpan'></span>
+		</div>
+
+		<script type="text/javascript">
+		
+		</script>
+	</body>
+</html>

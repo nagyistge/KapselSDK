@@ -1,0 +1,15 @@
+
+.messageClass {
+    z-index: 200;
+    background-color: red;
+    color: black;
+    border-radius: 5px;
+    /* center div */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80%;
+    display: block;
+    padding: 8px 16px 8px 16px;
+    font-size: small;
+}

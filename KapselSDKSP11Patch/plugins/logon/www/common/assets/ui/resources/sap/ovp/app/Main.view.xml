@@ -1,0 +1,50 @@
+<mvc:View
+	controllerName="sap.ovp.app.Main"
+	xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:l="sap.ui.layout"
+	xmlns:commons="sap.ui.commons"
+	xmlns:core="sap.ui.core"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:ovp="sap.ovp.ui"
+    xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	>
+    <l:FixFlex class="fixFlexFixedSize ovpApplication">
+        <l:fixContent>
+            <VBox>
+                <!-- Object Header definition -->
+                <uxap:ObjectPageHeader class="ovpPageHeader"
+                        id="ovpPageHeader"
+                        objectTitle="{ui>/title}"
+                        objectSubtitle="{ui>/description}"
+                        objectImageURI="{= ${ui>/icon} ? ${ui>/icon} : '' }"
+                        objectImageShape="Circle"
+                        isObjectIconAlwaysVisible="true" >
+                    <template:if test="{ui>/globalFilterEntityType}">
+                        <uxap:actions>
+                            <uxap:ObjectPageHeaderActionButton class="showFilterButton" press="toggleFilterBar" iconFirst="true" icon="sap-icon://filter" />
+                        </uxap:actions>
+                    </template:if>
+                </uxap:ObjectPageHeader>
+                <!-- Global filters definition - only if entity type is defined! -->
+                <template:if test="{ui>/globalFilterEntityType}">
+                    <VBox id="ovpGlobalFilterWrapper" class="ovpGlobalFilterWrapper">
+                        <smartFilterBar:SmartFilterBar id="ovpGlobalFilter"
+                                                   visible="false"
+                                                   entityType="{ui>/globalFilterEntityType}"
+                                                   persistencyKey="ovpGlobalFilter"
+                                                   class="ovpSmartFilterBar"
+                                                   filterBarExpanded="true"
+                            >
+                        </smartFilterBar:SmartFilterBar>
+                    </VBox>
+                </template:if>
+            </VBox>
+        </l:fixContent>
+        <l:flexContent>
+            <!-- Cards container layout definition -->
+            <core:Fragment fragmentName="{ui>/cardContainerFragment}" type="XML"/>
+        </l:flexContent>
+    </l:FixFlex>
+</mvc:View>

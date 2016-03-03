@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-voicerecording"
+    version="3.11.4">
+    
+    <name>Voice Recording</name>
+
+    <js-module name="VoiceRecording" src="www/recording.js">
+        <clobbers target="sap.VoiceRecording" />
+    </js-module>
+    <js-module name="VoiceRecording-AudioRecorder" src="www/audiorecorder.js" />
+    <js-module name="VoiceRecording-AudioScreen" src="www/screen.js" />
+    <js-module name="VoiceRecording-Utils" src="www/recordingutils.js" />
+
+    <dependency id="kapsel-plugin-encryptedstorage" />
+    <dependency id="kapsel-plugin-i18n"/>
+    <dependency id="cordova-plugin-file" />
+    <dependency id="cordova-plugin-screen-orientation" />
+    <asset target="plugins/kapsel-plugin-voicerecording/www/i18n" src="www/i18n" />
+    <asset target="plugins/kapsel-plugin-voicerecording/www" src="www/dialogs.css" />
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="VoiceRecording">
+                <param name="android-package" value="com.sap.mp.cordova.plugins.recording.VoiceRecording" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        </config-file>
+         <source-file src="android/libs/voicerecording-android-3.11.4-SNAPSHOT.aar" target-dir="libs" />
+         <framework custom="true" src="android/smp_voicerecording.gradle" type="gradleReference" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+            <feature name="VoiceRecording">
+                <param name="ios-package" value="SMPVoiceRecordingPlugin" />
+            </feature>
+        </config-file>
+        <source-file framework="true" src="ios/libs/libSMPVoiceRecordingPlugin.a" />
+        <framework src="AudioToolbox.framework" />
+    </platform>
+    <platform name="windows">
+        <js-module src="windows/src/voicerecording_proxy_win.js" name="voicerecording_proxy_win">
+                <merges target="voicerecording_proxy_win" />
+        </js-module>
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <DeviceCapability Name="webcam" />
+            <DeviceCapability Name="microphone" />
+        </config-file>
+		
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+    </platform>
+</plugin>

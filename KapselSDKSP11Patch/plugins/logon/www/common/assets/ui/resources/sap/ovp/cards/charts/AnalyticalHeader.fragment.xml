@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:comm="sap.suite.ui.commons" xmlns:ssb="sap.ovp.cards.charts"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+	<template:with path="ovpCardProperties>/dataPointAnnotationPath"
+		helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='dataPoint'>
+		<template:with path="ovpCardProperties>/selectionAnnotationPath"
+			helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='selVar'>
+			<template:with path="ovpCardProperties>/presentationAnnotationPath"
+				helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='preVar'>
+				<VBox id="ovp" class="analyticalHeaderVbox">
+					<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+						<Text maxLines="1" text="{dataPoint>Title/String}" class="sapOvpAnaliticalCardTitleStyle" />
+					</FlexBox>
+					<HBox class="numericContentHbox" alignItems="End"
+						justifyContent="Start">
+						<items>
+							<ssb:AggregateNumber
+								singleton="{parts:[{path:'entitySet>'}, {path:'dataPoint>Value/Path'}, {path:'selVar>'}], formatter: 'sap.ovp.cards.charts.Utils.getAggregateNumber'}">
+								<ssb:singleton>
+									<core:Element />
+								</ssb:singleton>
+
+								<ssb:content width="100%">
+									<HBox class="innerNumericContentHbox" alignItems="End">
+										<items>
+											<comm:NumericContent id="kpiNumberValue"
+												size="M" truncateValueTo="5"
+												value="{path:'dataPoint>', formatter: 'sap.ovp.cards.charts.Utils.formThePathForAggregateNumber'}"
+												formatterValue="true"
+												valueColor="{path:'dataPoint>', formatter: 'sap.ovp.cards.charts.Utils.formThePathForAggregateNumberColor'}"
+												indicator="{path:'dataPoint>', formatter: 'sap.ovp.cards.charts.Utils.formThePathForTrendIcon'}"
+												state="Loaded" class="sapOvpAnaliticalCardkpiNumberValueStyle"
+												press="press">
+											</comm:NumericContent>
+											<Label
+												text="{path:'dataPoint>', formatter: 'sap.ovp.cards.charts.Utils.formThePathForUOM'}"
+												class="sapOvpAnaliticalCardunitOfMeasureStyle"></Label>
+											<Label
+												text="{path:'dataPoint>', formatter: 'sap.ovp.cards.charts.Utils.formPathForPercentageChange'}"
+												 class="sapOvpAnaliticalCardtrendPercentStyle">
+												<layoutData>
+													<FlexItemData growFactor="1"/>
+												</layoutData>
+											</Label>
+										</items>
+									</HBox>
+								</ssb:content>
+							</ssb:AggregateNumber>
+						</items>
+					</HBox>
+
+					<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+						<Text maxLines="1"
+							text="{path:'preVar>', formatter:'sap.ovp.cards.charts.Utils.listGroupBy'}"
+							class="sapOvpAnaliticalCardDimensionStyle" />
+					</FlexBox>
+
+					<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+						<Text maxLines="1"
+							text="{parts:[{path:'selVar>'}], formatter:'sap.ovp.cards.charts.Utils.listFilters'}"
+							class="sapOvpAnaliticalCardFilterStyle" />
+					</FlexBox>
+				</VBox>
+			</template:with>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

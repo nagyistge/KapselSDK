@@ -1,0 +1,21 @@
+{
+	"resources":[
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "Quickview-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "Quickview.controller.js"
+		},
+		{
+			"name": "Quickview.fragment.xml"
+		}
+	]
+}

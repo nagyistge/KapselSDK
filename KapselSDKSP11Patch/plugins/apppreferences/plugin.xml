@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-apppreferences"
+    version="3.11.4">
+
+    <name>AppPreference</name>
+
+    <dependency id="kapsel-plugin-corelibs" />
+
+	<platform name="android">
+        <js-module name="AppPreferences" src="www/apppreferences.js">
+            <clobbers target="sap.AppPreferences"/>
+        </js-module>
+
+		<config-file target="res/xml/config.xml" parent="/widget">
+			<feature name="AppPreferences">
+			  <param name="android-package" value="com.sap.mp.cordova.plugins.apppreferences.AppPreferences"/>
+			</feature>
+		</config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+               android:name="com.sap.mp.cordova.plugins.apppreferences.PrefsActivity"
+               android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+               android:theme="@android:style/Theme.Black.NoTitleBar" >
+           </activity>
+        </config-file>
+
+
+    	<source-file src="android/libs/apppreferences-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+
+  	</platform>
+
+    <platform name="ios">
+        <js-module name="AppPreferences" src="www/apppreferences.js">
+            <clobbers target="sap.AppPreferences"/>
+        </js-module>
+
+		<config-file target="config.xml" parent="/widget">
+            <feature name="AppPreferences">
+                <param name="ios-package" value="SMPAppPreferencesPlugin"/>
+			</feature>
+		</config-file>
+
+        <source-file src="ios/libs/libSMPAppPreferencesPlugin.a" framework="true"/>
+
+        <resource-file src="ios/bundles/Settings.bundle" />
+ 		<resource-file src="ios/SMPSettings.storyboard" />
+ 		<resource-file src="ios/SMPSettings_iPad.storyboard" />
+    	<framework src="libz.dylib" />
+    </platform>
+    <platform name="windows">
+        <js-module name="AppPreferences" src="www/apppreferences.js">
+            <clobbers target="sap.AppPreferences"/>
+        </js-module>
+        <js-module src="windows/src/apppreferences_proxy_win.js" name="apppreferences_proxy_win">
+          <merges target="apppreferences_proxy_win" />
+        </js-module>
+    </platform>
+</plugin>

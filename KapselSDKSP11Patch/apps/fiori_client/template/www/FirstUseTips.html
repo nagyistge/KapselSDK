@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- load jquery and sap-ui-core to get localization functionality. -->
+  <script src="smp/logon/ui/resources/sap-ui-core.js" type="text/javascript"
+      id="sap-ui-bootstrap"
+      data-sap-ui-theme="sap_bluecrystal"
+      data-sap-ui-libs="sap.m">
+  </script>
+  <script type="text/javascript">
+    jQuery.sap.require("jquery.sap.resources");
+    var locale = sap.ui.getCore().getConfiguration().getLanguage();
+    var i18n = jQuery.sap.resources({'url' : "i18n.properties", 'locale': locale});
+    var i18nProvider = jQuery.sap.resources({'url' : "i18n.provider.properties", 'locale': locale});
+
+    window.getLocalizedString = function(key){
+        var localizedValue = i18n.getText(key);
+        if (localizedValue == key){
+           //try to get the localized string from provider's resource to get value
+           localizedValue = i18nProvider.getText(key);
+        }
+        return localizedValue;
+    }
+  </script>
+  <title id="title"></title>
+  <script type="text/javascript">
+  document.getElementById("title").innerHTML = getLocalizedString("FIRST_USE_TIPS_TITLE");
+  window.addEventListener(
+    "orientationchange",
+    function() {
+       location.reload();
+    },
+    false );
+  </script>
+<style>
+
+
+element {
+}
+
+.center {
+    text-align: center;
+}
+.page {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    background-color: #efeff4;
+    font-weight: 400;
+    color: rgb(31, 31, 33);
+}
+
+* {
+    font-family: 'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif;
+}
+
+* {
+    -moz-user-select: none;
+    -moz-box-sizing: border-box;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>  
+</head>
+
+<body>    
+  
+  <div class="center page">
+    <h1 id="tip"></h1>
+
+    <p id="doubleTap"></p>
+    <p id="useful"></p>
+    <img src="./gesture.png" alt="">
+    <p><a id="closewindow" href="#closewindow"><button id="continue"></button></a></p>
+  </div>
+
+  <script type="text/javascript">
+    document.getElementById("tip").innerHTML = getLocalizedString("FIRST_USE_TIPS_TIP") + ":";
+    document.getElementById("doubleTap").innerHTML = getLocalizedString("FIRST_USE_TIPS_DOUBLE_TAP");
+    document.getElementById("useful").innerHTML = getLocalizedString("FIRST_USE_TIPS_USEFUL");
+    document.getElementById("continue").innerHTML = getLocalizedString("FIRST_USE_TIPS_CONTINUE");
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: AppSettings</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: AppSettings</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="sap.html">sap</a>.</span>
+        
+        AppSettings
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Used to access SMP application settings.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="http://dcx-pubs.sybase.com/index.html#smp0300/en/com.sybase.smp3.developer/doc/html/mdw1371795615579.html">Application Connection Properties</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getApplicationEndpoint"><span class="type-signature">(static) </span>getApplicationEndpoint<span class="signature">(successCallback, errorCallback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Retrieves the application end-point with which the application can access business data.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called with the value of the ProxyApplicationEndpoint.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called with error object that contains status and statusText.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.AppSettings.getApplicationEndpoint(function(endpoint) {
+   console.log("Endpoint: " + endpoint);
+}, function(error) {
+   alert("Failed to get setting. Status code" + error.statusCode + " text: " + error.statusText);
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getConfigProperty"><span class="type-signature">(static) </span>getConfigProperty<span class="signature">(successCallback, errorCallback, name)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Retrieves a config property by name.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called with the value of the property.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called with error object that contains status and statusText.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The property name</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.AppSettings.getConfigProperty(function(token) {
+   console.log("DeviceToken: " + token);
+}, function(error) {
+   alert("Failed to get setting. Status code" + error.statusCode + " text: " + error.statusText);
+}, "ApnsDeviceToken");</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".setConfigProperty"><span class="type-signature">(static) </span>setConfigProperty<span class="signature">(nameVals, successCallback, errorCallback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Updates the provided Name-Vaule pairs of config properties.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nameVals</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Object that contains name value pairs.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called if set is successful.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called with error object that contains status and statusText.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.AppSettings.setConfigProperty({ "ApnsDeviceToken" : "mytoken" }, function() {
+   console.log("Device token set");
+}, function(error) {
+   alert("Failed to set setting. Status code" + error.statusCode + " text: " + error.statusText);
+});</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="sap.AuthProxy_CertificateFromFile.html">CertificateFromFile</a></li><li><a href="sap.AuthProxy_CertificateFromLogonManager.html">CertificateFromLogonManager</a></li><li><a href="sap.AuthProxy_CertificateFromStore.html">CertificateFromStore</a></li><li><a href="sap.OfflineStore.html">OfflineStore</a></li><li><a href="sap.Usage.InfoType.html">InfoType</a></li></ul><h3>Events</h3><ul><li><a href="sap.AppUpdate.html#event:checking">checking</a></li><li><a href="sap.AppUpdate.html#event:downloading">downloading</a></li><li><a href="sap.AppUpdate.html#event:error">error</a></li><li><a href="sap.AppUpdate.html#event:insufficientspace">insufficientspace</a></li><li><a href="sap.AppUpdate.html#event:noupdate">noupdate</a></li><li><a href="sap.AppUpdate.html#event:progress">progress</a></li><li><a href="sap.AppUpdate.html#event:updateready">updateready</a></li><li><a href="sap.AppUpdate.html#event:updatetoolargeforcellular">updatetoolargeforcellular</a></li><li><a href="sap.CacheManager.html#event:cacheinvalidated">cacheinvalidated</a></li><li><a href="sap.CacheManager.html#event:noviewerfound">noviewerfound</a></li></ul><h3>Namespaces</h3><ul><li><a href="sap.html">sap</a></li><li><a href="sap.AppPreferences.html">AppPreferences</a></li><li><a href="sap.AppSettings.html">AppSettings</a></li><li><a href="sap.AppUpdate.html">AppUpdate</a></li><li><a href="sap.AuthProxy.html">AuthProxy</a></li><li><a href="sap.CacheManager.html">CacheManager</a></li><li><a href="sap.E2ETrace.html">E2ETrace</a></li><li><a href="sap.EncryptedStorage.html">EncryptedStorage</a></li><li><a href="sap.FioriClient.html">FioriClient</a></li><li><a href="sap.Logger.html">Logger</a></li><li><a href="sap.Logon.html">Logon</a></li><li><a href="sap.OData.html">OData</a></li><li><a href="sap.Online.html">Online</a></li><li><a href="sap.Push.html">Push</a></li><li><a href="sap.Settings.html">Settings</a></li><li><a href="sap.Toolbar.html">Toolbar</a></li><li><a href="sap.Usage.html">Usage</a></li><li><a href="sap.VoiceRecording.html">VoiceRecording</a></li></ul><h3>Interfaces</h3><ul><li><a href="sap.VoiceRecording.Recording.html">Recording</a></li></ul><h3>Global</h3><ul><li><a href="global.html#changeEncryptionKey">changeEncryptionKey</a></li><li><a href="global.html#checkExistence">checkExistence</a></li><li><a href="global.html#destroy">destroy</a></li><li><a href="global.html#getReports">getReports</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isInitialized">isInitialized</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#makeTimer">makeTimer</a></li><li><a href="global.html#refreshAccessToken">refreshAccessToken</a></li><li><a href="global.html#refreshSession">refreshSession</a></li><li><a href="global.html#sendOAuthPingRequest">sendOAuthPingRequest</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#setBehavior">setBehavior</a></li><li><a href="global.html#setCase">setCase</a></li><li><a href="global.html#setCategory">setCategory</a></li><li><a href="global.html#setElement">setElement</a></li><li><a href="global.html#setMeasurement">setMeasurement</a></li><li><a href="global.html#setResult">setResult</a></li><li><a href="global.html#setScreen">setScreen</a></li><li><a href="global.html#setType">setType</a></li><li><a href="global.html#setUnit">setUnit</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#setView">setView</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeEnd">timeEnd</a></li><li><a href="global.html#timeStart">timeStart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

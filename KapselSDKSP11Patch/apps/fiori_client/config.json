@@ -1,0 +1,6 @@
+{
+    "packageName": "",
+    "targetFolder": "",
+    "appName": "",
+    "platforms": ["ios@3.9", "android@5.0"]
+}

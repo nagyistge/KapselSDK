@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+    <string name="restriction_title_appID">"ID d\'application"</string>
+    <string name="restriction_description_appID">"Il s\'agit de l\'ID d\'application permettant d\'identifier l\'application du coffre-fort de données. Si vous utilisez SMP, cette ID doit alors être cohérente avec l\'ID de l\'application cible. Notez que cette valeur est différente du nom du package, qui est principalement utilisé pour identifier votre application dans des magasins d\'applications."</string>
+
+    <string name="restriction_title_fioriURL">"URL du serveur SAP Fiori"</string>
+    <string name="restriction_description_fioriURL">"URL complet de l\'application cible. Si votre application n\'utilise pas SMP, elle navigue alors directement vers cet URL une fois la connexion terminée. Si votre application utilise SMP, cet URL est analysé et utilisé de la manière suivante : 1. Le modèle d’URL (qui doit être HTTP ou HTTPS) détermine la valeur initiale du code \"https\" dans la boîte de dialogue d\'enregistrement. De la même manière, l\'hôte et le port dans l\'URL déterminent leurs valeurs initiales correspondantes dans la boîte de dialogue d\'enregistrement. Si la valeur du port n\'est pas spécifiée, elle est définie par défaut sur 443. 2. Le suffixe de l\'URL (tout ce qui apparaît derrière l\'hôte et port) est ajouté à l\'URL auquel s\'inscrit l\'utilisateur. Bien que la procédure soit sensiblement la même que pour le modèle, l\'hôte et le port, décrite sous le point 1, l\'utilisateur a la possibilité de modifier ces valeurs. Cependant, le suffixe ne peut pas être modifié. Si vous utilisez SMP, indiquez le modèle, l\'hôte et le port de votre serveur SMP, suivi du suffixe du point de terminaison SAP Fiori. Par exemple : \"https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html\""</string>
+
+     <string name="restriction_title_appName">"Nom de l\'application"</string>
+     <string name="restriction_description_appName">"Propriété facultative utilisée pour personnaliser le nom de l\'application SAP Fiori affiché sur l\'écran de connexion. Par défaut, le nom de l\'application est SAP Fiori Client. Lorsque cette zone est vide, la valeur par défaut est utilisée."</string>
+
+     <string name="restriction_title_fioriURLIsSMP">"L\'URL du serveur SAP Fiori est un serveur SMP."</string>
+     <string name="restriction_description_fioriURLIsSMP">"Si vous utilisez SMP, affectez la valeur \"true\" pour exécuter l\'enregistrement."</string>
+
+    <string name="restriction_title_certificate">"Fournisseur de certificat client"</string>
+    <string name="restriction_description_certificate">"Fournisseur de certificat client"</string>
+
+    <string name="restriction_title_autoSelectSingleCert">"Sélectionner automatiquement fournisseur de certificat client"</string>
+    <string name="restriction_description_autoSelectSingleCert">"Sélectionner automatiquement certificat client pour authentif. mutuelle si un seul certificat client est disponilble."</string>
+
+    <string name="restriction_title_passcodePolicyExpirationDays">"Stratégie de code PIN : jours avant expiration"</string>
+    <string name="restriction_description_passcodePolicyExpirationDays">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyHasDigits">"Stratégie de code PIN comprend des chiffres."</string>
+    <string name="restriction_description_passcodePolicyHasDigits">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyHasLowerCaseLetters">"Stratégie de code PIN comprend des minuscules."</string>
+    <string name="restriction_description_passcodePolicyHasLowerCaseLetters">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyHasSpecialLetters">"Stratégie de code PIN comporte des caractères spéciaux."</string>
+    <string name="restriction_description_passcodePolicyHasSpecialLetters">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyHasUpperCaseLetters">"Stratégie de code PIN comporte des majuscules."</string>
+    <string name="restriction_description_passcodePolicyHasUpperCaseLetters">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyDefaultAllowed">"Stratégie de code PIN : valeurs par défaut autorisées"</string>
+    <string name="restriction_description_passcodePolicyDefaultAllowed">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyLockTimeout">"Stratégie de code PIN : expiration du blocage"</string>
+    <string name="restriction_description_passcodePolicyLockTimeout">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyMinLength">"Stratégie de code PIN : longueur minimum"</string>
+    <string name="restriction_description_passcodePolicyMinLength">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyMinUniqueChars">"Stratégie de code PIN : nombre minimum de caractères uniques"</string>
+    <string name="restriction_description_passcodePolicyMinUniqueChars">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+
+    <string name="restriction_title_passcodePolicyRetryLimit">"Stratégie de code PIN : nombre limite de nouvelles tentatives"</string>
+    <string name="restriction_description_passcodePolicyRetryLimit">"Stratégie de code PIN du coffre-fort de données. Note : si vous utilisez SMP, la stratégie de code PIN est déterminée par le serveur."</string>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-attachmentviewer"
+    version="3.11.4">
+
+	<name>AttachmentViewer</name>
+	<dependency id="kapsel-plugin-corelibs" />
+	<dependency id="kapsel-plugin-authproxy" />
+	<dependency id="cordova-plugin-device" />
+	<dependency id="kapsel-plugin-inappbrowser"/>
+	<dependency id="kapsel-plugin-i18n"/>
+	<dependency id="cordova-plugin-dialogs"/>
+
+	<js-module name="AttachmentViewer" src="www/attachmentviewer.js">
+		<clobbers target="sap.AttachmentViewer"/>
+	</js-module>
+
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_en.properties" src="www/messages_en.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_ar.properties" src="www/messages_ar.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_de.properties" src="www/messages_de.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_es.properties" src="www/messages_es.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_fr.properties" src="www/messages_fr.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_ja.properties" src="www/messages_ja.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_pt.properties" src="www/messages_pt.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_ru.properties" src="www/messages_ru.properties"/>
+    <asset target="plugins/kapsel-plugin-attachmentviewer/www/messages_zh_CN.properties" src="www/messages_zh_CN.properties"/>
+
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="AttachmentHandler">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.attachmentViewer.AttachmentViewer"/>
+				<param name="onload" value="true"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<provider
+				android:name="com.sap.mp.cordova.plugins.attachmentViewer.FileProviderWithWorkaround"
+				android:authorities="$PACKAGE_NAME.KapselAttachmentViewer"
+				android:exported="false"
+				android:grantUriPermissions="true">
+				<meta-data
+					android:name="android.support.FILE_PROVIDER_PATHS"
+					android:resource="@xml/filepaths" />
+			</provider>
+		</config-file>
+
+		<source-file src="android/filepaths.xml" target-dir="res/xml/" />
+
+        <source-file src="android/libs/attachmentviewer-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+        <framework src="com.android.support:support-v4:22.0.0" />
+	</platform>
+
+	<!-- windows universal apps (Windows 8.1, Windows Phone 8.1, Windows 8.0) -->
+    <platform name="windows">
+        <js-module src="windows/downloader.js" name="Downloader">
+        	<clobbers target="sap.AttachmentViewer.Downloader" />
+        </js-module>
+        <js-module src="windows/utils.js" name="Utils">
+        	<clobbers target="sap.AttachmentViewer.Utils" />
+        </js-module>
+        <js-module src="windows/filecleaner.js" name="FileCleaner">
+        	<clobbers target="sap.AttachmentViewer.FileCleaner" />
+        </js-module>
+         <asset src="windows/attachmentviewer.css" target="css/attachmentviewer.css" />
+         <asset src="windows/mimetypes.json" target="mimetypes.json" />
+    </platform>
+</plugin>

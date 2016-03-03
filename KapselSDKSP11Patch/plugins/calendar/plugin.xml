@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-calendar"
+    version="4.4.4">
+
+    <name>Calendar</name>
+    
+   <description>
+     This plugin allows allows you to manipulate the native calendar.
+   </description>
+
+   <license>MIT</license>
+
+   <engines>
+      <engine name="cordova" version=">=3.0.0" />
+   </engines>
+    
+    <dependency id="kapsel-plugin-corelibs" />
+    
+    <js-module name="Calendar" src="www/calendar.js">
+        <clobbers target="Calendar"/>
+    </js-module>
+
+    <!-- ios -->
+   <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+         <feature name="Calendar">
+            <param name="ios-package" value="SMPCalendarPlugin" />
+         </feature>
+      </config-file>
+      <source-file src="ios/libs/libSMPCalendarPlugin.a" framework="true"/>
+      <framework src="EventKit.framework" />
+      <framework src="EventKitUI.framework" />
+   </platform>
+   
+   <!-- android -->
+   <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+         <feature name="Calendar">
+            <param name="android-package" value="com.sap.mp.cordova.plugins.calendar.Calendar" />
+         </feature>
+      </config-file>
+     <config-file target="AndroidManifest.xml" parent="/manifest">
+       <uses-permission android:name="android.permission.READ_CALENDAR"/>
+       <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+     </config-file>
+     <source-file src="android/libs/calendar-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/> 
+   </platform>
+
+</plugin>

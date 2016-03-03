@@ -1,0 +1,32 @@
+{
+  "_version": "1.2.0",
+  "sap.app": {
+    "_version": "1.2.0",
+    "id": "sap.ui.generic.app",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.32.5"
+    },
+    "title": "The SAPUI5 library contains classes that are mainly used in smart template applications, but can also be used in any Fiori/UI5 application that uses the OData protocol to communicate with an application server.",
+    "description": "The SAPUI5 library contains classes that are mainly used in smart template applications, but can also be used in any Fiori/UI5 application\n                   that uses the OData protocol to communicate with an application server.",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5",
+    "supportedThemes": []
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "dependencies": {
+      "minUI5Version": "1.32",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.32.5"
+        }
+      }
+    }
+  }
+}

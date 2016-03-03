@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+        controllerName="sap.ovp.cards.generic.Card"
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:ovp="sap.ovp.ui"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+    <VBox class="sapOvpBaseCard">
+        <core:Fragment fragmentName="sap.ovp.cards.generic.Header" type="XML"/>
+        <ovp:CardContentContainer>
+                <template:if test="{ovpCardProperties>/contentFragment}">
+                    <core:Fragment fragmentName="{ovpCardProperties>/contentFragment}" type="XML" />
+                </template:if>
+        </ovp:CardContentContainer>
+        <template:if test="{ovpCardProperties>/footerFragment}">
+            <core:Fragment fragmentName="{ovpCardProperties>/footerFragment}" type="XML" />
+        </template:if>
+    </VBox>
+
+</core:FragmentDefinition>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-usage"
+    version="3.11.4">
+    
+    <name>Usage</name>
+    <dependency id="kapsel-plugin-corelibs"/>
+    <dependency id="kapsel-plugin-inappbrowser"/>
+	<dependency id="kapsel-plugin-authproxy"/>
+    <dependency id="kapsel-plugin-logon"/>
+	<dependency id="kapsel-plugin-settings"/>
+
+    <js-module name="Usage" src="www/usage.js">
+        <clobbers target="sap.Usage"/>
+    </js-module>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/widget">
+			<feature name="Usage">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.usage.UsagePlugin"/>
+				<param name="onload" value="true"/>
+			</feature>
+		</config-file>
+		<source-file src="android/libs/usage-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+        <source-file src="android/libs/Usage-3.11.3-SNAPSHOT.jar" target-dir="libs"/>
+
+		<source-file src="android/libs/commons-codec.jar" target-dir="libs"/>
+		<source-file src="android/libs/guava-r09.jar" target-dir="libs"/>
+		<source-file src="android/libs/sqlcipher.jar" target-dir="libs"/>
+		<source-file src="android/libs/armeabi/libdatabase_sqlcipher.so" target-dir="libs/armeabi"/>
+		<source-file src="android/libs/armeabi/libsqlcipher_android.so" target-dir="libs/armeabi"/>
+		<source-file src="android/libs/armeabi/libstlport_shared.so" target-dir="libs/armeabi"/>
+		<source-file src="android/libs/armeabi-v7a/libdatabase_sqlcipher.so" target-dir="libs/armeabi-v7a"/>
+		<source-file src="android/libs/armeabi-v7a/libsqlcipher_android.so" target-dir="libs/armeabi-v7a"/>
+		<source-file src="android/libs/armeabi-v7a/libstlport_shared.so" target-dir="libs/armeabi-v7a"/>
+		<source-file src="android/libs/x86/libdatabase_sqlcipher.so" target-dir="libs/x86"/>
+		<source-file src="android/libs/x86/libsqlcipher_android.so" target-dir="libs/x86"/>
+		<source-file src="android/libs/x86/libstlport_shared.so" target-dir="libs/x86"/>
+
+		<source-file src="android/assets/icudt46l.zip" target-dir="assets"/>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		</config-file>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+			<feature name="Usage">
+				<param name="ios-package" value="SMPUsagePlugin"/>
+				<param name="onload" value="true"/>
+			</feature>
+		</config-file>
+
+        <source-file framework="true" src="ios/libs/libSMPUsagePlugin.a"/>
+		<source-file framework="true" src="ios/libs/libUsage.a"/>
+		<source-file framework="true" src="ios/libs/libsqlcipher.a"/>
+	</platform>
+    <platform name="windows">
+		<js-module src="windows/src/usage_proxy_win.js" name="usage_proxy_win">
+          <merges target="usage_proxy_win" />
+        </js-module>
+		
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+
+    </platform>
+</plugin>

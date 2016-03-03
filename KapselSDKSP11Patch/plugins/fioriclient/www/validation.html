@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var isUrl = function(url) {
+            if (typeof(url) !== 'string') {
+                return false;
+            }
+            
+			//To validate URLs that are entered as user input and cover the most cases, 
+			//use open source URL validation regexp. https://gist.github.com/dperini/729294
+			var regexp =  new RegExp(
+			              "^" +
+                          // protocol identifier
+                          "(?:(?:https?)://)" +
+                          // user:pass authentication
+                          "(?:\\S+(?::\\S*)?@)?" +
+                          "(?:" +
+                          // IP address exclusion
+                          // private & local networks
+                          "(?!(?:10|127)(?:\\.\\d{1,3}){3})" +
+                          "(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})" +
+                          "(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})" +
+                          // IP address dotted notation octets
+                          // excludes loopback network 0.0.0.0
+                          // excludes reserved space >= 224.0.0.0
+                          // excludes network & broacast addresses
+                          // (first & last IP address of each class)
+                          "(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])" +
+                          "(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}" +
+                          "(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))" +
+                          "|" +
+                          // host name
+                          "(?:(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)" +
+                          // domain name
+                          "(?:\\.(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)*" +
+                          // TLD identifier
+                          "(?:\\.(?:[a-z\\u00a1-\\uffff]{2,}))" +
+                          ")" +
+                          // port number
+                          "(?::\\d{2,5})?" +
+                          // resource path
+                          "(?:/\\S*)?" +
+                          "$", "i" 
+						  );
+
+            return regexp.test(url);
+        };
+        
+        function validationFunction(key, newValue, collection2) {
+            // collection2 isn't guaranteed to be parsable by JSON.  There could be
+            // newline characters, which cause a JSON parsing error.  So replace the
+            // newline with the harmless "\\n".  There should be no newlines in
+            // fioriURL, so this modification shouldn't harm the validation.
+            collection2 = collection2.replace(/\n/g,"\\n");
+            var collection = JSON.parse(collection2);
+            switch (key) {
+              case "fioriURL":
+                  if (!isUrl(newValue)) {
+                      return JSON.stringify({"validationResult": false, "descriptionResult": "This URL is invalid."});
+                  }
+                  break;
+            }
+            return JSON.stringify({"validationResult": true,"descriptionResult":"No validation check defined " + newValue});
+        }
+        </script>
+    </body>
+</html>

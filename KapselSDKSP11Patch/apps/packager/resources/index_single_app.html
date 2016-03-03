@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+         -->
+        <title>Mobile Fiori Offline Launchpad</title>
+
+	<script type="text/javascript">alert('Hi');</script>
+
+        <script id="sap-ui-bootstrap" src="resources/sap-ui-core.js"
+            data-sap-ui-libs="__LIBS__"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-preload="sync"
+            data-sap-ui-resourceroots='__RESOURCEROOTS__'
+            data-sap-ui-xx-bindingSyntax="complex">
+        </script>
+        
+        <script>
+            // The viewport meta tag must be inserted to the DOM before the “DOMContentLoaded” event is published.
+            // The initMobile function is responsible to insert the correct viewport according to the current device.
+            // For iPhone running ios 7.1 and above a "minimal-ui" property is added to the viewport meta tag which allows minimizing the top and bottom bars of the browser.
+            jQuery.sap.initMobile({preventScroll: false});
+        </script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/logon.js"></script>
+        <script type="text/javascript" src="js/contentplace.js"></script>
+        
+        <script>
+            // detect image load errors and if we get one, see if was due to an attempt to load from a local file system location
+            // If so, then redirect the request to FES
+            window.addEventListener("error", function(e) {
+                if (e && e.target && e.target.nodeName && e.target.nodeName.toLowerCase() == "img") {
+                    var root = (new RegExp(/^.*\//)).exec(window.location.href)[0],
+                        remoteBase = "__FES__",
+                        src = e.target.src;
+
+                    if (src.indexOf(root) === 0) {
+                        e.target.src = remoteBase + src.substring(root.length);
+                    } else if (src.indexOf("file://") === 0) {
+                        e.target.src = remoteBase + src.substring("file://".length);
+                    }
+                 }
+            }, true);
+
+            // don't load sap.fiori.core-ext
+            sap.ui.getCore().attachInit(function() {
+                jQuery.sap.declare("sap.fiori.core-ext");
+            });
+
+            function startApp(ctx) {
+                jQuery.sap.registerModulePath("__FIORI_APP_ID__", '__FIORI_APP_URL__');
+                oComponentContainer = new sap.ui.core.ComponentContainer({ height : "100%", name : "__FIORI_APP_ID__"});
+                oComponentContainer.placeAt("single_app_content");
+            }
+        
+            function failedToStart(error) {
+                jQuery.sap.require("sap.m.MessageBox");
+
+                console.log("failed");
+                
+                sap.m.MessageBox.show("Failed to start the app: " + error.msg, sap.m.MessageBox.Icon.ERROR, "Error");
+            }
+        
+            if (window.cordova) {
+                devapp.initialize(startApp, failedToStart);
+            } else {
+                startApp({});
+            }
+        </script>
+    </head>
+        <body class="sapUiBody sapUShellFullHeight" role="application" id="single_app_content">
+            <div id="canvas" class="sapUShellFullHeight">
+                <!--  the Fiori2 loading screen for different browsers (as SAPUI5 is not loaded yet, will be replaced by Launchpad):
+                 * in pure HTML with CSS animation for modern browsers
+                 * animated gif image for <=IE9 (IE10+ doesn't support conditional comments)
+                 -->
+                <!--[if IE]>
+                 <div id="fiori2-startup-flower" class="demo">
+                 <img src="../../../../../resources/sap/ushell/themes/base/img/flower_anim.gif" />
+                 </div>
+                 <![endif]-->
+                <!--[if !IE]> -->
+                <div id="fiori2-startup-flower" class="demo">
+                    <div class="fiori2-blossom">
+                        <div class="fiori2-leafContainer fiori2-leafContainer1">
+                            <div class="fiori2-leaf fiori2-leaf1"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer2">
+                            <div class="fiori2-leaf fiori2-leaf2"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer3">
+                            <div class="fiori2-leaf fiori2-leaf3"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer4">
+                            <div class="fiori2-leaf fiori2-leaf4"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer5">
+                            <div class="fiori2-leaf fiori2-leaf5"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <![endif] -->
+            </div>
+            <div id="dbg_grid_overlay" style="position: absolute;z-index: 1000;background-image: url('./resources/sap/ushell/themes/sap_bluecrystal/img/grid.png');
+                width: 100%;height: 100%;opacity: 0.1;top: 0;left: 0;display:none;">
+                
+            </div>
+        </body>
+</html>

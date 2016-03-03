@@ -1,0 +1,327 @@
+{
+	"resources":[
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "Calendar-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Calendar.control"
+		},
+		{
+			"name": "Calendar.js"
+		},
+		{
+			"name": "CalendarDate-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "CalendarDate.js"
+		},
+		{
+			"name": "CalendarDesign.type"
+		},
+		{
+			"name": "CalendarEventType.type"
+		},
+		{
+			"name": "CalendarLegend-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "CalendarLegend.control"
+		},
+		{
+			"name": "CalendarLegend.js"
+		},
+		{
+			"name": "CalendarLegendRenderer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "CalendarLegendRenderer.js"
+		},
+		{
+			"name": "CalendarRenderer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "CalendarRenderer.js"
+		},
+		{
+			"name": "CalendarSelectionMode.type"
+		},
+		{
+			"name": "OverlapCalendar-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "OverlapCalendar.control"
+		},
+		{
+			"name": "OverlapCalendar.js"
+		},
+		{
+			"name": "OverlapCalendarEvent-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "OverlapCalendarEvent.control"
+		},
+		{
+			"name": "OverlapCalendarEvent.js"
+		},
+		{
+			"name": "OverlapCalendarRenderer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "OverlapCalendarRenderer.js"
+		},
+		{
+			"name": "ProgressIndicator-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ProgressIndicator.control"
+		},
+		{
+			"name": "ProgressIndicator.js"
+		},
+		{
+			"name": "ProgressIndicatorRenderer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ProgressIndicatorRenderer.js"
+		},
+		{
+			"name": "TabContainer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "TabContainer.control"
+		},
+		{
+			"name": "TabContainer.js"
+		},
+		{
+			"name": "TabContainerRenderer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "TabContainerRenderer.js"
+		},
+		{
+			"name": "library-all-dbg.js",
+			"isDebug":true,
+			"merged":true
+		},
+		{
+			"name": "library-all.js",
+			"merged":true
+		},
+		{
+			"name": "library-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "library-preload.json",
+			"merged":true
+		},
+		{
+			"name": "library.dependencies.json"
+		},
+		{
+			"name": "library.dependencies.xml"
+		},
+		{
+			"name": "library.js"
+		},
+		{
+			"name": "library.templates.xml"
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "themes/base/.theming",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/Calendar.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/CalendarLegend.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/OverlapCalendar.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-RTL.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug":true,
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-parameters.json",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/shared.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/sap_bluecrystal/.theming",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/Calendar.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/CalendarLegend.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/OverlapCalendar.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/ProgressIndicator.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/TabContainer.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/img-RTL/bg_white_transparent.png",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/img/bg_white_transparent.png",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug":true,
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/shared.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_hcb/.theming",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/Calendar.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/CalendarLegend.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/OverlapCalendar.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/img-RTL/bg_white_transparent.png",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/img/bg_white_transparent.png",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL.css",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-dbg.css",
+			"isDebug":true,
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-parameters.json",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.css",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.source.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/shared.css",
+			"theme":"sap_hcb"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"resources":[
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "Stack-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "Stack.controller.js"
+		},
+		{
+			"name": "Stack.fragment.xml"
+		}
+	]
+}

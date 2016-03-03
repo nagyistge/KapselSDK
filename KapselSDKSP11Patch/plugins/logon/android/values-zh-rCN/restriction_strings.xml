@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+    <string name="restriction_title_appID">"应用标识"</string>
+    <string name="restriction_description_appID">"用于向数据保险箱识别应用的应用标识。 如果使用 SMP，则此项应与目标应用的应用标识一致。 请注意，此值有别于包名称，后者主要用于识别应用商店中的应用。"</string>
+
+    <string name="restriction_title_fioriURL">"Fiori 服务器 URL"</string>
+    <string name="restriction_description_fioriURL">"目标应用的完整 URL。 如果应用不使用 SMP，则它会在登录完成后就直接导航至此 URL。 如果应用确实使用 SMP，则会以如下方式解析并使用此 URL： 1. URL 方案（必须为 HTTP 或 HTTPS）确定了注册对话框中 \'https\' 标志的初始值。 同样，URL 中的主机和端口确定了其在注册对话框中相应的初始值，如果未指定端口，则使用缺省值 443。 2. URL 后缀（主机和端口之后的所有内容）会附于用户注册到的 URL 后面。 尽管此项可能与来自 1. 的方案、主机和端口相同，但用户可以更改这些值。 然而，后缀无法更改。 如果使用 SMP，请指定 SMP 服务器的方案、主机和端口，后跟 Fiori 端点的后缀。 例如： \'https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html\'"</string>
+
+     <string name="restriction_title_appName">"应用名称"</string>
+     <string name="restriction_description_appName">"用于定制登录屏幕上所显示 Fiori 应用名称的可选属性。 缺省情况下，应用名称为 SAP Fiori Client。 当此字段为空时会使用缺省值。"</string>
+
+     <string name="restriction_title_fioriURLIsSMP">"Fiori 服务器 URL 是指 SMP 服务器"</string>
+     <string name="restriction_description_fioriURLIsSMP">"如果使用 SMP，则将此项设置为 true 以执行注册。"</string>
+
+    <string name="restriction_title_certificate">"客户端证书提供者"</string>
+    <string name="restriction_description_certificate">"客户端证书提供者"</string>
+
+    <string name="restriction_title_autoSelectSingleCert">"自动选择客户端证书提供者"</string>
+    <string name="restriction_description_autoSelectSingleCert">"如果只有一个客户端证书可用，则自动选择该证书进行相互验证。"</string>
+
+    <string name="restriction_title_passcodePolicyExpirationDays">"密码策略过期天数"</string>
+    <string name="restriction_description_passcodePolicyExpirationDays">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyHasDigits">"密码策略含有数字"</string>
+    <string name="restriction_description_passcodePolicyHasDigits">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyHasLowerCaseLetters">"密码策略含有小写字母"</string>
+    <string name="restriction_description_passcodePolicyHasLowerCaseLetters">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyHasSpecialLetters">"密码策略含有特殊字母"</string>
+    <string name="restriction_description_passcodePolicyHasSpecialLetters">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyHasUpperCaseLetters">"密码策略含有大写字母"</string>
+    <string name="restriction_description_passcodePolicyHasUpperCaseLetters">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyDefaultAllowed">"允许密码策略缺省"</string>
+    <string name="restriction_description_passcodePolicyDefaultAllowed">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyLockTimeout">"密码策略锁定超时值"</string>
+    <string name="restriction_description_passcodePolicyLockTimeout">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyMinLength">"密码策略最小长度"</string>
+    <string name="restriction_description_passcodePolicyMinLength">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyMinUniqueChars">"密码策略最小唯一字符数"</string>
+    <string name="restriction_description_passcodePolicyMinUniqueChars">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+
+    <string name="restriction_title_passcodePolicyRetryLimit">"密码策略重试限制"</string>
+    <string name="restriction_description_passcodePolicyRetryLimit">"数据保险箱的密码策略。注：如果使用 SMP，则密码策略由服务器确定。"</string>
+</resources>

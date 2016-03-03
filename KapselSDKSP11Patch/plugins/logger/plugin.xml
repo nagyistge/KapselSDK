@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-logger"
+    version="3.11.4">
+
+    <name>Logger</name>
+
+    <dependency id="kapsel-plugin-corelibs" />
+    <dependency id="kapsel-plugin-inappbrowser"/>
+    <dependency id="kapsel-plugin-logon"/>
+
+	<js-module name="Logging" src="www/logger.js">
+		<clobbers target="sap.Logger"/>
+	</js-module>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Logging">
+			  <param name="android-package" value="com.sap.mp.cordova.plugins.logger.Logger"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<provider
+				android:name="android.support.v4.content.FileProvider"
+				android:authorities="$PACKAGE_NAME.KapselLogger"
+				android:exported="false"
+				android:grantUriPermissions="true">
+				<meta-data
+					android:name="android.support.FILE_PROVIDER_PATHS"
+					android:resource="@xml/logfilepaths" />
+			</provider>
+		</config-file>
+
+        <source-file src="android/logfilepaths.xml" target-dir="res/xml/" />
+
+    	<source-file src="android/libs/logger-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+        <framework src="com.android.support:support-v4:22.0.0" />
+  	</platform>
+
+    <platform name="ios">
+		<config-file target="config.xml" parent="/*">
+            <feature name="Logging">
+                <param name="ios-package" value="SMPLoggerPlugin"/>
+			</feature>
+		</config-file>
+
+        <source-file src="ios/libs/libSMPLoggerPlugin.a" framework="true"/>
+
+    	<framework src="libz.dylib" />
+    </platform>
+
+    <platform name="windows">
+        <!-- command proxy for windows8 platform -->
+        <js-module name="logger_proxy_win" src="windows/src/logger_proxy_win.js">
+          <clobbers target="logger_proxy_win"/>
+        </js-module>
+		
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+
+    </platform>
+</plugin>

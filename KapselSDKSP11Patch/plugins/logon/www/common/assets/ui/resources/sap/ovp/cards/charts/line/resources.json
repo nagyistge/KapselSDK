@@ -1,0 +1,21 @@
+{
+	"resources":[
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "LineChart-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "LineChart.controller.js"
+		},
+		{
+			"name": "LineChart.fragment.xml"
+		}
+	]
+}

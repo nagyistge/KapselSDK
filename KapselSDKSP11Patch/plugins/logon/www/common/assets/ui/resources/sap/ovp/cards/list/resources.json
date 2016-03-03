@@ -1,0 +1,33 @@
+{
+	"resources":[
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "CondensedBarList.fragment.xml"
+		},
+		{
+			"name": "ExtendedBarList.fragment.xml"
+		},
+		{
+			"name": "List-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "List.controller.js"
+		},
+		{
+			"name": "List.fragment.xml"
+		},
+		{
+			"name": "ObjectList.fragment.xml"
+		},
+		{
+			"name": "StandardList.fragment.xml"
+		}
+	]
+}

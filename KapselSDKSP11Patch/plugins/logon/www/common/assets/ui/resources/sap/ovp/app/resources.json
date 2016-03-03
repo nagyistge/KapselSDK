@@ -1,0 +1,24 @@
+{
+	"resources":[
+		{
+			"name": "CardContainer.fragment.xml"
+		},
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "Main-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "Main.controller.js"
+		},
+		{
+			"name": "Main.view.xml"
+		}
+	]
+}

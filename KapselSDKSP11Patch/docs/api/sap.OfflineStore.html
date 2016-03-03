@@ -1,0 +1,3076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: OfflineStore</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: OfflineStore</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="sap.html">sap</a>.</span>
+        
+        OfflineStore
+        </h2>
+        
+            <div class="class-description">Provides methods for interacting with the offline OData store.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="OfflineStore"><span class="type-signature"></span>new OfflineStore<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="customCookies"><span class="type-signature">(readonly) </span>customCookies<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    Object that contains the cookies to send as name value pairs.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="customHeaders"><span class="type-signature">(readonly) </span>customHeaders<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    Object that contains the headers to send as name value pairs.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="definingRequests"><span class="type-signature">(readonly) </span>definingRequests<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    Object that contains the coverage of data as name value pairs. The names are arbitrary and used when performing  
+refreshes with subsets.  The values are OData URLs represent the coverage of data to be managed by the store.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="enableRepeatableRequests"><span class="type-signature">(readonly) </span>enableRepeatableRequests<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    If the OData Producer is able to support repeatable requests then enable use of this.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="host"><span class="type-signature">(readonly) </span>host<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    The host of the server.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="https"><span class="type-signature">(readonly) </span>https<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    Whether to use HTTP or HTTPS.  Default is HTTP.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="name"><span class="type-signature">(readonly) </span>name<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    The unique name of the store.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="offlineServiceRoot"><span class="type-signature"></span>offlineServiceRoot<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Offline service root that can be used for media entry create requests.
+This property will be set after the store has been opened.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// !! Assumes media_file exists as a file input element in the DOM.
+var file = document.getElementById("media_file").files[0];
+var xhr = new XMLHttpRequest();
+// Third paramenter (async) must always be true.
+xhr.open("POST", store.offlineServiceRoot + "Drivers", true);
+xhr.setRequestHeader("Accept", "application/json");
+xhr.onreadystatechange = function() {
+   if (xhr.readyState === 4) {
+      if (xhr.status === 201) {
+         console.log("Media Created");
+      } else {
+         console.log("Failed to create media");
+      }
+   }
+}
+xhr.send(file);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="onrequesterror"><span class="type-signature"></span>onrequesterror<span class="type-signature"> :OfflineStore~requesterror</span></h4>
+
+
+
+
+<div class="description">
+    Called when a modification request fails against the OData producer.
+This can be called multiple times during a single flush if there is a bunch of pending modifications.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">OfflineStore~requesterror</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>store.onrequesterror = function(error) {
+   console.log("Error occurred while sending modification to server. " + error);
+};</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="pageSize"><span class="type-signature">(readonly) </span>pageSize<span class="type-signature"> :Number</span></h4>
+
+
+
+
+<div class="description">
+    Specifies the maximum number of entities that can be returned in a single read request.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="port"><span class="type-signature">(readonly) </span>port<span class="type-signature"> :Number</span></h4>
+
+
+
+
+<div class="description">
+    The port of the server.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="serviceRoot"><span class="type-signature">(readonly) </span>serviceRoot<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Identifies the root of an OData service.  This can be relative to the host and should be set to a backend connection name from the server.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="streamParams"><span class="type-signature">(readonly) </span>streamParams<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Any additional stream parameters.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="urlSuffix"><span class="type-signature">(readonly) </span>urlSuffix<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    The URL suffix path to the server
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="clear"><span class="type-signature"></span>clear<span class="signature">(success, error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Removes the physical store from the filesystem. The store must be closed before clearing.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called when store is successfully cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called if store cannot be cleared.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">(success, error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Closes the store and releases its resources.
+Closing the store will attempt to interrupt any operation already occurring against
+this store, and will block until the other operations have finished.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called when store successfully closes.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called when store fails to close.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="flush"><span class="type-signature"></span>flush<span class="signature">(success, error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Starts sending pending modification requests to the server.
+The application must have network connectivity to perform this operation.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called when flush has finished.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called if error calling flush.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getRequestQueueStatus"><span class="type-signature"></span>getRequestQueueStatus<span class="signature">(success, error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Returns whether or not the there are any pending requests stored in the request queue that have
+not yet been flushed.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~successQueueStatus">sap.OfflineStore~successQueueStatus</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called with the status of the request queue.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called if there was an issue determining queue state.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="open"><span class="type-signature"></span>open<span class="signature">(success, error, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Opens the store.
+The store will be available for offline access only after it is open successfully.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Called when store successfully opens.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Called when store fails to open.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Options used when opening the store object
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>storeEncryptionKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Key to use to encrypt the local data store.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="refresh"><span class="type-signature"></span>refresh<span class="signature">(success, error, subset<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Refreshes the store with the OData service.
+The application must have network connectivity to perform this operation.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Called when store is successfully refreshed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Called if store fails to refresh itself.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">List of the names of the defining requests to refresh.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="registerStreamRequest"><span class="type-signature"></span>registerStreamRequest<span class="signature">(name, resourcePath, success, error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Registers a request to download an individual media stream.
+The registered request must be the read link of the media entity (not the media stream).
+You must refresh the store for the stream to be downloaded.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">an arbitrary and unique name associated with the defining request.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resourcePath</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the path to the media entity</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called when registration is successful.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called if registraion fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="unregisterStreamRequest"><span class="type-signature"></span>unregisterStreamRequest<span class="signature">(name, success, error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Unregisters a previously registered stream request
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the request to unregister</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~success">sap.OfflineStore~success</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called when unregistration is successful.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.OfflineStore.html#~error">sap.OfflineStore~error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Called if unregistraion fails.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+
+    
+
+    <h4 class="name" id="~error"><span class="type-signature"></span>error<span class="signature">(error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Offline store error callback.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The error message.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~requesterror"><span class="type-signature"></span>requesterror<span class="signature">(error)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Offline store flush error callback.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The error message.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~success"><span class="type-signature"></span>success<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Offline store success callback.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~successQueueStatus"><span class="type-signature"></span>successQueueStatus<span class="signature">(status<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Offline store queue status success callback.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Status for the request queue.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>isEmpty</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">True if request queue is empty.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="sap.AuthProxy_CertificateFromFile.html">CertificateFromFile</a></li><li><a href="sap.AuthProxy_CertificateFromLogonManager.html">CertificateFromLogonManager</a></li><li><a href="sap.AuthProxy_CertificateFromStore.html">CertificateFromStore</a></li><li><a href="sap.OfflineStore.html">OfflineStore</a></li><li><a href="sap.Usage.InfoType.html">InfoType</a></li></ul><h3>Events</h3><ul><li><a href="sap.AppUpdate.html#event:checking">checking</a></li><li><a href="sap.AppUpdate.html#event:downloading">downloading</a></li><li><a href="sap.AppUpdate.html#event:error">error</a></li><li><a href="sap.AppUpdate.html#event:insufficientspace">insufficientspace</a></li><li><a href="sap.AppUpdate.html#event:noupdate">noupdate</a></li><li><a href="sap.AppUpdate.html#event:progress">progress</a></li><li><a href="sap.AppUpdate.html#event:updateready">updateready</a></li><li><a href="sap.AppUpdate.html#event:updatetoolargeforcellular">updatetoolargeforcellular</a></li><li><a href="sap.CacheManager.html#event:cacheinvalidated">cacheinvalidated</a></li><li><a href="sap.CacheManager.html#event:noviewerfound">noviewerfound</a></li></ul><h3>Namespaces</h3><ul><li><a href="sap.html">sap</a></li><li><a href="sap.AppPreferences.html">AppPreferences</a></li><li><a href="sap.AppSettings.html">AppSettings</a></li><li><a href="sap.AppUpdate.html">AppUpdate</a></li><li><a href="sap.AuthProxy.html">AuthProxy</a></li><li><a href="sap.CacheManager.html">CacheManager</a></li><li><a href="sap.E2ETrace.html">E2ETrace</a></li><li><a href="sap.EncryptedStorage.html">EncryptedStorage</a></li><li><a href="sap.FioriClient.html">FioriClient</a></li><li><a href="sap.Logger.html">Logger</a></li><li><a href="sap.Logon.html">Logon</a></li><li><a href="sap.OData.html">OData</a></li><li><a href="sap.Online.html">Online</a></li><li><a href="sap.Push.html">Push</a></li><li><a href="sap.Settings.html">Settings</a></li><li><a href="sap.Toolbar.html">Toolbar</a></li><li><a href="sap.Usage.html">Usage</a></li><li><a href="sap.VoiceRecording.html">VoiceRecording</a></li></ul><h3>Interfaces</h3><ul><li><a href="sap.VoiceRecording.Recording.html">Recording</a></li></ul><h3>Global</h3><ul><li><a href="global.html#changeEncryptionKey">changeEncryptionKey</a></li><li><a href="global.html#checkExistence">checkExistence</a></li><li><a href="global.html#destroy">destroy</a></li><li><a href="global.html#getReports">getReports</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isInitialized">isInitialized</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#makeTimer">makeTimer</a></li><li><a href="global.html#refreshAccessToken">refreshAccessToken</a></li><li><a href="global.html#refreshSession">refreshSession</a></li><li><a href="global.html#sendOAuthPingRequest">sendOAuthPingRequest</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#setBehavior">setBehavior</a></li><li><a href="global.html#setCase">setCase</a></li><li><a href="global.html#setCategory">setCategory</a></li><li><a href="global.html#setElement">setElement</a></li><li><a href="global.html#setMeasurement">setMeasurement</a></li><li><a href="global.html#setResult">setResult</a></li><li><a href="global.html#setScreen">setScreen</a></li><li><a href="global.html#setType">setType</a></li><li><a href="global.html#setUnit">setUnit</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#setView">setView</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeEnd">timeEnd</a></li><li><a href="global.html#timeStart">timeStart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

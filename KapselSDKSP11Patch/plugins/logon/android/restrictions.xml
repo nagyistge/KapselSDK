@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <restriction
+        android:key="appID"
+        android:restrictionType="string"
+        android:defaultValue=""
+        android:title="@string/restriction_title_appID"
+        android:description="@string/restriction_description_appID"
+        />
+
+    <restriction
+        android:key="fioriURL"
+        android:restrictionType="string"
+        android:title="@string/restriction_title_fioriURL"
+        android:description="@string/restriction_description_fioriURL"
+        android:defaultValue="" />
+
+    <restriction
+        android:key="appName"
+        android:restrictionType="string"
+        android:title="@string/restriction_title_appName"
+        android:description="@string/restriction_description_appName"
+        android:defaultValue="" />
+
+    <restriction
+        android:key="fioriURLIsSMP"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_fioriURLIsSMP"
+        android:description="@string/restriction_description_fioriURLIsSMP"
+        android:defaultValue="false" />
+
+    <restriction
+        android:key="certificate"
+        android:restrictionType="string"
+        android:title="@string/restriction_title_certificate"
+        android:description="@string/restriction_description_certificate"
+        android:defaultValue="" />
+
+    <restriction
+        android:key="autoSelectSingleCert"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_autoSelectSingleCert"
+        android:description="@string/restriction_description_autoSelectSingleCert"
+        android:defaultValue="false" />
+
+    <restriction
+        android:key="passcodePolicyExpirationDays"
+        android:restrictionType="integer"
+        android:title="@string/restriction_title_passcodePolicyExpirationDays"
+        android:description="@string/restriction_description_passcodePolicyExpirationDays"
+        android:defaultValue="0" />
+
+    <restriction
+        android:key="passcodePolicyHasDigits"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_passcodePolicyHasDigits"
+        android:description="@string/restriction_description_passcodePolicyHasDigits"
+        android:defaultValue="false" />
+
+    <restriction
+        android:key="passcodePolicyHasLowerCaseLetters"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_passcodePolicyHasLowerCaseLetters"
+        android:description="@string/restriction_description_passcodePolicyHasLowerCaseLetters"
+        android:defaultValue="false" />
+
+    <restriction
+        android:key="passcodePolicyHasSpecialLetters"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_passcodePolicyHasSpecialLetters"
+        android:description="@string/restriction_description_passcodePolicyHasSpecialLetters"
+        android:defaultValue="false" />
+
+    <restriction
+        android:key="passcodePolicyHasUpperCaseLetters"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_passcodePolicyHasUpperCaseLetters"
+        android:description="@string/restriction_description_passcodePolicyHasUpperCaseLetters"
+        android:defaultValue="false" />
+
+    <restriction
+        android:key="passcodePolicyDefaultAllowed"
+        android:restrictionType="bool"
+        android:title="@string/restriction_title_passcodePolicyDefaultAllowed"
+        android:description="@string/restriction_description_passcodePolicyDefaultAllowed"
+        android:defaultValue="true" />
+
+    <restriction
+        android:key="passcodePolicyLockTimeout"
+        android:restrictionType="integer"
+        android:title="@string/restriction_title_passcodePolicyLockTimeout"
+        android:description="@string/restriction_description_passcodePolicyLockTimeout"
+        android:defaultValue="300" />
+
+    <restriction
+        android:key="passcodePolicyMinLength"
+        android:restrictionType="integer"
+        android:title="@string/restriction_title_passcodePolicyMinLength"
+        android:description="@string/restriction_description_passcodePolicyMinLength"
+        android:defaultValue="8" />
+
+    <restriction
+        android:key="passcodePolicyMinUniqueChars"
+        android:restrictionType="integer"
+        android:title="@string/restriction_title_passcodePolicyMinUniqueChars"
+        android:description="@string/restriction_description_passcodePolicyMinUniqueChars"
+        android:defaultValue="0" />
+
+    <restriction
+        android:key="passcodePolicyRetryLimit"
+        android:restrictionType="integer"
+        android:title="@string/restriction_title_passcodePolicyRetryLimit"
+        android:description="@string/restriction_description_passcodePolicyRetryLimit"
+        android:defaultValue="10" />
+
+</restrictions>

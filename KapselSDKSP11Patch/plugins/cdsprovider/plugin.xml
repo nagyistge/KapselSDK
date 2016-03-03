@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-cdsprovider"
+    version="3.11.4">
+
+  <name>CDSProvider</name>
+
+  <dependency id="kapsel-plugin-logon"/>
+
+  <platform name="android">
+    <source-file src="android/libs/CDSProvider-3.11.3-SNAPSHOT.aar" target-dir="libs"/>
+    <source-file src="android/libs/core-1.52.0.0.jar" target-dir="libs"/>
+    <source-file src="android/libs/prov-1.52.0.0.jar" target-dir="libs"/>
+    <source-file src="android/libs/pkix-1.52.0.0.jar" target-dir="libs"/>
+
+    <framework custom="true" src="android/cdsprovider.gradle" type="gradleReference"/>
+
+    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+      <meta-data android:name="com.sap.mobilesecure.certificateService" android:value="com.sap.smp.client.android.cdsprovider.CDSProvider"/>
+    </config-file>
+  </platform>
+
+  <platform name="ios">
+    <source-file src="ios/libs/libCDSProvider.a" framework="true"/>
+
+    <config-file target="*-Info.plist" parent="com.sap.mobilesecure.certificateService">
+      <string>CDSProvider</string>
+    </config-file>
+  </platform>
+</plugin>

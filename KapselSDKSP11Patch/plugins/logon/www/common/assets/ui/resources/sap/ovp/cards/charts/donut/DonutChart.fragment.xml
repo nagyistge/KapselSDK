@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:suite="sap.suite.ui.commons" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:dataSet="sap.viz.ui5.data">
+
+	<template:with path="ovpCardProperties>/chartAnnotationPath"
+		helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='chart'>
+		<template:with path="ovpCardProperties>/selectionAnnotationPath"
+			helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='selVar'>
+			<template:with path="ovpCardProperties>/presentationAnnotationPath"
+				helper="sap.ovp.cards.AnnotationHelper.resolveEntityTypePath" var='preVar'>
+				<viz:VizFrame id="donutChartCard" uiConfig="{applicationSet:'fiori'}"
+					vizType="donut" width="100%">
+					<viz:dataset>
+						<dataSet:FlattenedDataset
+							data="{parts: [{path:'entitySet>'}, {path:'selVar>'}, {path:'preVar>'}, {path:'chart>DimensionAttributes'}, {path:'chart>MeasureAttributes'}], formatter: 'sap.ovp.cards.charts.Utils.formatItems'}">
+							<dataSet:dimensions>
+								<!-- Donut chart requires one dimension. ignoring rest -->
+								<dataSet:DimensionDefinition
+									name="{path: 'chart>DimensionAttributes/0/Dimension/PropertyPath'}"
+									value="{path: 'chart>DimensionAttributes/0/Dimension/PropertyPath', formatter: 'sap.ovp.cards.charts.Utils.formDimensionPath'}">
+								</dataSet:DimensionDefinition>
+								<!-- -->
+							</dataSet:dimensions>
+							<dataSet:measures>
+								<!-- Donut chart requires one measure. ignoring rest -->
+								<dataSet:MeasureDefinition
+									name="{path: 'chart>MeasureAttributes/0/Measure/PropertyPath'}"
+									value="{path: 'chart>MeasureAttributes/0/Measure/PropertyPath', formatter: 'sap.ovp.cards.charts.Utils.wrapInBraces'}">
+								</dataSet:MeasureDefinition>
+								<!-- -->
+							</dataSet:measures>
+						</dataSet:FlattenedDataset>
+					</viz:dataset>
+				</viz:VizFrame>
+			</template:with>
+		</template:with>
+	</template:with>
+
+</core:FragmentDefinition>

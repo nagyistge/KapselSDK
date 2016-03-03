@@ -1,0 +1,3102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Logger</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: Logger</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="sap.html">sap</a>.</span>
+        
+        Logger
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">The Kapsel Logger plugin provides a Cordova plugin wrapper around the SAP Mobile Platform client logging API (Supportability library). 
+<br><br>
+
+The Logger plugin has ERROR, WARN, INFO, and DEBUG log levels and log messages are captured based on the configured and selected log level. 
+A Kapsel application can be set to these log levels by programmatic control, and by the administrator changing a setting on the server. 
+For Android and iOS, the default log level is ERROR, so by default only ERROR level logs are captured.
+sap.Logger.setLogLevel() method is used to set other levels. If you want to get log messages at all log levels, 
+you must set the log level to DEBUG. (DEBUG < INFO < WARN < ERROR) <br>
+If the log level is set to DEBUG, the application captures all log messages. <br>
+If you set the log level to INFO, the application captures INFO, WARN, and ERROR log messages. <br>
+If you set the log level to WARN, the application captures WARN and ERROR log messages. <br>
+If you set the log level to ERROR, the application captures only Error log messages. 
+<br><br>
+
+Using the provided sap.Logger.upload() method allows developers to upload a log file to SAP Mobile Platform Server, 
+where an administrator can view them and remotely set the appropriate log level to control the amount of information 
+that is written to the log. When the sap.Logger.upload() method is triggered, a log file will be uploaded.
+If the Log Upload checkbox is selected in the Management Cockpit, the client can upload a log file by calling sap.Logger.upload(). 
+If the Log Upload checkbox is disabled in the Management Cockpit, the client does not upload the log file to the server. The attempt to upload causes an "HTTP/1.1 403 Forbidden" error. 
+To support manual uploading of the log, you should implement a button or some other mechanism that calls sap.Logger.upload() when needed.
+<br>
+For the Logger plugin to upload a log file these conditions must be met: 1) Log Upload checkbox enabled In the Management Cockpit 2) sap.Logger.upload() is called by developer.
+<br>
+The expected work flow, with the current architecture consists of the following: <br>
+1) If a user has an issue that needs to be analyzed by an administrator or developer, the user reports the issue as appropriate.<br>
+2) The administrator, or developer, enables the log collection for the user on the SAP Mobile Platform server.<br> 
+3) The administrator lets the user know that he, or she, can upload log file. <br>
+4) The user uploads thelog file to the server, and the administrator gets the uploaded log file in the Management Cockpit.<br>
+5) The administrator sends the file to the developer to debug.
+<br><br>
+
+Currently, on iOS, if the current log level is ERROR (default level), only ERROR level messages are displayed on the console 
+even if other log level messages are generated. But if the current log level is DEBUG, INFO, or WARN, 
+all generated log messages, regardless of log level, are displayed on the console. <br>
+On Android, if the current log level is ERROR, only ERROR level messages are displayed in the Android logcat view (console).
+if log level is INFO, then ERROR, WARN and INFO level messages are displayed in the Android logcat view (console).  
+<br><br>
+
+When the Kapsel Settings plugin is added to the project, Settings will: 1) Get log level from the server 2) Set it into Logger on the client 
+3) Call sap.Logger.upload() after a logon success event, for example, when the app is launched or resumed and logon is successful. 
+The Settings plugin retrieves the selected log level(type) from the Management Cockpit on the server,
+sets the log level to Logger plugin, and then automatically uploads a log file to the server.
+If the Settings plugin is not added to the project, a log file can be uploaded only by the developer calling the sap.Logger.upload() method manually.
+To upload a log file automatically, settings plugin is required.
+In the Management Cockpit, in the Client Logging dialog box, the Log Upload checkbox is able to enable or disable log file upload, and you can choose the log type(level). 
+You can also view a list of the uploaded log files. On the server side, there are seven log types: NONE, FATAL, ERROR, WARNING, INFO, DEBUG and PATH. 
+Since the Kapsel Logger plugin supports only DEBUG, INFO, WARN, and ERROR, the Logger plugin implicitly matches FATAL to ERROR, and PATH to DEBUG.
+If NONE is set in the Management Cockpit, Logger sets it to default log level.
+<br><br>
+<b>Adding and Removing the Logger Plugin</b><br>
+Add or remove the Logger plugin using the
+<a href="http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface">Cordova CLI</a>.<br>
+<br>
+To add the Logger plugin to your project, use the following command:<br>
+Cordova plugin add kapsel-plugin-logger<br>
+<br>
+To remove the Logger plugin from your project, use the following command:<br>
+cordova plugin rm kapsel-plugin-logger
+<br></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="CONSOLE"><span class="type-signature">(static, constant) </span>Logger#CONSOLE<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Constant variable for log destination. It contains "CONSOLE" string.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setDestination(sap.Logger.CONSOLE);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="DEBUG"><span class="type-signature">(static, constant) </span>Logger#DEBUG<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Constant variable for Debug log level. It contains "DEBUG" string.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setLogLevel(sap.Logger.DEBUG);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="ERROR"><span class="type-signature">(static, constant) </span>Logger#ERROR<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Constant variable for Error log level. It contains "ERROR" string.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setLogLevel(sap.Logger.ERROR);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="FILESYSTEM"><span class="type-signature">(static, constant) </span>Logger#FILESYSTEM<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Constant variable for log destination. It contains "FILESYSTEM" string.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setDestination(sap.Logger.FILESYSTEM);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="INFO"><span class="type-signature">(static, constant) </span>Logger#INFO<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Constant variable for Information log level. It contains "INFO" string.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setLogLevel(sap.Logger.INFO);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="WARN"><span class="type-signature">(static, constant) </span>Logger#WARN<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    Constant variable for Warning log level. It contains "WARN" string.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setLogLevel(sap.Logger.WARN);</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="~local"><span class="type-signature">(inner) </span>local<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Set the initial log level from native config. This will be the value until the setting exchange changes with what is there in the server.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".clearLog"><span class="type-signature">(static) </span>clearLog<span class="signature">(successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Clear the contents of the log.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when log has been successfully cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the log has failed to be cleared.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.clearLog();</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".debug"><span class="type-signature">(static) </span>debug<span class="signature">(message, tag<span class="signature-attributes">opt</span>, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Add a debug message to the log.
+This function logs messages with the 'DEBUG' log level.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Log message to be logged.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Tag value added to the log entry used to indicate the source of the message (for example, SMP_LOGGER, SMP_AUTHPROXY).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the message has been successfully added to the log.
+                                     No object will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while adding the message to the log. 
+                                     Since Kapsel Logger native code will always call the success callback function, the 
+                                     errorCallback function will be executed by Cordova if an error or exception occurs 
+                                     while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.debug("debug message", "DEBUG_TAG");</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".emailLog"><span class="type-signature">(static) </span>emailLog<span class="signature">(to<span class="signature-attributes">opt</span>, subject<span class="signature-attributes">opt</span>, message<span class="signature-attributes">opt</span>, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Email the contents of the log as an attachment.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">email address to email log to</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the subject of the email</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">message placed in the body of the email</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the devices email application has been called with the log as an attachment.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs calling the devices email application.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.emailLog();
+
+sap.Logger.emailLog('joe@someserver.com','The log','Please see the attached log.');</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".error"><span class="type-signature">(static) </span>error<span class="signature">(message, tag<span class="signature-attributes">opt</span>, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Add an error message to the log.
+This function logs messages with the 'ERROR' log level.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Log message to be logged.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Tag value added to the log entry used to indicate the source of the message (for example, SMP_LOGGER, SMP_AUTHPROXY).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the message has been successfully added to the log.
+                                     No object will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while adding the message to the log. 
+                                     Since Kapsel Logger native code will always call the success callback function, the 
+                                     errorCallback function will be executed by Cordova if an error or exception occurs 
+                                     while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.error("error message", "ERROR_TAG");</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getLogEntries"><span class="type-signature">(static) </span>getLogEntries<span class="signature">(successCallback, errorCallback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Get log entries. 
+This function gets the aggregated log entries from all loggers. 
+Use this function to retrieve log entries with the given level produced during the current session till the point the API was called. 
+(Currently, it's only for iOS. On Android, this function retrieves all log entries regardless of log level.)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function called when the log entries have been successfully retrieved. 
+                                  When the current log entries are successfully retrieved, it is fired with the aggregated log entries.
+                                  Log entries of String type will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while getting the aggregated log entries.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.getLogEntries(successCallback, errorCallback);
+
+function successCallback(logEntries) {
+    alert(logEntries);
+}
+
+function errorCallback() {
+    alert("Failed to get log entries");
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getLogLevel"><span class="type-signature">(static) </span>getLogLevel<span class="signature">(successCallback, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Get log level. 
+This function gets the current log level. 
+Use this function to know what kind of log level messages can be generated and affected at the current log level.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the log level has been successfully retrieved. 
+                                  When the current log level is successfully retrieved, it is fired with the current log level. [DEBUG, INFO, WARN, ERROR]
+                                  Log level of String type will be passed to success callback. 
+                                  Default log level is ERROR.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while getting the current log level.  For this method, error callback is optional.
+                                  Since Kapsel Logger native code will always call the success callback function, the 
+                                  errorCallback function will be executed by Cordova if an error or exception occurs 
+                                  while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.getLogLevel(successCallback, errorCallback);
+
+function successCallback(logLevel) {
+    alert("Log level is " + logLevel);
+}
+
+function errorCallback() {
+    alert("Failed to get log level");
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".info"><span class="type-signature">(static) </span>info<span class="signature">(message, tag<span class="signature-attributes">opt</span>, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Add an info message to the log.
+This function logs messages with the 'INFO' log level.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Log message to be logged.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Tag value added to the log entry used to indicate the source of the message (for example, SMP_LOGGER, SMP_AUTHPROXY).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the message has been successfully added to the log.
+                                     No object will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while adding the message to the log. 
+                                     Since Kapsel Logger native code will always call the success callback function, the 
+                                     errorCallback function will be executed by Cordova if an error or exception occurs 
+                                     while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.info("info message", "INFO_TAG");</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".setDestination"><span class="type-signature">(static) </span>setDestination<span class="signature">(destination, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Set destination.
+This function sets the destination for logging. <br>
+NOTE: This function is available for Android and iOS only. Windows is not yet supported. <br>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>destination</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">parameter [CONSOLE,FILESYSTEM]</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the log level has been successfully set.
+                                    No object will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while setting the log level.
+                                    Since Kapsel Logger native code will always call the success callback function, the
+                                    errorCallback function will be executed by Cordova if an error or exception occurs
+                                    while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setDestination([sap.Logger.CONSOLE], successCallback, errorCallback);
+
+function successCallback() {
+    alert("Destination set");
+}
+
+function errorCallback() {
+    alert("Failed to set destination");
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".setLogLevel"><span class="type-signature">(static) </span>setLogLevel<span class="signature">(level, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Set log level.
+This function sets the log level for logging. <br>
+Coverage of logging data in each log level:  DEBUG < INFO < WARN < ERROR. <br>
+Following is the expected behavior to cover log messages at specific log levels: <br>
+   ERROR : only ERROR messages <br>
+   WARN  : ERROR and WARN messages <br>
+   INFO  : ERROR, WARN and INFO <br>
+   DEBUG : ERROR, WARN, INFO and DEBUG <br>
+For example, if you want to get all log messages, you need to set the log to the 'Debug' level. 
+If the WARN level is set, logging data contains WARN and ERROR messages. <br>
+Default log level is ERROR.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Log level to set [DEBUG, INFO, WARN, ERROR]</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the log level has been successfully set. 
+                                    No object will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while setting the log level. 
+                                    Since Kapsel Logger native code will always call the success callback function, the 
+                                    errorCallback function will be executed by Cordova if an error or exception occurs 
+                                    while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.setLogLevel(sap.Logger.DEBUG, successCallback, errorCallback);
+
+function successCallback() {
+    alert("Log level set");
+}
+
+function errorCallback() {
+    alert("Failed to set log level");
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".upload"><span class="type-signature">(static) </span>upload<span class="signature">(successCallback, errorCallback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Upload a log file, with log entries, to SAP Mobile Platform server.<br>
+This function uploads a log file, which is helpful for collecting logging data from the app to trace bugs and issues.
+It uploads a log file, which contains log entries based on log level.
+Developers can access the log data in the Management Cockpit and/or a specific folder in installed server directly.<br><br>
+
+On iOS, the uploaded log messages are filtered by the log level at upon upload. 
+For example, when you upload a log file with an ERROR log level, the uploaded log messages contain only ERROR log level messages. 
+When you upload log files with an INFO level, uploaded log messages contain ERROR, WARN, and INFO log level messages.
+
+<br><br>
+On Android, generated log messages are filtered "at the log level." 
+In other words, the already generated and filtered log messages at another log level are not affected by the current log level. 
+Log messages are not filtered upon upload. For example, if you set the log level to DEBUG log messages are filtered at four levels (DEBUG, INFO, WARN, and ERROR. 
+Logger on Android has four log levels messages. So, if you set the log level to WARN and upload a log file, the log file has four log level messages that were already generated at the DEBUG level.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function called when a log file is successfully uploaded to the server. 
+                                  When a log file is successfully uploaded, it is fired. (with http statusCode and statusMessage for success)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while uploading a log file to the server. 
+                                  If there is a connectivity error, such as an HTTP error, or unknown server error, 
+                                  it is fired with http statusCode and statusMessage for error.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.upload(successCallback, errorCallback);
+
+function successCallback() {
+    alert("Upload Successful");
+}
+
+function errorCallback(e) {
+    alert("Upload Failed. Status: " + e.statusCode + ", Message: " + e.statusMessage);
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".warn"><span class="type-signature">(static) </span>warn<span class="signature">(message, tag<span class="signature-attributes">opt</span>, successCallback<span class="signature-attributes">opt</span>, errorCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Add a warning message to the log.
+This function logs messages with the 'WARN' log level.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Log message to be logged.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Tag value added to the log entry used to indicate the source of the message (for example, SMP_LOGGER, SMP_AUTHPROXY).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when the message has been successfully added to the log.
+                                     No object will be passed to success callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback function called when an error occurs while adding the message to the log. 
+                                     Since Kapsel Logger native code will always call the success callback function, the 
+                                     errorCallback function will be executed by Cordova if an error/exception occurs 
+                                     while making the call to the plugin.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>sap.Logger.warn("warn message", "WARN_TAG");</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="sap.AuthProxy_CertificateFromFile.html">CertificateFromFile</a></li><li><a href="sap.AuthProxy_CertificateFromLogonManager.html">CertificateFromLogonManager</a></li><li><a href="sap.AuthProxy_CertificateFromStore.html">CertificateFromStore</a></li><li><a href="sap.OfflineStore.html">OfflineStore</a></li><li><a href="sap.Usage.InfoType.html">InfoType</a></li></ul><h3>Events</h3><ul><li><a href="sap.AppUpdate.html#event:checking">checking</a></li><li><a href="sap.AppUpdate.html#event:downloading">downloading</a></li><li><a href="sap.AppUpdate.html#event:error">error</a></li><li><a href="sap.AppUpdate.html#event:insufficientspace">insufficientspace</a></li><li><a href="sap.AppUpdate.html#event:noupdate">noupdate</a></li><li><a href="sap.AppUpdate.html#event:progress">progress</a></li><li><a href="sap.AppUpdate.html#event:updateready">updateready</a></li><li><a href="sap.AppUpdate.html#event:updatetoolargeforcellular">updatetoolargeforcellular</a></li><li><a href="sap.CacheManager.html#event:cacheinvalidated">cacheinvalidated</a></li><li><a href="sap.CacheManager.html#event:noviewerfound">noviewerfound</a></li></ul><h3>Namespaces</h3><ul><li><a href="sap.html">sap</a></li><li><a href="sap.AppPreferences.html">AppPreferences</a></li><li><a href="sap.AppSettings.html">AppSettings</a></li><li><a href="sap.AppUpdate.html">AppUpdate</a></li><li><a href="sap.AuthProxy.html">AuthProxy</a></li><li><a href="sap.CacheManager.html">CacheManager</a></li><li><a href="sap.E2ETrace.html">E2ETrace</a></li><li><a href="sap.EncryptedStorage.html">EncryptedStorage</a></li><li><a href="sap.FioriClient.html">FioriClient</a></li><li><a href="sap.Logger.html">Logger</a></li><li><a href="sap.Logon.html">Logon</a></li><li><a href="sap.OData.html">OData</a></li><li><a href="sap.Online.html">Online</a></li><li><a href="sap.Push.html">Push</a></li><li><a href="sap.Settings.html">Settings</a></li><li><a href="sap.Toolbar.html">Toolbar</a></li><li><a href="sap.Usage.html">Usage</a></li><li><a href="sap.VoiceRecording.html">VoiceRecording</a></li></ul><h3>Interfaces</h3><ul><li><a href="sap.VoiceRecording.Recording.html">Recording</a></li></ul><h3>Global</h3><ul><li><a href="global.html#changeEncryptionKey">changeEncryptionKey</a></li><li><a href="global.html#checkExistence">checkExistence</a></li><li><a href="global.html#destroy">destroy</a></li><li><a href="global.html#getReports">getReports</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isInitialized">isInitialized</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#makeTimer">makeTimer</a></li><li><a href="global.html#refreshAccessToken">refreshAccessToken</a></li><li><a href="global.html#refreshSession">refreshSession</a></li><li><a href="global.html#sendOAuthPingRequest">sendOAuthPingRequest</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#setBehavior">setBehavior</a></li><li><a href="global.html#setCase">setCase</a></li><li><a href="global.html#setCategory">setCategory</a></li><li><a href="global.html#setElement">setElement</a></li><li><a href="global.html#setMeasurement">setMeasurement</a></li><li><a href="global.html#setResult">setResult</a></li><li><a href="global.html#setScreen">setScreen</a></li><li><a href="global.html#setType">setType</a></li><li><a href="global.html#setUnit">setUnit</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#setView">setView</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeEnd">timeEnd</a></li><li><a href="global.html#timeStart">timeStart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

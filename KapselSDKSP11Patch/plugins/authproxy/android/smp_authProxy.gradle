@@ -1,0 +1,12 @@
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+// Apply values after project's build-extras.gradle
+cdvPluginPostBuildExtras.add({
+    dependencies {
+        compile(name:'authproxy-android-3.11.4-SNAPSHOT', ext:'aar')
+    }
+})

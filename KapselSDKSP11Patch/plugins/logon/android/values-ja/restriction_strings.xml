@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+    <string name="restriction_title_appID">"アプリケーション ID"</string>
+    <string name="restriction_description_appID">"アプリ ID はデータ記憶域に対するアプリケーションの識別に使用されます。 SMP を使用している場合、この ID はターゲットアプリケーションのアプリ ID と一致します。 この値は、主にアプリストアでのアプリケーションの識別に使用されるパッケージ名とは区別されることに注意してください。"</string>
+
+    <string name="restriction_title_fioriURL">"Fiori サーバ URL"</string>
+    <string name="restriction_description_fioriURL">"ターゲットアプリケーションの完全な URL。 アプリケーションで SMP が使用されていない場合、ログオンが完了すると、アプリはこの URL に直接ナビゲートします。 アプリで SMP が使用されている場合、この URL がパースされ、以下のように使用されます。 1. URL スキーム (HTTP または HTTPS のいずれか) により、登録ダイアログの \'https\' フラグの初期値が決定されます。 同様に、URL のホストとポートにより、登録ダイアログの該当する初期値が決定されます。ポートが指定されない場合、初期値は 443 に設定されます。 2. URL 接尾辞 (ホストとポート以降の文字列) が、ユーザが登録する URL にアペンドされます。 これは、1. のスキーム、ホストおよびポートと同じになりますが、ユーザが値を変更することが可能です。 ただし、接尾辞は変更できません。 SMP を使用している場合、SMP サーバのスキーム、ホストおよびポートを指定すると、その後に Fiori エンドポイントの接尾辞が続きます。 例:  \'https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html\'"</string>
+
+     <string name="restriction_title_appName">"アプリケーション名"</string>
+     <string name="restriction_description_appName">"ログオン画面に表示される Fiori アプリケーション名のカスタマイズに使用されるオプションのプロパティ。 デフォルトでは、アプリ名は SAP Fiori Client です。 この項目が空白の場合はデフォルトが使用されます。"</string>
+
+     <string name="restriction_title_fioriURLIsSMP">"Fiori サーバ URL は SMP サーバです"</string>
+     <string name="restriction_description_fioriURLIsSMP">"SMP を使用している場合は True に設定して登録を行ってください。"</string>
+
+    <string name="restriction_title_certificate">"クライアント証明書プロバイダ"</string>
+    <string name="restriction_description_certificate">"クライアント証明書プロバイダ"</string>
+
+    <string name="restriction_title_autoSelectSingleCert">"クライアント証明書プロバイダの自動選択"</string>
+    <string name="restriction_description_autoSelectSingleCert">"クライアント証明書が 1 つしか存在しない場合、この証明書が相互認証に対して自動的に選択されます。"</string>
+
+    <string name="restriction_title_passcodePolicyExpirationDays">"パスコードポリシー: 有効日数"</string>
+    <string name="restriction_description_passcodePolicyExpirationDays">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyHasDigits">"パスコードポリシー: 数字を含む"</string>
+    <string name="restriction_description_passcodePolicyHasDigits">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyHasLowerCaseLetters">"パスコードポリシー: 小文字を含む"</string>
+    <string name="restriction_description_passcodePolicyHasLowerCaseLetters">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyHasSpecialLetters">"パスコードポリシー: 特殊文字を含む"</string>
+    <string name="restriction_description_passcodePolicyHasSpecialLetters">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyHasUpperCaseLetters">"パスコードポリシー: 大文字を含む"</string>
+    <string name="restriction_description_passcodePolicyHasUpperCaseLetters">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyDefaultAllowed">"パスコードポリシー: デフォルト使用可能"</string>
+    <string name="restriction_description_passcodePolicyDefaultAllowed">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyLockTimeout">"パスコードポリシー: ロックタイムアウト"</string>
+    <string name="restriction_description_passcodePolicyLockTimeout">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyMinLength">"パスコードポリシー: 最小長"</string>
+    <string name="restriction_description_passcodePolicyMinLength">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyMinUniqueChars">"パスコードポリシー: 一意文字の最小数"</string>
+    <string name="restriction_description_passcodePolicyMinUniqueChars">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+
+    <string name="restriction_title_passcodePolicyRetryLimit">"パスコードポリシー: 再試行回数上限"</string>
+    <string name="restriction_description_passcodePolicyRetryLimit">"データ記憶域のパスコードポリシー。注記: SMP を使用している場合、パスコードポリシーはサーバにより決定されます。"</string>
+</resources>

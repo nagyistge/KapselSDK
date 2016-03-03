@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-logon"
+    version="3.11.4">
+
+    <name>Logon</name>
+    <dependency id="kapsel-plugin-corelibs" />
+    <dependency id="kapsel-plugin-authproxy" />
+    <dependency id="kapsel-plugin-inappbrowser"/>
+    <dependency id="cordova-plugin-device"/>
+
+    <js-module name="LogonCore" src="www/common/modules/MAFLogonCorePlugin.js">
+        <clobbers target="sap.logon.Core"/>
+	</js-module>
+    <js-module name="LogonUtils" src="www/common/modules/Utils.js">
+        <clobbers target="sap.logon.Utils"/>
+    </js-module>
+    <js-module name="LogonStaticScreens" src="www/common/modules/StaticScreens.js">
+        <clobbers target="sap.logon.StaticScreens"/>
+    </js-module>
+    <js-module name="LogonDynamicScreens" src="www/common/modules/DynamicScreens.js">
+        <clobbers target="sap.logon.DynamicScreens"/>
+    </js-module>
+    <js-module name="Logon" src="www/common/modules/LogonController.js">
+        <clobbers target="sap.Logon"/>
+    </js-module>
+    <js-module name="LogonIabUi" src="www/common/modules/InAppBrowserUI.js">
+        <clobbers target="sap.logon.IabUi"/>
+    </js-module>
+    <js-module name="LogonJsView" src="www/common/modules/LogonJsView.js">
+        <clobbers target="sap.logon.LogonJsView"/>
+    </js-module>
+    <platform name="android">
+
+        <asset target="smp/logon" src="www/common/assets"/>
+
+        <source-file target-dir="libs" src="android/libs/maflogger-1.211.3-SNAPSHOT.jar" />
+        <source-file target-dir="libs" src="android/libs/maflogoncore-1.211.3-SNAPSHOT.jar" />
+        <source-file target-dir="libs" src="android/libs/CommonCertificateProvider-3.11.3-SNAPSHOT.jar" />
+        <source-file target-dir="libs" src="android/libs/AfariaProvider-3.11.3-SNAPSHOT.aar" />
+        <source-file target-dir="libs" src="android/libs/XscriptParser-3.11.3-SNAPSHOT.jar" />
+
+        <source-file target-dir="libs" src="android/libs/maflogoncorecdvplugin-3.11.4-SNAPSHOT.jar" />
+
+        <framework src="android/smp_logon.gradle" custom="true" type="gradleReference" />
+
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="MAFLogonCoreCDVPluginJS" required="true">
+                <param name="android-package" value="com.sap.maf.html5.android.MAFLogonCoreCDVPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+			    <uses-permission android:name="com.sap.mobile.clientHub.CLIENTHUB_ACCESS_PERMISSION" />
+  		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:name="com.sap.smp.client.httpc.authflows.OTPAuthActivity" android:excludeFromRecents="true">
+				<intent-filter>
+					<data android:scheme="$PACKAGE_NAME.xcallbackurl" />
+					<action android:name="android.intent.action.VIEW" />
+					<category android:name="android.intent.category.DEFAULT" />
+					<category android:name="android.intent.category.BROWSABLE" />
+				</intent-filter>
+			</activity>
+		    <meta-data
+                android:name="com.sap.afaria"
+                android:value="com.sap.smp.client.android.afariaprovider.AfariaCertificateProvider" />
+            <meta-data android:name="android.content.APP_RESTRICTIONS" android:resource="@xml/restrictions" />
+		</config-file>
+
+        <!-- Android for Work resources -->
+        <resource-file src="android/restrictions.xml" target="res/xml/restrictions.xml" />
+        <resource-file src="android/values/restriction_strings.xml" target="res/values/restriction_strings.xml" />
+        <resource-file src="android/values-ar/restriction_strings.xml" target="res/values-ar/restriction_strings.xml" />
+        <resource-file src="android/values-de/restriction_strings.xml" target="res/values-de/restriction_strings.xml" />
+        <resource-file src="android/values-en/restriction_strings.xml" target="res/values-en/restriction_strings.xml" />
+        <resource-file src="android/values-es/restriction_strings.xml" target="res/values-es/restriction_strings.xml" />
+        <resource-file src="android/values-fr/restriction_strings.xml" target="res/values-fr/restriction_strings.xml" />
+        <resource-file src="android/values-ja/restriction_strings.xml" target="res/values-ja/restriction_strings.xml" />
+        <resource-file src="android/values-pt/restriction_strings.xml" target="res/values-pt/restriction_strings.xml" />
+        <resource-file src="android/values-ru/restriction_strings.xml" target="res/values-ru/restriction_strings.xml" />
+        <resource-file src="android/values-zh-rCN/restriction_strings.xml" target="res/values-zh-rCN/restriction_strings.xml" />
+    </platform>
+
+    <platform name="ios">
+        <asset target="smp/logon" src="www/common/assets"/>
+
+        <source-file src="ios/libs/libMAFLogger.a" framework="true"/>
+        <source-file src="ios/libs/libMAFLogonCoreCDVPlugin.a" framework="true"/>
+        <source-file src="ios/libs/libMAFLogonManagerNG.a" framework="true"/>
+        <source-file src="ios/libs/libCommonCertificateProvider.a" framework="true"/>
+        <source-file src="ios/libs/libAfariaProvider.a" framework="true"/>
+        <source-file src="ios/libs/libXScriptParser.a" framework="true"/>
+        <header-file src="ios/headers/CertificateProvider.h" />
+        <header-file src="ios/headers/CertificateProviderDelegate.h" />
+
+        <resource-file src="ios/bundles/MAFLogonManagerNG.bundle" />
+        <resource-file src="ios/bundles/AfariaProvider.bundle" />
+
+		<config-file target="config.xml" parent="/widget">
+            <feature name="MAFLogonCoreCDVPluginJS">
+                <param name="ios-package" value="MAFLogonCoreCDVPlugin"/>
+            </feature>
+       		<preference name="openurlscheme.afaria" value="$PACKAGE_NAME.afaria" />
+       		<preference name="openurlscheme.xcallbackurl" value="$PACKAGE_NAME.xcallbackurl" />
+        </config-file>
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+           <array>
+               <dict>
+                  <key>CFBundleURLName</key>
+                  <string>$PACKAGE_NAME.afaria</string>
+       			  <key>CFBundleURLSchemes</key>
+       			  <array>
+                      <string>$PACKAGE_NAME.afaria</string>
+                  </array>
+               </dict>
+               <dict>
+                  <key>CFBundleURLName</key>
+                  <string>$PACKAGE_NAME.xcallbackurl</string>
+       			  <key>CFBundleURLSchemes</key>
+       			  <array>
+                      <string>$PACKAGE_NAME.xcallbackurl</string>
+                  </array>
+                </dict>
+            </array>
+        </config-file>
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <string>afaria-getdata</string>
+                <string>afaria-appstore-getdata</string>
+                <string>afaria-enterprise-getdata</string>
+                <string>sapauthenticator</string>
+            </array>
+        </config-file>
+    </platform>
+
+    <platform name="windows">
+        <asset target="smp/logon" src="www/common/assets"/>
+
+        <js-module name="logon_proxy_win" src="windows/src/logon_proxy_win.js">
+            <merges target="logon_proxy_win"/>
+        </js-module>
+
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+
+        <!-- Add capabilities to the manifest file -->
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <!-- access the internet -->
+            <Capability Name="internetClient" />
+            <!-- access intranet -->
+            <Capability Name="privateNetworkClientServer" />
+            <!-- Used for x.509 certificate challenge -->
+            <Capability Name="sharedUserCertificates" />
+        </config-file>
+
+    </platform>
+</plugin>

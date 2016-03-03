@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-cachemanager"
+    version="3.11.4">
+
+	<name>CacheManager</name>
+	<dependency id="kapsel-plugin-corelibs" />
+	<dependency id="kapsel-plugin-i18n" />
+	<dependency id="kapsel-plugin-online" />
+	<dependency id="kapsel-plugin-authproxy"/>
+	<dependency id="cordova-plugin-dialogs" />
+
+	<js-module name="CacheManager" src="www/cachemanager.js">
+		<clobbers target="sap.CacheManager"/>
+	</js-module>
+
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_en.properties" src="www/messages_en.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_ar.properties" src="www/messages_ar.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_de.properties" src="www/messages_de.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_es.properties" src="www/messages_es.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_fr.properties" src="www/messages_fr.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_ja.properties" src="www/messages_ja.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_pt.properties" src="www/messages_pt.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_ru.properties" src="www/messages_ru.properties"/>
+	<asset target="plugins/kapsel-plugin-cachemanager/www/messages_zh_CN.properties" src="www/messages_zh_CN.properties"/>
+
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="CacheManager">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.cacheManager.CacheManager"/>
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+		</config-file>
+
+		<source-file src="android/libs/cachemanager-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+	</platform>
+
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="CacheManager">
+				<param name="ios-package" value="SMPCacheManagerPlugin"/>
+			</feature>
+		</config-file>
+		<source-file framework="true" src="ios/libs/libSMPCacheManagerPlugin.a"/>
+	</platform>
+</plugin>

@@ -1,0 +1,10 @@
+repositories {
+   jcenter()
+}
+
+// Apply values after project's build-extras.gradle
+cdvPluginPostBuildExtras.add({
+    dependencies {
+        compile(name:'fioriclient-android-3.11.4-SNAPSHOT', ext:'aar')
+    }
+})

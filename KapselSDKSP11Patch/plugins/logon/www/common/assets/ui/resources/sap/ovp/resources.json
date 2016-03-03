@@ -1,0 +1,670 @@
+{
+	"resources":[
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "app/CardContainer.fragment.xml"
+		},
+		{
+			"name": "app/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "app/Component.js"
+		},
+		{
+			"name": "app/Main-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "app/Main.controller.js"
+		},
+		{
+			"name": "app/Main.view.xml"
+		},
+		{
+			"name": "cards/ActionUtils-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/ActionUtils.js"
+		},
+		{
+			"name": "cards/AnnotationHelper-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/AnnotationHelper.js"
+		},
+		{
+			"name": "cards/charts/AggregateNumber-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/AggregateNumber.js"
+		},
+		{
+			"name": "cards/charts/AnalyticalHeader.fragment.xml"
+		},
+		{
+			"name": "cards/charts/Utils-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/Utils.js"
+		},
+		{
+			"name": "cards/charts/bubble/BubbleChart-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/bubble/BubbleChart.controller.js"
+		},
+		{
+			"name": "cards/charts/bubble/BubbleChart.fragment.xml"
+		},
+		{
+			"name": "cards/charts/bubble/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/bubble/Component.js"
+		},
+		{
+			"name": "cards/charts/donut/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/donut/Component.js"
+		},
+		{
+			"name": "cards/charts/donut/DonutChart-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/donut/DonutChart.controller.js"
+		},
+		{
+			"name": "cards/charts/donut/DonutChart.fragment.xml"
+		},
+		{
+			"name": "cards/charts/generic/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/generic/Component.js"
+		},
+		{
+			"name": "cards/charts/line/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/line/Component.js"
+		},
+		{
+			"name": "cards/charts/line/LineChart-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/charts/line/LineChart.controller.js"
+		},
+		{
+			"name": "cards/charts/line/LineChart.fragment.xml"
+		},
+		{
+			"name": "cards/generic/Action.fragment.xml"
+		},
+		{
+			"name": "cards/generic/ActionsFooter.fragment.xml"
+		},
+		{
+			"name": "cards/generic/Card-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/generic/Card.controller.js"
+		},
+		{
+			"name": "cards/generic/Card.view.xml"
+		},
+		{
+			"name": "cards/generic/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/generic/Component.js"
+		},
+		{
+			"name": "cards/generic/ContentMiddle.fragment.xml"
+		},
+		{
+			"name": "cards/generic/ContentRight.fragment.xml"
+		},
+		{
+			"name": "cards/generic/CountFooter.fragment.xml"
+		},
+		{
+			"name": "cards/generic/Header.fragment.xml"
+		},
+		{
+			"name": "cards/image/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/image/Component.js"
+		},
+		{
+			"name": "cards/image/Image-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/image/Image.controller.js"
+		},
+		{
+			"name": "cards/image/Image.fragment.xml"
+		},
+		{
+			"name": "cards/list/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/list/Component.js"
+		},
+		{
+			"name": "cards/list/CondensedBarList.fragment.xml"
+		},
+		{
+			"name": "cards/list/ExtendedBarList.fragment.xml"
+		},
+		{
+			"name": "cards/list/List-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/list/List.controller.js"
+		},
+		{
+			"name": "cards/list/List.fragment.xml"
+		},
+		{
+			"name": "cards/list/ObjectList.fragment.xml"
+		},
+		{
+			"name": "cards/list/StandardList.fragment.xml"
+		},
+		{
+			"name": "cards/loading/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/loading/Component.js"
+		},
+		{
+			"name": "cards/loading/Loading-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/loading/Loading.controller.js"
+		},
+		{
+			"name": "cards/loading/LoadingFooter.fragment.xml"
+		},
+		{
+			"name": "cards/quickview/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/quickview/Component.js"
+		},
+		{
+			"name": "cards/quickview/Quickview-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/quickview/Quickview.controller.js"
+		},
+		{
+			"name": "cards/quickview/Quickview.fragment.xml"
+		},
+		{
+			"name": "cards/stack/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/stack/Component.js"
+		},
+		{
+			"name": "cards/stack/Stack-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/stack/Stack.controller.js"
+		},
+		{
+			"name": "cards/stack/Stack.fragment.xml"
+		},
+		{
+			"name": "cards/table/Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/table/Component.js"
+		},
+		{
+			"name": "cards/table/Table-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "cards/table/Table.controller.js"
+		},
+		{
+			"name": "cards/table/Table.fragment.xml"
+		},
+		{
+			"name": "library-all-dbg.js",
+			"isDebug":true,
+			"merged":true
+		},
+		{
+			"name": "library-all.js",
+			"merged":true
+		},
+		{
+			"name": "library-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "library-preload.json",
+			"merged":true
+		},
+		{
+			"name": "library.dependencies.json"
+		},
+		{
+			"name": "library.dependencies.xml"
+		},
+		{
+			"name": "library.js"
+		},
+		{
+			"name": "library.properties"
+		},
+		{
+			"name": "library.templates.xml"
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "messagebundle.properties",
+			"raw":"messagebundle.properties",
+			"locale":""
+		},
+		{
+			"name": "messagebundle_ar.properties",
+			"raw":"messagebundle.properties",
+			"locale":"ar"
+		},
+		{
+			"name": "messagebundle_bg.properties",
+			"raw":"messagebundle.properties",
+			"locale":"bg"
+		},
+		{
+			"name": "messagebundle_ca.properties",
+			"raw":"messagebundle.properties",
+			"locale":"ca"
+		},
+		{
+			"name": "messagebundle_cs.properties",
+			"raw":"messagebundle.properties",
+			"locale":"cs"
+		},
+		{
+			"name": "messagebundle_da.properties",
+			"raw":"messagebundle.properties",
+			"locale":"da"
+		},
+		{
+			"name": "messagebundle_de.properties",
+			"raw":"messagebundle.properties",
+			"locale":"de"
+		},
+		{
+			"name": "messagebundle_el.properties",
+			"raw":"messagebundle.properties",
+			"locale":"el"
+		},
+		{
+			"name": "messagebundle_en.properties",
+			"raw":"messagebundle.properties",
+			"locale":"en"
+		},
+		{
+			"name": "messagebundle_es.properties",
+			"raw":"messagebundle.properties",
+			"locale":"es"
+		},
+		{
+			"name": "messagebundle_et.properties",
+			"raw":"messagebundle.properties",
+			"locale":"et"
+		},
+		{
+			"name": "messagebundle_fi.properties",
+			"raw":"messagebundle.properties",
+			"locale":"fi"
+		},
+		{
+			"name": "messagebundle_fr.properties",
+			"raw":"messagebundle.properties",
+			"locale":"fr"
+		},
+		{
+			"name": "messagebundle_hi.properties",
+			"raw":"messagebundle.properties",
+			"locale":"hi"
+		},
+		{
+			"name": "messagebundle_hr.properties",
+			"raw":"messagebundle.properties",
+			"locale":"hr"
+		},
+		{
+			"name": "messagebundle_hu.properties",
+			"raw":"messagebundle.properties",
+			"locale":"hu"
+		},
+		{
+			"name": "messagebundle_it.properties",
+			"raw":"messagebundle.properties",
+			"locale":"it"
+		},
+		{
+			"name": "messagebundle_iw.properties",
+			"raw":"messagebundle.properties",
+			"locale":"iw"
+		},
+		{
+			"name": "messagebundle_ja.properties",
+			"raw":"messagebundle.properties",
+			"locale":"ja"
+		},
+		{
+			"name": "messagebundle_ko.properties",
+			"raw":"messagebundle.properties",
+			"locale":"ko"
+		},
+		{
+			"name": "messagebundle_lt.properties",
+			"raw":"messagebundle.properties",
+			"locale":"lt"
+		},
+		{
+			"name": "messagebundle_lv.properties",
+			"raw":"messagebundle.properties",
+			"locale":"lv"
+		},
+		{
+			"name": "messagebundle_nl.properties",
+			"raw":"messagebundle.properties",
+			"locale":"nl"
+		},
+		{
+			"name": "messagebundle_no.properties",
+			"raw":"messagebundle.properties",
+			"locale":"no"
+		},
+		{
+			"name": "messagebundle_pl.properties",
+			"raw":"messagebundle.properties",
+			"locale":"pl"
+		},
+		{
+			"name": "messagebundle_pt.properties",
+			"raw":"messagebundle.properties",
+			"locale":"pt"
+		},
+		{
+			"name": "messagebundle_ro.properties",
+			"raw":"messagebundle.properties",
+			"locale":"ro"
+		},
+		{
+			"name": "messagebundle_ru.properties",
+			"raw":"messagebundle.properties",
+			"locale":"ru"
+		},
+		{
+			"name": "messagebundle_sh.properties",
+			"raw":"messagebundle.properties",
+			"locale":"sh"
+		},
+		{
+			"name": "messagebundle_sk.properties",
+			"raw":"messagebundle.properties",
+			"locale":"sk"
+		},
+		{
+			"name": "messagebundle_sl.properties",
+			"raw":"messagebundle.properties",
+			"locale":"sl"
+		},
+		{
+			"name": "messagebundle_sv.properties",
+			"raw":"messagebundle.properties",
+			"locale":"sv"
+		},
+		{
+			"name": "messagebundle_th.properties",
+			"raw":"messagebundle.properties",
+			"locale":"th"
+		},
+		{
+			"name": "messagebundle_tr.properties",
+			"raw":"messagebundle.properties",
+			"locale":"tr"
+		},
+		{
+			"name": "messagebundle_uk.properties",
+			"raw":"messagebundle.properties",
+			"locale":"uk"
+		},
+		{
+			"name": "messagebundle_vi.properties",
+			"raw":"messagebundle.properties",
+			"locale":"vi"
+		},
+		{
+			"name": "messagebundle_zh_CN.properties",
+			"raw":"messagebundle_zh.properties",
+			"locale":"CN"
+		},
+		{
+			"name": "messagebundle_zh_TW.properties",
+			"raw":"messagebundle_zh.properties",
+			"locale":"TW"
+		},
+		{
+			"name": "themes/base/.theming",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/BarListCard.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/Card.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/EasyScanLayout.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/OVPApp.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/ObjectStream.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/StackPlaceHolder.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/chartStyle.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-RTL.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug":true,
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library-parameters.json",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.css",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"theme":"base"
+		},
+		{
+			"name": "themes/sap_bluecrystal/.theming",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/BarListCard.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/img-RTL/ovpDarkBg.png",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/img/ovpDarkBg.png",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug":true,
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"theme":"sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_hcb/.theming",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL-dbg.css",
+			"isDebug":true,
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL.css",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-dbg.css",
+			"isDebug":true,
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-parameters.json",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.css",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.source.less",
+			"theme":"sap_hcb"
+		},
+		{
+			"name": "ui/CardContentContainer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ui/CardContentContainer.js"
+		},
+		{
+			"name": "ui/EasyScanLayout-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ui/EasyScanLayout.js"
+		},
+		{
+			"name": "ui/ObjectStream-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ui/ObjectStream.js"
+		},
+		{
+			"name": "ui/ObjectStreamRenderer-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ui/ObjectStreamRenderer.js"
+		},
+		{
+			"name": "ui/SmartphoneHeaderToggle-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "ui/SmartphoneHeaderToggle.js"
+		}
+	]
+}

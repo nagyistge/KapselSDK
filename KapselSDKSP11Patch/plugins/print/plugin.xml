@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="de.appplant.cordova.plugin.printer"
+        version="0.7.0">
+
+    <name>Printer</name>
+
+    <description>
+        Cordova plugin to print HTML documents using AirPrint
+        and Android Printing Framework.
+    </description>
+
+    <repo>
+        https://github.com/katzer/cordova-plugin-printer.git
+    </repo>
+
+    <keywords>
+        print, printer, ios, android, google cloud, air print
+    </keywords>
+
+    <license>Apache 2.0</license>
+
+    <author>Sebastián Katzer</author>
+
+    <!-- cordova -->
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    
+    <dependency id="kapsel-plugin-corelibs" />    
+
+    <!-- interface -->
+    <js-module src="www/printer.js" name="Printer">
+        <clobbers target="plugin.printer" />
+        <clobbers target="cordova.plugins.printer" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Printer">
+                <param name="ios-package" value="SMPPrintPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="ios/libs/libSMPPrintPlugin.a" framework="true"/>
+
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Printer">
+                <param name="android-package" value="de.appplant.cordova.plugin.printer.Printer"/>
+            </feature>
+        </config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+        <source-file src="android/libs/print-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+		<framework src="com.android.support:support-v4:23.1.0" />
+    </platform>
+    
+     <!-- windows -->
+    <platform name="windows">
+		<js-module src="windows/src/Printer.js" name="WinPrinter">
+            <clobbers target="window.Printer" />
+        </js-module>
+    </platform>
+</plugin>

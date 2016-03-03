@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+    <items>
+        <CustomListItem
+                type="Active"
+                press="onListItemPress">
+            <Text   class="sapOvpBarListDataField sapOvpBarListTitle"
+                    text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataFieldValue'}"/>
+            <HBox class="sapOvpBarListHBox">
+                <ProgressIndicator
+                        class="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.isFirstDataPointPercentageUnit'} ? 'sapOvpBarListProgressIndicator sapOvpBarListProgressIndicatorBackground' : 'sapOvpBarListProgressIndicator' }"
+                        height="0.75rem"
+                        percentValue="{= '{path: \'' + ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getFirstDataPointValue'} + '\', formatter: \'.normalizeValueToPercentage\'}' }"
+                        state="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointState'}">
+                    <layoutData>
+                        <FlexItemData
+                                growFactor="1"/>
+                    </layoutData>
+                </ProgressIndicator>
+                <template:if test="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.isFirstDataPointPercentageUnit'}}" >
+                    <template:then>
+                        <Text
+                                class="sapOvpBarListObjectNumber"
+                                textAlign="End"
+                                text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointValue'}%"/>
+                    </template:then>
+                    <template:else>
+                        <Text
+                                class="sapOvpBarListObjectNumber"
+                                textAlign="End"
+                                text="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointValue'}"/>
+                    </template:else>
+                </template:if>
+
+                <template:if test="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getDataPointsCount'} > 1}" >
+                    <ObjectNumber
+                            class="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointState'} === 'None' ?
+                                            'sapOvpBarListObjectNumber' : 'sapOvpBarListObjectNumber sapOvpBarListObjectNumberWithoutState'}"
+                            textAlign="End"
+                            number="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatSecondDataPointValue'}"
+                            state="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointState'} === 'None' ?
+                                            ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatSecondDataPointState'} : 'None'}"
+                            Unit="M"/>
+                </template:if>
+            </HBox>
+        </CustomListItem>
+    </items>
+
+</core:FragmentDefinition>

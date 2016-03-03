@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+xmlns="sap.m" xmlns:core="sap.ui.core"
+xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+    <template:if test="{path: 'entityType>com.sap.vocabularies.UI.v1.Identification', formatter: 'sap.ovp.cards.AnnotationHelper.hasActions'}">
+        <OverflowToolbar id="ovpActionFooter">
+            <ToolbarSpacer/>
+            <template:repeat
+                    list="{path:'entityType>com.sap.vocabularies.UI.v1.Identification',
+                            filters: [
+                                {path:'com.sap.vocabularies.UI.v1.Importance/EnumMember', operator: 'EndsWith', value1: 'High'},
+                                {path:'com.sap.vocabularies.UI.v1.Importance/EnumMember', operator: 'EndsWith', value1: 'Medium'}
+                            ],
+                            sorter: [{path:'com.sap.vocabularies.UI.v1.Importance/EnumMember'}]
+                         }" var="dataField">
+                <core:Fragment fragmentName="sap.ovp.cards.generic.Action" type="XML"/>
+            </template:repeat>
+            <template:repeat
+                    list="{path:'entityType>com.sap.vocabularies.UI.v1.Identification',
+                            filters: [
+                                {path:'com.sap.vocabularies.UI.v1.Importance/EnumMember', operator: 'EndsWith', value1: 'Low'}
+                            ]
+                         }" var="dataField">
+                <core:Fragment fragmentName="sap.ovp.cards.generic.Action" type="XML"/>
+            </template:repeat>
+            <template:repeat list="{path:'entityType>com.sap.vocabularies.UI.v1.Identification'}" var="dataField">
+                <template:if test="{=  !${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} }">
+                    <core:Fragment fragmentName="sap.ovp.cards.generic.Action" type="XML"/>
+                </template:if>
+            </template:repeat>
+        </OverflowToolbar>
+    </template:if>
+
+</core:FragmentDefinition>

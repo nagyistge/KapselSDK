@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+    <string name="restriction_title_appID">"Ид. приложения"</string>
+    <string name="restriction_description_appID">"Ид. приложения используется для идентификации приложения доступа к хранилищу данных. Если используется SMP, этот ид. должен совпадать с ид. целевого приложения. Обратите внимание: это значение не совпадает с именем пакета, который, как правило, используется для идентификации приложения в магазинах приложений."</string>
+
+    <string name="restriction_title_fioriURL">"URL-адрес сервера Fiori"</string>
+    <string name="restriction_description_fioriURL">"Полный UR-адрес целевого приложения. Если приложение не использует SMP, при входе выполняется переход напрямую к этому URL-адресу. Если приложение использует SMP, выполняется синтаксический анализ этого URL-адреса и он используется следующим образом: 1. Схема URL (должна быть HTTP или HTTPS) определяет начальное значение индикатора \'https\' в диалоговом окне регистрации. Аналогичным образом хост и порт, указанные в URL, определяют соответствующие начальные значения в диалоговом окне регистрации. Если порт не указан, по умолчанию используется порт 443. 2. Суффикс URL (все символы после хоста и порта) добавляется к URL, по которому регистрируется пользователь. Хотя он, скорее всего, совпадает со значениями схемы, хоста и порта из пункта 1, пользователь может изменить их. Однако суффикс изменить нельзя. Если используется SMP, укажите схему, хост и порт сервера SMP, а после них суффикс конечной точки Fiori. Пример: \'https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html\'"</string>
+
+     <string name="restriction_title_appName">"Имя приложения"</string>
+     <string name="restriction_description_appName">"Необязательное свойство для настройки имени приложения Fiori на экране входа. По умолчанию имя приложения - SAP Fiori Client. Если это поле не заполнено, используется значение по умолчанию."</string>
+
+     <string name="restriction_title_fioriURLIsSMP">"URL сервера Fiori - сервер SMP"</string>
+     <string name="restriction_description_fioriURLIsSMP">"Если используется SMP, установите значение true для выполнения регистрации."</string>
+
+    <string name="restriction_title_certificate">"Провайдер сертификата клиента"</string>
+    <string name="restriction_description_certificate">"Провайдер сертификата клиента"</string>
+
+    <string name="restriction_title_autoSelectSingleCert">"Выбрать провайдера сертификата клиента автоматически"</string>
+    <string name="restriction_description_autoSelectSingleCert">"Если доступен только один сертификат клиента, автоматическии выбрать этот сертификат для взаимной аутентификации."</string>
+
+    <string name="restriction_title_passcodePolicyExpirationDays">"Политика кодов доступа - дней до истечения"</string>
+    <string name="restriction_description_passcodePolicyExpirationDays">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyHasDigits">"Политика кодов доступа - содержит цифры"</string>
+    <string name="restriction_description_passcodePolicyHasDigits">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyHasLowerCaseLetters">"Политика кодов доступа - содержит строчные буквы"</string>
+    <string name="restriction_description_passcodePolicyHasLowerCaseLetters">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyHasSpecialLetters">"Политика кодов доступа - содержит специальные символы"</string>
+    <string name="restriction_description_passcodePolicyHasSpecialLetters">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyHasUpperCaseLetters">"Политика кодов доступа - содержит прописные буквы"</string>
+    <string name="restriction_description_passcodePolicyHasUpperCaseLetters">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyDefaultAllowed">"Политика кодов доступа - разрешено по умолчанию"</string>
+    <string name="restriction_description_passcodePolicyDefaultAllowed">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyLockTimeout">"Политика кодов доступа - блокировка по тайм-ауту"</string>
+    <string name="restriction_description_passcodePolicyLockTimeout">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyMinLength">"Политика кодов доступа - минимальная длина"</string>
+    <string name="restriction_description_passcodePolicyMinLength">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyMinUniqueChars">"Политика кодов доступа - минимальное число уникальных символов"</string>
+    <string name="restriction_description_passcodePolicyMinUniqueChars">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+
+    <string name="restriction_title_passcodePolicyRetryLimit">"Политика кодов доступа - лимит количества попыток"</string>
+    <string name="restriction_description_passcodePolicyRetryLimit">"Политика кодов доступа к хранилищу данных. Примечание: если используется SMP, политика кодов доступа определяется сервером."</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-fioriclient"
+    version="3.11.4">
+
+    <name>FioriClient</name>
+
+    <js-module name="FioriClient" src="www/fioriclient.js">
+        <clobbers target="sap.FioriClient"/>
+    </js-module>
+    <js-module name="FioriClient-Launchpad" src="www/launchpad.js"/>
+
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_en.properties" src="www/messages_en.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_ar.properties" src="www/messages_ar.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_de.properties" src="www/messages_de.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_es.properties" src="www/messages_es.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_fr.properties" src="www/messages_fr.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_ja.properties" src="www/messages_ja.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_pt.properties" src="www/messages_pt.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_ru.properties" src="www/messages_ru.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/messages_zh_CN.properties" src="www/messages_zh_CN.properties"/>
+	<asset target="plugins/kapsel-plugin-fioriclient/www/validation.html" src="www/validation.html"/>
+
+    <platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<preference name="homeUrlkey" value="fioriURL" />
+		</config-file>
+		<config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="FioriClient">
+                <param name="android-package" value="com.sap.mp.cordova.plugins.fioriclient.FioriClient" />
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <source-file src="android/libs/fioriclient-android-3.11.4-SNAPSHOT.jar" target-dir="libs" />
+        <!-- Needed if we change to .aar file extension.
+        <source-file src="android/libs/fioriclient-android-3.11.4-SNAPSHOT.aar" target-dir="libs" />
+        <framework custom="true" src="android/smp_fioriclient.gradle" type="gradleReference" />
+        -->
+	</platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+			<preference name="homeUrlkey" value="fioriURL" />
+            <feature name="FioriClient">
+                <param name="ios-package" value="SMPFioriClientPlugin" />
+                <param name="onload" value="true"/>
+            </feature>
+		</config-file>
+        <source-file framework="true" src="ios/libs/libSMPFioriClientPlugin.a" />
+        <resource-file src="ios/SMPFioriToolbar.xcassets"/>
+
+        <config-file target="*-Info.plist" parent="CFBundleLocalizations">
+            <array>
+                <string>ar</string>
+                <string>de</string>
+                <string>en</string>
+                <string>es</string>
+                <string>fr</string>
+                <string>ja</string>
+                <string>pt</string>
+                <string>ru</string>
+                <string>zh_CN</string>
+            </array>
+        </config-file>
+
+    </platform>
+    <platform name="windows">
+        <js-module src="windows/src/fioriClient_proxy_win.js" name="fioriClient_proxy_win">
+            <merges target="fioriClient_proxy_win" />
+        </js-module>
+    </platform>
+
+</plugin>

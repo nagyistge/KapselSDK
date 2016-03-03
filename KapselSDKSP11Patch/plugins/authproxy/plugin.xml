@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-authproxy"
+    version="3.11.4">
+
+    <name>AuthProxy</name>
+
+    <dependency id="kapsel-plugin-corelibs" />
+	<dependency id="cordova-plugin-device" />
+    <dependency id="kapsel-plugin-inappbrowser"/>
+    <dependency id="kapsel-plugin-i18n"/>
+
+    <js-module name="AuthProxy" src="www/authproxy.js">
+		<clobbers target="sap.AuthProxy"/>
+	</js-module>
+
+    <platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="AuthProxy">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.authProxy.AuthProxy"/>
+				<param name="onload" value="true"/>
+			</feature>
+
+			<preference name="SAPKapselHandleHttpRequests" value="false" />
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:name="com.sap.smp.client.httpc.authflows.SAML2AuthActivity" android:excludeFromRecents="true">
+			</activity>
+			<receiver android:name="com.sap.mp.cordova.plugins.authProxy.WifiChangeReceiver">
+				<intent-filter>
+					<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+				</intent-filter>
+			</receiver>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		</config-file>
+
+        <source-file src="android/libs/authproxy-android-3.11.4-SNAPSHOT.aar" target-dir="libs"/>
+        <framework src="android/smp_authProxy.gradle" custom="true" type="gradleReference" />
+	</platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+			<feature name="AuthProxy">
+				<param name="ios-package" value="SMPAuthProxyPlugin"/>
+				<param name="onload" value="true"/>
+			</feature>
+
+			<preference name="SAPKapselHandleHttpRequests" value="true" />
+		</config-file>
+
+        <source-file src="ios/libs/libSMPAuthProxyPlugin.a" framework="true"/>
+        <resource-file src="ios/Certificate.xcassets"/>
+        <resource-file src="ios/bundles/HttpConvAuthFlows.bundle" />
+        <resource-file src="ios/bundles/SMPAuthProxyPlugin.bundle" />
+    </platform>
+
+    <platform name="windows">
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+        </config-file>
+
+        <js-module src="windows/src/AuthProxyPlugin.js" name="AuthProxyPlugin">
+          <merges target="AuthProxyPlugin" />
+        </js-module>
+		
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+		
+    </platform>
+</plugin>

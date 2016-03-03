@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-xhook"
+    version="3.11.4">
+
+<name>Xhook</name>
+
+    <js-module name="Xhook" src="www/xhooks.js">
+        <clobbers target="sap.Xhook"/>
+    </js-module>
+
+</plugin>

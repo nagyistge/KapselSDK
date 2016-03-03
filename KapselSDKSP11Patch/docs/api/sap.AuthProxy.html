@@ -1,0 +1,3883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: AuthProxy</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: AuthProxy</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="sap.html">sap</a>.</span>
+        
+        AuthProxy
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">The AuthProxy plugin provides the ability to make HTTPS requests with mutual authentication.<br/>
+<br/>
+The regular XMLHttpRequest does not
+support mutual authentication.  The AuthProxy plugin allows you to specify a certificate to include in an HTTPS request
+to identify the client to the server.  This allows the server to verify the identity of the client.  An example of where you
+might need mutual authenticaion is the onboarding process to register with an application, or, to access an
+OData producer. This occurs mostly in Business to Business (B2B) applications. This is different from most business to
+consumer (B2C) web sites where it is only the server that authenticates itself to the client with a certificate.<br/>
+<br/>
+<b>Adding and Removing the AuthProxy Plugin</b><br/>
+The AuthProxy plugin is added and removed using the
+<a href="http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface">Cordova CLI</a>.<br/>
+<br/>
+To add the AuthProxy plugin to your project, use the following command:<br/>
+cordova plugin add kapsel-plugin-authproxy<br/>
+<br/>
+To remove the AuthProxy plugin from your project, use the following command:<br/>
+cordova plugin rm kapsel-plugin-authproxy</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="sap.AuthProxy_CertificateFromFile.html">CertificateFromFile</a></dt>
+            <dd></dd>
+        
+            <dt><a href="sap.AuthProxy_CertificateFromLogonManager.html">CertificateFromLogonManager</a></dt>
+            <dd></dd>
+        
+            <dt><a href="sap.AuthProxy_CertificateFromStore.html">CertificateFromStore</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="ERR_CERTIFICATE_ALIAS_NOT_FOUND"><span class="type-signature">(constant) </span>ERR_CERTIFICATE_ALIAS_NOT_FOUND<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the certificate with the given alias could not be found. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_CERTIFICATE_FILE_NOT_EXIST"><span class="type-signature">(constant) </span>ERR_CERTIFICATE_FILE_NOT_EXIST<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the certificate file could not be found. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_CERTIFICATE_INVALID_FILE_FORMAT"><span class="type-signature">(constant) </span>ERR_CERTIFICATE_INVALID_FILE_FORMAT<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating incorrect certificate file format.  Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_CLIENT_CERTIFICATE_VALIDATION"><span class="type-signature">(constant) </span>ERR_CLIENT_CERTIFICATE_VALIDATION<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the provided certificate failed validation on the server side. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_DOMAIN_WHITELIST_REJECTION"><span class="type-signature">(constant) </span>ERR_DOMAIN_WHITELIST_REJECTION<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating cordova domain whitelist rejection error while sending request to server. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_FILE_CERTIFICATE_SOURCE_UNSUPPORTED"><span class="type-signature">(constant) </span>ERR_FILE_CERTIFICATE_SOURCE_UNSUPPORTED<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the certificate from file is not supported on the current platform. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_GET_CERTIFICATE_FAILED"><span class="type-signature">(constant) </span>ERR_GET_CERTIFICATE_FAILED<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating failure in getting the certificate. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_HTTP_TIMEOUT"><span class="type-signature">(constant) </span>ERR_HTTP_TIMEOUT<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating timeout error while connecting to the server. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_INVALID_PARAMETER_VALUE"><span class="type-signature">(constant) </span>ERR_INVALID_PARAMETER_VALUE<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the operation failed due to an invalid parameter (for example, a string was passed where a number was
+required). Used as a possible value for the errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_LOGON_MANAGER_CERTIFICATE_METHOD_NOT_AVAILABLE"><span class="type-signature">(constant) </span>ERR_LOGON_MANAGER_CERTIFICATE_METHOD_NOT_AVAILABLE<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the logon manager certifciate method is not available. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_LOGON_MANAGER_CORE_NOT_AVAILABLE"><span class="type-signature">(constant) </span>ERR_LOGON_MANAGER_CORE_NOT_AVAILABLE<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the logon manager core library is not available.  Getting this error code means you tried
+to use Logon plugin features (for example, a certificate from Logon) without adding the Logon plugin to the app.
+A possible value for the errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_MISSING_PARAMETER"><span class="type-signature">(constant) </span>ERR_MISSING_PARAMETER<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the operation failed because of a missing parameter. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_NO_SUCH_ACTION"><span class="type-signature">(constant) </span>ERR_NO_SUCH_ACTION<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating there is no such Cordova action for the current service.  When a Cordova plugin calls into native
+code it specifies an action to perform.  If the action provided by the JavaScript is unknown to the native code this
+error occurs.  This error should not occur as long as authproxy.js is unmodified. Used as a possible
+value for the errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_SERVER_CERTIFICATE_VALIDATION"><span class="type-signature">(constant) </span>ERR_SERVER_CERTIFICATE_VALIDATION<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the server certificate failed validation on the client side.  This is likely because the server certificate
+is self-signed, or not signed by a well-known certificate authority.  This constant is used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_SERVER_REQUEST_FAILED"><span class="type-signature">(constant) </span>ERR_SERVER_REQUEST_FAILED<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the server request failed. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_SYSTEM_CERTIFICATE_SOURCE_UNSUPPORTED"><span class="type-signature">(constant) </span>ERR_SYSTEM_CERTIFICATE_SOURCE_UNSUPPORTED<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the certificate from the system keystore is not supported on the current platform. Used as a possible value
+for the errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ERR_UNKNOWN"><span class="type-signature">(constant) </span>ERR_UNKNOWN<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Constant indicating the operation failed with unknown error. Used as a possible value for the
+errorCode in <a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a>.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="addHTTPSConversionHost"><span class="type-signature"></span>addHTTPSConversionHost<span class="signature">(successCB, errorCB, url)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    This function adds host name of the given url to a list of hostnames for which the AuthProxy
+will convert all requests to HTTPS (if AuthProxy is intercepting all requests).  This is
+necessary only on Android when the SAPKapselHandleHttpRequests feature is enabled.  If HTTPS
+requests are made when that feature is enabled without calling this function first, the
+request will fail.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~successCallback">sap.AuthProxy~successCallback</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback method upon success.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback method upon failure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A valid URL that contains the host name for which all requests should
+be converted to HTTPS.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var successCB = function(){
+    alert("HTTPS conversion host successfully added.");
+}
+var errorCB = function(error){
+    alert("error adding HTTPS conversion host: " + JSON.stringify(error));
+}
+sap.AuthProxy.addHTTPSConversionHost(successCB, errorCB, "https://someHost.com");</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="deleteCertificateFromStore"><span class="type-signature"></span>deleteCertificateFromStore<span class="signature">(successCB, errorCB<span class="signature-attributes">opt</span>, certificateKey)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Delete a cached certificate from the keychain. iOS clients always checks the cached certificate first to see if it is available before 
+loading the certificate from the file system. If the cached certificate is no longer valid, use this method to delete it from the keychain.
+<br/><b>Only supported on iOS platform, NOT Android.</b>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~deleteCertificateSuccessCallback">sap.AuthProxy~deleteCertificateSuccessCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method upon success.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method upon failure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>certificateKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The key of the certificate to be deleted.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var successCB = function(){
+    alert("certificate successfully deleted.");
+}
+var errorCB = function(error){
+    alert("error deleting certificate: " + JSON.stringify(error));
+}
+sap.AuthProxy.deleteCertificateFromStore(successCB, errorCB, "certificateKeyToDelete");</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="generateODataHttpClient"><span class="type-signature"></span>generateODataHttpClient<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Generates an OData client that uses the AuthProxy plugin to make requests.  This is useful if you are using Datajs, but want
+to make use of the certificate features of AuthProxy.  Datajs is a javascript library useful for accessing OData services.
+Datajs has a concept of an HttpClient, which does the work of making the request.  This function generates an HttpClient that
+you can specify to Datajs so you can provide client certificates for requests.  If you want to use the generated HTTP client
+for all future Datajs requests, you can do that by setting the OData.defaultHttpClient property to the return value of this
+function.  Once that is done, then doing OData stuff with Datajs is almost exactly the same, but you can add a
+certificateSource to a request.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>OData.defaultHttpClient = sap.AuthProxy.generateODataHttpClient();
+
+// Using a certificate from file, for example.
+fileCert = new sap.AuthProxy.CertificateFromFile("mnt/sdcard/cert.p12", "password", "certKey");
+
+// This is the same request object you would have created if you were just using Datajs, but now
+// you can add the extra 'certificateSource' property.
+var createRequest = {
+    requestUri: "http://www.example.com/stuff/etc/example.svc",
+    certificateSource : fileCert,
+    user : "username",
+    password : "password",
+    method : "POST",
+    data:
+    {
+         Description: "Created Record",
+         CategoryName: "Created Category"
+    }
+}
+
+// Use Datajs to send the request.
+OData.request( createRequest, successCallback, failureCallback );</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="generateODataHttpClient2"><span class="type-signature"></span>generateODataHttpClient2<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Generates an OData client that uses the AuthProxy plugin's sendRequest2 method. This method is similar to 
+sap.AuthProxy.generateODataHttpClient, but it replaces user, password, and certificateSource parameters 
+with the new authConfig parameter as required by Authproxy's sendRequest2 method.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>OData.defaultHttpClient = sap.AuthProxy.generateODataHttpClient2();
+
+The below sample use a certificate from file, and a preset user and password.
+var request = {
+                  authConfig : {basic:
+                                  [
+                                     {type:"preset", data:{user:"smptester", password:"SMP_t3st3r"}}
+                                  ],
+                                clientCert:
+                                  [
+                                      {type: "file", data: { path:"cert.p12", password:"password$", certificateKey:"client"}}
+                                  ]
+                                },
+                  requestUri : "http://www.example.com/stuff/etc/example.svc",
+                  method : "GET"
+  };
+  odatajs.oData.request(request, successCallback, errorCallback, null, httpClient);
+The below sample use a certificate from file, and allow user to input credential at runtime.
+var request = {
+                  authConfig : {basic:
+                                  [
+                                      {type:"user"}
+                                  ],
+                                clientCert:
+                                  [
+                                      {type: "file", data: { path:"cert.p12", password:"password$", certificateKey:"client"}}
+                                  ]
+                                },
+                  requestUri : "http://www.example.com/stuff/etc/example.svc",
+                  method : "GET"
+  };
+  odatajs.oData.request(request, successCallback, errorCallback, null, httpClient);</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(url, header, successCB, errorCB, user<span class="signature-attributes">opt</span>, password<span class="signature-attributes">opt</span>, timeout<span class="signature-attributes">opt</span>, certSource<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Send an HTTP(S) GET request to a remote server.  This is a convenience function that simply calls <a href="sap.AuthProxy.html#sendRequest">sap.AuthProxy#sendRequest</a>
+with "GET" as the method and null for the request body.  All given parameters are passed as-is to sap.AuthProxy.sendRequest.
+The success callback is invoked upon any response from the server.  Even responses not generally considered to be
+successful (such as 404 or 500 status codes) will result in the success callback being invoked. The error callback
+is reserved for problems that prevent the AuthProxy from creating the request or contacting the server.  It is, therefore,
+important to always check the status property on the object given to the success callback.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The URL against which to make the request.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>header</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">HTTP header to send to the server. This is an Object. Can be null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~successCallback">sap.AuthProxy~successCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method invoked upon a response from the server.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method invoked in case of failure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">User ID for basic authentication.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">User password for basic authentication.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Timeout setting in seconds.  Default timeout is 60 seconds.  A value of 0 means there is no timeout.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>certSource</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Certificate description object. It can be one of <a href="sap.AuthProxy_CertificateFromFile.html">sap.AuthProxy#CertificateFromFile</a>,
+<a href="sap.AuthProxy_CertificateFromStore.html">sap.AuthProxy#CertificateFromStore</a>, or <a href="sap.AuthProxy_CertificateFromLogonManager.html">sap.AuthProxy#CertificateFromLogonManager</a>.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A JavaScript function object to abort the operation.  Calling the abort function results in neither the success or error
+callback being invoked for the original request (excepting the case where the success or error callback was invoked before calling the
+abort functino).  Note that the request itself cannot be unsent, and the server will still receive the request - the JavaScript will just
+not know the results of that request.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var successCB = function(serverResponse){
+    alert("Status: " + JSON.stringify(serverResponse.status));
+    alert("Headers: " + JSON.stringify(serverResponse.headers));
+    if (serverResponse.responseText){
+        alert("Response: " + JSON.stringify(serverResponse.responseText));
+    }
+}
+var errorCB = function(errorObject){
+    alert("Error making request: " + JSON.stringify(errorObject));
+}
+
+// To send a GET request to server, call the method
+var abortFunction = sap.AuthProxy.get("http://www.example.com", null, successCB, errorCB);
+
+// An example of aborting the request
+abortFunction();
+
+// To send a GET request to the server with headers, call the method
+sap.AuthProxy.get("http://www.example.com", {HeaderName : "Header value"}, successCB, errorCB);
+
+// To send a GET request to the server with basic authentication, call the method
+sap.AuthProxy.get("https://www.example.com", headers, successCB, errorCB, "username", "password");
+
+// To send a GET request to the server with mutual authentication, call the method
+sap.AuthProxy.get("https://www.example.com", headers, successCB, errorCB, null, null, 0, 
+    new sap.AuthProxy.CertificateFromLogonManager("theAppId"));</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="sendRequest"><span class="type-signature"></span>sendRequest<span class="signature">(method, url, header, requestBody, successCB, errorCB, user<span class="signature-attributes">opt</span>, password<span class="signature-attributes">opt</span>, timeout<span class="signature-attributes">opt</span>, certSource<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Send an HTTP(S) request to a remote server.  This function is the centerpiece of the AuthProxy plugin.  It will handle
+mutual authentication if a certificate source is provided.
+The success callback is invoked upon any response from the server.  Even responses not generally considered to be
+successful (such as 404 or 500 status codes) will result in the success callback being invoked.  The error callback
+is reserved for problems that prevent the AuthProxy from creating the request or contacting the server.  It is therefore
+important to always check the status property on the object given to the success callback.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>method</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Standard HTTP request method name.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The HTTP URL with format http(s)://[user:password]@hostname[:port]/path.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>header</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">HTTP header to send to the server. This is an Object. Can be null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>requestBody</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Data to send to the server with the request. Can be null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~successCallback">sap.AuthProxy~successCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method invoked upon a response from the server.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method invoked in case of failure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">User ID for basic authentication.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">User password for basic authentication.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Timeout setting in seconds.  Default timeout is 60 seconds.  A value of 0 means there is no timeout.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>certSource</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Certificate description object. It can be one of <a href="sap.AuthProxy_CertificateFromFile.html">sap.AuthProxy#CertificateFromFile</a>,
+<a href="sap.AuthProxy_CertificateFromStore.html">sap.AuthProxy#CertificateFromStore</a>, or <a href="sap.AuthProxy_CertificateFromLogonManager.html">sap.AuthProxy#CertificateFromLogonManager</a>.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A JavaScript function object to abort the operation.  Calling the abort function results in neither the success or error
+callback being invoked for the original request (excepting the case where the success or error callback was invoked before calling the
+abort function).  Note that the request itself cannot be unsent, and the server will still receive the request - the JavaScript will just
+not know the results of that request.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// callbacks
+var successCB = function(serverResponse){
+    alert("Status: " + JSON.stringify(serverResponse.status));
+    alert("Headers: " + JSON.stringify(serverResponse.headers));
+    alert("Response: " + JSON.stringify(serverResponse.response));
+}
+var errorCB = function(errorObject){
+    alert("Error making request: " + JSON.stringify(errorObject));
+}
+
+// To send a post request to the server, call the method
+var abortFunction = sap.AuthProxy.sendRequest("POST", "http://www.google.com", null, "THIS IS THE BODY", successCB, errorCB);
+// An example of aborting the request
+abortFunction();
+
+// To send a post request to the server with headers, call the method
+sap.AuthProxy.sendRequest("POST", url, {HeaderName : "Header value"}, "THIS IS THE BODY", successCB, errorCB);
+
+// To send a post request to the server with basic authentication, call the method
+sap.AuthProxy.sendRequest("POST", url, headers, "THIS IS THE BODY", successCB, errorCB, "username", "password");
+
+// To send a post request to the server with mutual authentication, call the method
+sap.AuthProxy.sendRequest("POST", "https://hostname", headers, "THIS IS THE BODY", successCB, errorCB, null, 
+    null, 0, new sap.AuthProxy.CertificateFromLogonManager("theAppId"));</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="sendRequest2"><span class="type-signature"></span>sendRequest2<span class="signature">(method, url, header, requestBody, successCB, errorCB, timeout<span class="signature-attributes">opt</span>, authConfig<span class="signature-attributes">opt</span>, forCheckReachability<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Send an HTTP(S) request to a remote server.  This function is the centerpiece of the AuthProxy plugin.  It will handle
+mutual authentication if a certificate source is provided.
+The success callback is invoked upon any response from the server.  Even responses not generally considered to be
+successful (such as 404 or 500 status codes) will result in the success callback being invoked.  The error callback
+is reserved for problems that prevent the AuthProxy from creating the request or contacting the server.  It is therefore
+important to always check the status property on the object given to the success callback.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>method</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Standard HTTP request method name.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The HTTP URL with format http(s)://hostname[:port]/path.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>header</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">HTTP header to send to the server. This is an Object. Can be null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>requestBody</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Data to send to the server with the request. Can be null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~successCallback">sap.AuthProxy~successCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method invoked upon a response from the server.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method invoked in case of failure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Timeout setting in seconds.  Default timeout is 60 seconds.  A value of 0 means there is no timeout.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>authConfig</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">authentication configuration object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forCheckReachability</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">To check server reachability, set the parameter to an object, otherwise setting it to null</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A JavaScript function object to abort the operation.  Calling the abort function results in neither the success or error
+callback being invoked for the original request (excepting the case where the success or error callback was invoked before calling the
+abort function).  Note that the request itself cannot be unsent, and the server will still receive the request - the JavaScript will just
+not know the results of that request.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// callbacks
+var successCB = function(serverResponse){
+    alert("Status: " + JSON.stringify(serverResponse.status));
+    alert("Headers: " + JSON.stringify(serverResponse.headers));
+    alert("Response: " + JSON.stringify(serverResponse.response));
+}
+var errorCB = function(errorObject){
+    alert("Error making request: " + JSON.stringify(errorObject));
+}
+
+// To send a post request to the server, call the method
+var abortFunction = sap.AuthProxy.sendRequest("POST", "http://www.google.com", null, "THIS IS THE BODY", successCB, errorCB);
+// An example of aborting the request
+abortFunction();
+
+// To send a post request to the server with headers, call the method
+sap.AuthProxy.sendRequest("POST", url, {HeaderName : "Header value"}, "THIS IS THE BODY", successCB, errorCB);
+
+// To send a post request to the server with preset basic authentication configuration, call the method
+var authConfig = {basic:[{type:"preset", data:{user:"myname", password:"mypassword"}}, {type:"user"}]};
+sap.AuthProxy.sendRequest("POST", url, headers, "THIS IS THE BODY", successCB, errorCB, null, authConfig);
+
+// To send a post request to the server with mutual authentication selected by user, call the method
+var authConfig = {clientcert:[{type:"user"}]};
+sap.AuthProxy.sendRequest("POST", "https://hostname", null, "THIS IS THE BODY", successCB, errorCB, null, authConfig);</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setAutoSelectCertificateConfig"><span class="type-signature"></span>setAutoSelectCertificateConfig<span class="signature">(successCB, errorCB<span class="signature-attributes">opt</span>, autoSelectSingleCert)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    set configuration for automatically select client certificate
+<br/><b>Only supported on iOS platform, NOT Android.</b>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>successCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~successCallback">sap.AuthProxy~successCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method upon success.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="sap.AuthProxy.html#~errorCallback">sap.AuthProxy~errorCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Callback method upon failure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoSelectSingleCert</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">enable or disable automatically select the single client certificate</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var successCB = function(){
+    console.log("setAutoSelectCertificateConfig called successfully.");
+}
+var errorCB = function(error){
+    console.log("error calling setAutoSelectCertificateConfig: " + JSON.stringify(error));
+}
+sap.AuthProxy.setAutoSelectCertificateConfig(successCB, errorCB, enableAutoSelectSingleCert);</code></pre>
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+
+    
+
+    <h4 class="name" id="~deleteCertificateSuccessCallback"><span class="type-signature"></span>deleteCertificateSuccessCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Callback function that is invoked upon successfully deleting a certificate from the store.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~errorCallback"><span class="type-signature"></span>errorCallback<span class="signature">(errorObject)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Callback function that is invoked in case of an error.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>errorObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object containing two properties: 'errorCode' and 'description.'
+The 'errorCode' property corresponds to one of the <a href="sap.AuthProxy.html">sap.AuthProxy</a> constants.  The 'description'
+property is a string with more detailed information of what went wrong.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>function errorCallback(errCode) {
+   //Set the default error message. Used if an invalid code is passed to the
+   //function (just in case) but also to cover the
+   //sap.AuthProxy.ERR_UNKNOWN case as well.
+   var msg = "Unkown Error";
+   switch (errCode) {
+      case sap.AuthProxy.ERR_INVALID_PARAMETER_VALUE:
+         msg = "Invalid parameter passed to method";
+         break;
+      case sap.AuthProxy.ERR_MISSING_PARAMETER:
+         msg = "A required parameter was missing";
+         break;
+      case sap.AuthProxy.ERR_HTTP_TIMEOUT:
+         msg = "The request timed out";
+         break;
+   };
+   //Write the error to the log
+   console.error(msg);
+   //Let the user know what happened
+   navigator.notification.alert(msg, null, "AuthProxy Error", "OK");
+};</code></pre>
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~successCallback"><span class="type-signature"></span>successCallback<span class="signature">(serverResponse)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Callback function that is invoked upon a response from the server.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>serverResponse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object containing the response from the server.  Contains a 'headers' property,
+a 'status' property, and a 'responseText' property.<br/>
+'headers' is an object containing all the headers in the response.<br/>
+'status' is an integer corresponding to the HTTP status code of the response.  It is important to check the status of
+the response, since <b>this success callback is invoked upon any response from the server</b> - including responses that are
+not normally thought of as successes (for example, the status code could be 404 or 500).<br/>
+'responseText' is a string containing the body of the response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="sap.AuthProxy_CertificateFromFile.html">CertificateFromFile</a></li><li><a href="sap.AuthProxy_CertificateFromLogonManager.html">CertificateFromLogonManager</a></li><li><a href="sap.AuthProxy_CertificateFromStore.html">CertificateFromStore</a></li><li><a href="sap.OfflineStore.html">OfflineStore</a></li><li><a href="sap.Usage.InfoType.html">InfoType</a></li></ul><h3>Events</h3><ul><li><a href="sap.AppUpdate.html#event:checking">checking</a></li><li><a href="sap.AppUpdate.html#event:downloading">downloading</a></li><li><a href="sap.AppUpdate.html#event:error">error</a></li><li><a href="sap.AppUpdate.html#event:insufficientspace">insufficientspace</a></li><li><a href="sap.AppUpdate.html#event:noupdate">noupdate</a></li><li><a href="sap.AppUpdate.html#event:progress">progress</a></li><li><a href="sap.AppUpdate.html#event:updateready">updateready</a></li><li><a href="sap.AppUpdate.html#event:updatetoolargeforcellular">updatetoolargeforcellular</a></li><li><a href="sap.CacheManager.html#event:cacheinvalidated">cacheinvalidated</a></li><li><a href="sap.CacheManager.html#event:noviewerfound">noviewerfound</a></li></ul><h3>Namespaces</h3><ul><li><a href="sap.html">sap</a></li><li><a href="sap.AppPreferences.html">AppPreferences</a></li><li><a href="sap.AppSettings.html">AppSettings</a></li><li><a href="sap.AppUpdate.html">AppUpdate</a></li><li><a href="sap.AuthProxy.html">AuthProxy</a></li><li><a href="sap.CacheManager.html">CacheManager</a></li><li><a href="sap.E2ETrace.html">E2ETrace</a></li><li><a href="sap.EncryptedStorage.html">EncryptedStorage</a></li><li><a href="sap.FioriClient.html">FioriClient</a></li><li><a href="sap.Logger.html">Logger</a></li><li><a href="sap.Logon.html">Logon</a></li><li><a href="sap.OData.html">OData</a></li><li><a href="sap.Online.html">Online</a></li><li><a href="sap.Push.html">Push</a></li><li><a href="sap.Settings.html">Settings</a></li><li><a href="sap.Toolbar.html">Toolbar</a></li><li><a href="sap.Usage.html">Usage</a></li><li><a href="sap.VoiceRecording.html">VoiceRecording</a></li></ul><h3>Interfaces</h3><ul><li><a href="sap.VoiceRecording.Recording.html">Recording</a></li></ul><h3>Global</h3><ul><li><a href="global.html#changeEncryptionKey">changeEncryptionKey</a></li><li><a href="global.html#checkExistence">checkExistence</a></li><li><a href="global.html#destroy">destroy</a></li><li><a href="global.html#getReports">getReports</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isInitialized">isInitialized</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#makeTimer">makeTimer</a></li><li><a href="global.html#refreshAccessToken">refreshAccessToken</a></li><li><a href="global.html#refreshSession">refreshSession</a></li><li><a href="global.html#sendOAuthPingRequest">sendOAuthPingRequest</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#setBehavior">setBehavior</a></li><li><a href="global.html#setCase">setCase</a></li><li><a href="global.html#setCategory">setCategory</a></li><li><a href="global.html#setElement">setElement</a></li><li><a href="global.html#setMeasurement">setMeasurement</a></li><li><a href="global.html#setResult">setResult</a></li><li><a href="global.html#setScreen">setScreen</a></li><li><a href="global.html#setType">setType</a></li><li><a href="global.html#setUnit">setUnit</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#setView">setView</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeEnd">timeEnd</a></li><li><a href="global.html#timeStart">timeStart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

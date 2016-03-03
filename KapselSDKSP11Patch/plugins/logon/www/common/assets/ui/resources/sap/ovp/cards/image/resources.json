@@ -1,0 +1,21 @@
+{
+	"resources":[
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "Image-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "Image.controller.js"
+		},
+		{
+			"name": "Image.fragment.xml"
+		}
+	]
+}

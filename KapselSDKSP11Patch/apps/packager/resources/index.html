@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+         -->
+        <title>Mobile Fiori Offline Launchpad</title>
+
+	<script type="text/javascript" src="applications.js"></script>
+	<script type="text/javascript" src="tiles.js"></script>
+	<script type="text/javascript" src="ushellconfig.js"></script>
+        <script type="text/javascript">
+            var oDeferred;
+        
+            if (typeof sap === "undefined") {
+                sap = {};
+            }
+            if (typeof sap.smp === "undefined") {
+                sap.smp = {};
+            }
+        
+            sap.smp.fnMyCallback = function(oDeferredParam) {
+                oDeferred = oDeferredParam;
+            }
+
+            window["sap-ushell-config"] = sapUshellConfig;
+        </script>
+
+        <script type="text/javascript" src="localShell/bootstrap/local.js"></script>
+
+        <script id="sap-ui-bootstrap" src="resources/sap-ui-core.js"
+            data-sap-ui-libs="__LIBS__"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-preload="sync"
+            data-sap-ui-resourceroots='__RESOURCEROOTS__'
+            data-sap-ui-xx-bindingSyntax="complex">
+        </script>
+        
+        <script>
+            // The viewport meta tag must be inserted to the DOM before the “DOMContentLoaded” event is published.
+            // The initMobile function is responsible to insert the correct viewport according to the current device.
+            // For iPhone running ios 7.1 and above a "minimal-ui" property is added to the viewport meta tag which allows minimizing the top and bottom bars of the browser.
+            jQuery.sap.initMobile({preventScroll: false});
+        </script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/stores.js"></script>
+        <script type="text/javascript" src="js/createStores.js"></script>
+        <script type="text/javascript" src="js/contentplace.js"></script>
+        <script type="text/javascript" src="appConfig.js"></script>
+        <script>
+            // detect image load errors and if we get one, see if was due to an attempt to load from a local file system location
+            // If so, then redirect the request to FES
+            window.addEventListener("error", function(e) {
+                if (e && e.target && e.target.nodeName && e.target.nodeName.toLowerCase() == "img") {
+                    var root = (new RegExp(/^.*\//)).exec(window.location.href)[0],
+                        remoteBase = fiori_client_appConfig.fioriURL,
+                        src = e.target.src;
+
+                    if (src.indexOf(root) === 0) {
+                        e.target.src = remoteBase + src.substring(root.length);
+                    } else if (src.indexOf("file://") === 0) {
+                        e.target.src = remoteBase + src.substring("file://".length);
+                    }
+                 }
+            }, true);
+
+
+            // don't load sap.fiori.core-ext
+            sap.ui.getCore().attachInit(function() {
+                jQuery.sap.declare("sap.fiori.core-ext");
+            });
+
+            function startApp(ctx) {
+     			var oUserName = {};
+				//for no smp registration, the ctx parameter will be null, and authproxy will intercept the 401 authentiation error
+				//and allow user to provide the credential at runtime. 
+				if (ctx){
+					  oUserName = {
+						id: ctx.user,
+						firstName: ctx.user,
+						lastName: ctx.user,
+						fullName: ctx.user
+					  };
+                }
+                                
+                oDeferred.resolve(oUserName);
+                
+                // load and register Fiori2 icon font
+                if (sap.ui.Device.os.ios) {
+                    jQuery.sap.setIcons({
+                                    'phone': 'resources/sap/ushell/themes/base/img/launchicons/57_iPhone_Desktop_Launch.png',
+                                    'phone@2': 'resources/sap/ushell/themes/base/img/launchicons/114_iPhone-Retina_Web_Clip.png',
+                                    'tablet': 'resources/sap/ushell/themes/base/img/launchicons/72_iPad_Desktop_Launch.png',
+                                    'tablet@2': 'resources/sap/ushell/themes/base/img/launchicons/144_iPad_Retina_Web_Clip.png',
+                                    'favicon': 'resources/sap/ushell/themes/base/img/launchpad_favicon.ico',
+                                    'precomposed': true
+                                    });
+                } else {
+                    jQuery.sap.setIcons({
+                                    'phone': '',
+                                    'phone@2': '',
+                                    'tablet': '',
+                                    'tablet@2': '',
+                                    'favicon': 'resources/sap/ushell/themes/base/img/launchpad_favicon.ico',
+                                    'precomposed': true
+                                    });
+                }
+                jQuery.sap.require("sap.ushell.iconfonts");
+                sap.ushell.iconfonts.registerFiori2IconFont();
+
+                (function() {
+                    // ensure XMLHttpRequests adjust URLs properly to work in packaged context
+                    var originalOpen = window.XMLHttpRequest.prototype.open;
+    
+                    var sapClient = jQuery.sap.getUriParameters().get("sap-client");
+                    window.XMLHttpRequest.prototype.open = function (method, url, async, user, password) {
+                        if (url && url.indexOf('/sap') === 0) {
+                            // starts with /sap so we need to prepend host/port
+                            url = fiori_client_appConfig.fioriURL + url;
+                            
+                            if (sapClient && url.indexOf('sap-client') === -1) {
+                                if (url.indexOf('?') >= 0) {
+                                    url = url + '&sap-client=' + sapClient;
+                                } else {
+                                    url = url + '?sap-client=' + sapClient;
+                                }
+                            }
+                            arguments[1] = url;
+                        }
+
+                        originalOpen.apply(this, arguments);
+                    };
+
+                    // ensure that Launchpage adapter handles i18n strings properly
+                    jQuery.sap.require("sap.ushell.adapters.local.LaunchPageAdapter");
+
+                    var originalAdapter = sap.ushell.adapters.local.LaunchPageAdapter;
+                    
+                    sap.ushell.adapters.local.LaunchPageAdapter = function (oUnused, sParameter, oAdapterConfiguration) {
+                        jQuery.sap.require("sap.ui.model.resource.ResourceModel");
+                    
+                        var i18nModel = new sap.ui.model.resource.ResourceModel({
+                            bundleUrl : oAdapterConfiguration.config.pathToLocalizedContentResources,
+                            bundleLocale : sap.ui.getCore().getConfiguration().getLanguage()
+                            });
+                    
+                        var i18n = i18nModel.getResourceBundle();
+                    
+                        function _getTextLocalized(sKey) {
+                            return i18n.getText(sKey);
+                        }
+                    
+                        var aConfigGroups = oAdapterConfiguration.config.groups,
+                        aConfigCatalogs = oAdapterConfiguration.config.catalogs;
+                    
+                        jQuery.each(aConfigCatalogs, function (index, oCatTiles) {
+                            oCatTiles.title = _getTextLocalized(oCatTiles.title);
+                        
+                            jQuery.each(oCatTiles.tiles, function (index, oTile) {
+                                oTile.title = _getTextLocalized(oTile.title);
+                            });
+                        });
+                    
+                        jQuery.each(aConfigGroups, function (index, oGroup) {
+                            oGroup.title =  _getTextLocalized(oGroup.title);
+                        
+                            jQuery.each(oGroup.tiles, function (index, oTile) {
+                                oTile.title = _getTextLocalized(oTile.title);
+                                oTile.properties.title = _getTextLocalized(oTile.properties.title);
+                            });
+                        });
+                    
+                        return originalAdapter.call(this, oUnused, sParameter, oAdapterConfiguration);
+                    };
+                })();
+
+                /*global sap, document */
+                jQuery.sap.require("sap.ushell.functionBindPrototype");
+            
+                // clean fiori loading screen markup before placing main content
+                var oContent = sap.ushell.Container.createRenderer("fiori2");
+                jQuery("#canvas").empty();
+
+                setTimeout(createContentPlaceFunction(oContent, ctx),1);
+                
+                jQuery(document).keydown(function (e) {
+                    //CTRL + ALT +  G keydown combo
+                    if (e.ctrlKey && e.altKey && e.keyCode === 71) {
+                        jQuery("#dbg_grid_overlay").toggle();
+                    }
+                });
+            }
+        
+            function failedToStart(error) {
+                jQuery.sap.require("sap.m.MessageBox");
+
+                console.log("failed");
+                
+                sap.m.MessageBox.show("Failed to start the app: " + error.msg, sap.m.MessageBox.Icon.ERROR, "Error");
+            }
+        
+        </script>
+    </head>
+        <body class="sapUiBody sapUShellFullHeight" role="application">
+            <div id="canvas" class="sapUShellFullHeight">
+                <!--  the Fiori2 loading screen for different browsers (as SAPUI5 is not loaded yet, will be replaced by Launchpad):
+                 * in pure HTML with CSS animation for modern browsers
+                 * animated gif image for <=IE9 (IE10+ doesn't support conditional comments)
+                 -->
+                <!--[if IE]>
+                 <div id="fiori2-startup-flower" class="demo">
+                 <img src="../../../../../resources/sap/ushell/themes/base/img/flower_anim.gif" />
+                 </div>
+                 <![endif]-->
+                <!--[if !IE]> -->
+                <div id="fiori2-startup-flower" class="demo">
+                    <div class="fiori2-blossom">
+                        <div class="fiori2-leafContainer fiori2-leafContainer1">
+                            <div class="fiori2-leaf fiori2-leaf1"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer2">
+                            <div class="fiori2-leaf fiori2-leaf2"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer3">
+                            <div class="fiori2-leaf fiori2-leaf3"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer4">
+                            <div class="fiori2-leaf fiori2-leaf4"></div>
+                        </div>
+                        <div class="fiori2-leafContainer fiori2-leafContainer5">
+                            <div class="fiori2-leaf fiori2-leaf5"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <![endif] -->
+            </div>
+            <div id="dbg_grid_overlay" style="position: absolute;z-index: 1000;background-image: url('./resources/sap/ushell/themes/sap_bluecrystal/img/grid.png');
+                width: 100%;height: 100%;opacity: 0.1;top: 0;left: 0;display:none;">
+                
+            </div>
+        </body>
+</html>

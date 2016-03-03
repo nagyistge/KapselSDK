@@ -1,0 +1,23 @@
+{
+  "name": "packager",
+  "description": "A script for packaging a set of Fiori applications.",
+  "version": "3.11.4-SNAPSHOT",
+  "homepage": "",
+  "author": {
+    "name": "SAP",
+    "email": ""
+  },
+  "dependencies" :
+  {
+    "shelljs" : "~0.4.0",
+    "nopt" : "~3.0.1",
+    "nopt-defaults": "~0.0.1",
+    "nopt-usage": "~0.1.0",
+    "q": "~1.4.0",
+    "prompt":"~0.2.14",
+    "archiver": "~0.14.4",
+    "xml2js": "~0.4.13"  
+  },
+  "keywords": [],
+  "private": true
+}

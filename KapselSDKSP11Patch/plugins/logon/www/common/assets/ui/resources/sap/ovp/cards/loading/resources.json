@@ -1,0 +1,21 @@
+{
+	"resources":[
+		{
+			"name": "Component-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "Loading-dbg.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "Loading.controller.js"
+		},
+		{
+			"name": "LoadingFooter.fragment.xml"
+		}
+	]
+}

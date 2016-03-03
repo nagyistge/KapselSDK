@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="kapsel-plugin-inappbrowser-xwalk"
+      version="3.11.4">
+
+    <name>InAppBrowser</name>
+    <description>Cordova Crosswalk InAppBrowser Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,in,app,browser,inappbrowser</keywords>
+
+    <engines>
+      <engine name="cordova" version=">=3.1.0" /><!-- Needs cordova/urlutil -->
+    </engines>
+
+    <dependency id="kapsel-plugin-inappbrowser"/>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="InAppBrowser" extend="true"> 
+                <param name="android-package" value="com.sap.kapsel.inappbrowser.XWalkInAppBrowser"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/XWalkInAppBrowser.java" target-dir="src/com/sap/kapsel/inappbrowser" />
+        <source-file src="src/android/XWalkInAppUIClient.java" target-dir="src/com/sap/kapsel/inappbrowser" />
+    </platform>
+</plugin>

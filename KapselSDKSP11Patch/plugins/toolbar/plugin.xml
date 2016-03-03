@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-toolbar"
+    version="3.11.4">
+
+    <name>Toolbar</name>
+    <description>Cordova Toolbar Plugin</description>
+
+    <js-module src="www/toolbar.js" name="toolbar">
+        <clobbers target="window.sap.Toolbar" />
+    </js-module>
+
+    <hook type="before_prepare" src="android/hooks/updateTheme.js"/>
+
+    <!-- Android -->
+	<platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="showTitle" value="true" />
+
+            <feature name="toolbar">
+                <param name="android-package" value="com.sap.mp.cordova.plugins.toolbar.Toolbar"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <source-file src="android/libs/toolbar-android-3.11.4-SNAPSHOT.aar" target-dir="libs"/>
+        <framework src="android/smp_toolbar.gradle" custom="true" type="gradleReference" />
+	</platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="toolbar">
+                <param name="ios-package" value="SMPToolbarPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <resource-file src="ios/SMPDefaultToolbar.xcassets"/>
+        <resource-file src="ios/bundles/SMPToolbarPlugin.bundle" />
+        <source-file framework="true" src="ios/libs/libSMPToolbarPlugin.a"/>
+    </platform>
+
+    <!-- windows -->
+    <platform name="windows">
+        <js-module src="windows/src/toolbar_proxy_win.js" name="toolbar_proxy_win">
+            <merges target="toolbar_proxy_win" />
+        </js-module>
+    </platform>
+</plugin>

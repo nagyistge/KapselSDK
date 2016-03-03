@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-barcodescanner"
+    version="3.11.4">
+
+    <name>BarcodeScanner</name>
+
+    <dependency id="kapsel-plugin-corelibs" />
+
+    <js-module name="BarcodeScanner" src="www/barcodescanner.js">
+        <clobbers target="cordova.plugins.barcodeScanner"/>
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+              <param name="android-package" value="com.sap.mp.cordova.plugins.barcodescanner.BarcodeScanner"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.google.zxing.client.android.CaptureActivity"
+                android:screenOrientation="landscape"
+                android:clearTaskOnLaunch="true"
+                android:configChanges="orientation|keyboardHidden"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:windowSoftInputMode="stateAlwaysHidden"
+                android:exported="false">
+                <intent-filter>
+                    <action android:name="com.sap.mp.cordova.plugins.barcodescanner.SCAN"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                </intent-filter>
+            </activity>
+            <activity android:name="com.google.zxing.client.android.encode.EncodeActivity">
+            </activity>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.FLASHLIGHT" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <!-- Not required to allow users to work around this -->
+            <uses-feature android:name="android.hardware.camera" android:required="false" />
+        </config-file>
+
+
+        <source-file src="android/libs/zxing.core-3.2.0.jar" target-dir="libs"/>
+        <source-file src="android/libs/barcodescanner-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+
+
+         <!--
+            LibraryProject/res/*.*
+            search: (src/android/LibraryProject/(.+?)/[^/]+)$
+            replace: <source-file src="$1" target-dir="$2"/>
+        -->
+
+        <source-file src="res/layout/capture.xml" target-dir="res/layout"/>
+        <source-file src="res/layout/encode.xml" target-dir="res/layout"/>
+        <source-file src="res/layout/help.xml" target-dir="res/layout"/>
+        <source-file src="res/layout/share.xml" target-dir="res/layout"/>
+        <source-file src="res/layout-land/encode.xml" target-dir="res/layout-land"/>
+        <source-file src="res/layout-land/share.xml" target-dir="res/layout-land"/>
+        <source-file src="res/raw/beep.ogg" target-dir="res/raw"/>
+        <source-file src="res/values/ids.xml" target-dir="res/values"/>
+        <source-file src="res/values/themes.xml" target-dir="res/values"/>
+        <source-file src="res/xml/preferences.xml" target-dir="res/xml"/>
+        <source-file src="res/menu/encode.xml" target-dir="res/menu"/>
+
+        <!-- corelibs should create this file -->
+        <config-file target="res/values/colors.xml" parent="/resources">
+            <color name="contents_text">#ff000000</color>
+            <color name="encode_view">#ffffffff</color>
+            <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+            <color name="result_minor_text">#ffc0c0c0</color>
+            <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+            <color name="result_text">#ffffffff</color>
+            <color name="result_view">#b0000000</color>
+            <color name="status_text">#ffffffff</color>
+            <color name="transparent">#00000000</color>
+            <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+            <color name="viewfinder_mask">#60000000</color>
+        </config-file>
+
+        <!-- corelibs should create this file -->
+        <config-file target="res/values/dimens.xml" parent="/resources">
+            <dimen name="standard_padding">8dip</dimen>
+            <dimen name="half_padding">4dip</dimen>
+        </config-file>
+
+        <!-- corelibs should create this file -->
+        <config-file target="res/values/styles.xml" parent="/resources">
+            <style name="ResultButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
+              <item name="android:layout_width">0dip</item>
+              <item name="android:layout_height">wrap_content</item>
+              <item name="android:layout_weight">1</item>
+            </style>
+            <style name="ShareButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
+              <item name="android:layout_width">wrap_content</item>
+              <item name="android:layout_height">wrap_content</item>
+            </style>
+        </config-file>
+
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="msg_unmount_usb">Sorry, the SD card is not accessible.</string>
+            <string name="msg_encode_contents_failed">Could not encode a barcode from the data provided.</string>
+            <string name="button_ok">OK</string>
+
+            <string name="contents_text">Plain text</string>
+            <string name="contents_email">Email address</string>
+            <string name="contents_phone">Phone number</string>
+            <string name="contents_sms">SMS address</string>
+
+            <string name="msg_bulk_mode_scanned">Bulk mode: barcode scanned and saved</string>
+            <string name="msg_default_status">Place a barcode inside the viewfinder rectangle to scan it.</string>
+            <string name="msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
+        </config-file>
+
+
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+                <param name="ios-package" value="SMPBarcodeScannerPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="ios/libs/libSMPBarcodeScannerPlugin.a" framework="true"/>
+
+        <framework src="libz.dylib" />
+
+        <framework src="libc++.dylib" />
+        <framework src="libiconv.dylib" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="CoreVideo.framework" />
+        <framework src="QuartzCore.framework" />
+    </platform>
+
+    <!-- windows -->
+    <platform name="windows">
+        <js-module src="windows/src/CameraHandler.js" name="CameraHandler">
+            <merges target="CameraHandler" />
+        </js-module>
+        <js-module src="windows/src/ScannerProxy.js" name="ScannerProxy">
+            <merges target="ScannerProxy" />
+        </js-module>
+        <framework src="windows/deps/ZXing.winmd" custom="true"/>
+
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <Capability Name="internetClient" />
+            <DeviceCapability Name="webcam" />
+            <DeviceCapability Name="microphone" />
+        </config-file>
+    </platform>
+
+</plugin>

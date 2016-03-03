@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-e2etrace"
+    version="3.11.4">
+
+    <name>E2ETrace</name>
+    <dependency id="kapsel-plugin-xhook"/>
+    <dependency id="kapsel-plugin-corelibs"/>
+    <dependency id="kapsel-plugin-inappbrowser"/>
+    <dependency id="kapsel-plugin-logon"/>
+
+    <js-module name="E2ETrace" src="www/e2etrace.js">
+        <clobbers target="sap.E2ETrace"/>
+    </js-module>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/widget">
+			<feature name="E2ETrace">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.e2etrace.E2ETrace"/>
+			</feature>
+		</config-file>
+		<source-file src="android/libs/e2etrace-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+			<feature name="E2ETrace">
+				<param name="ios-package" value="SMPE2ETracePlugin"/>
+			</feature>
+		</config-file>
+		<source-file framework="true" src="ios/libs/libSMPE2ETracePlugin.a"/>
+	</platform>
+     <platform name="windows">
+	    <!-- command proxy for windows8 platform -->
+	    <js-module name="e2etrace_proxy_win" src="windows/src/e2etrace_proxy_win.js">
+	        <clobbers target="e2etrace_proxy_win"/>
+	    </js-module>
+		
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+
+	 </platform>
+</plugin>

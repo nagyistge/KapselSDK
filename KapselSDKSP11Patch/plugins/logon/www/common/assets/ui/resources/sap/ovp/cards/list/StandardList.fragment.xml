@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+    <items>
+        <StandardListItem
+                title="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataFieldValue'}"
+                description="{path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatSecondDataFieldValue'}"
+                info="{= ${path: 'lineItem>', formatter :'sap.ovp.cards.AnnotationHelper.getDataPointsCount'} > 0 ? ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointValue'} : ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatThirdDataFieldValue'} }"
+                infoState="{= ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.getDataPointsCount'} > 0 ? ${path: 'lineItem>', formatter: 'sap.ovp.cards.AnnotationHelper.formatFirstDataPointState'} : 'None' }"
+                type="Active"
+                press="onListItemPress" >
+        </StandardListItem>
+    </items>
+
+</core:FragmentDefinition>

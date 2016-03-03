@@ -1,0 +1,36 @@
+{
+  "_version": "1.2.0",
+  "sap.app": {
+    "_version": "1.2.0",
+    "id": "sap.chart",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.32.5"
+    },
+    "title": "Smart viz control based on Vizframe",
+    "description": "Smart viz control based on Vizframe",
+    "ach": "BI-CVM",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5",
+    "supportedThemes": []
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "dependencies": {
+      "minUI5Version": "1.32",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.32.5"
+        },
+        "sap.viz": {
+          "minVersion": "1.32.5"
+        }
+      }
+    }
+  }
+}

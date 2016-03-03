@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-encryptedstorage"
+    version="3.11.4">
+
+	<name>EncryptedStorage</name>
+	
+    <dependency id="kapsel-plugin-corelibs" />
+    <dependency id="kapsel-plugin-inappbrowser" />
+	<dependency id="kapsel-plugin-logon"/>
+
+    <js-module name="Encrypted" src="www/encryptedstorage.js">
+		<clobbers target="sap.EncryptedStorage"/>
+	</js-module>
+    
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/widget">
+			<feature name="EncryptedStorage">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.storage.EncryptedStorage"/>
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+		<source-file src="android/libs/encryptedstorage-android-3.11.4-SNAPSHOT.jar" target-dir="libs"/>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+			<feature name="EncryptedStorage">
+				<param name="ios-package" value="SMPEncryptedStoragePlugin"/>
+                <param name="onload" value="true" />
+			</feature>
+		</config-file>
+		<source-file framework="true" src="ios/libs/libSMPEncryptedStoragePlugin.a"/>
+		<framework src="libz.dylib"/>
+		<framework src="libsqlite3.dylib"/>
+		<framework src="Security.framework"/>
+	</platform>
+
+    <platform name="windows">
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+        </config-file>
+        <js-module src="windows/src/encryptedstorage_proxy_win.js" name="encryptedstorage_proxy_win">
+            <merges target="encryptedstorage_proxy_win" />
+        </js-module>
+		
+      <hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+      <hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+	  
+	  <lib-file src="Microsoft.VCLibs, Version=12.0" target="all"/>
+    </platform>
+</plugin>
+

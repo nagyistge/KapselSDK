@@ -1,0 +1,74 @@
+{
+	"resources":[
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "Chart-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "Chart.js"
+		},
+		{
+			"name": "data/Dimension-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "data/Dimension.js"
+		},
+		{
+			"name": "data/Measure-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "data/Measure.js"
+		},
+		{
+			"name": "library-all-dbg.js",
+			"isDebug":true,
+			"merged":true
+		},
+		{
+			"name": "library-all.js",
+			"merged":true
+		},
+		{
+			"name": "library-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "library-preload.json",
+			"merged":true
+		},
+		{
+			"name": "library.dependencies.json"
+		},
+		{
+			"name": "library.dependencies.xml"
+		},
+		{
+			"name": "library.js"
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "utils/ChartUtils-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "utils/ChartUtils.js"
+		},
+		{
+			"name": "utils/RoleFitter-dbg.js",
+			"isDebug":true
+		},
+		{
+			"name": "utils/RoleFitter.js"
+		}
+	]
+}

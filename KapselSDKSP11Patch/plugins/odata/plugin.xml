@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="kapsel-plugin-odata"
+    version="3.11.4">
+
+    <name>OData</name>
+    <description>OData Plugin</description>
+	
+    <dependency id="kapsel-plugin-corelibs"/>
+    <dependency id="kapsel-plugin-authproxy" />
+    
+    <js-module src="www/OData.js" name="OData">
+        <clobbers target="window.sap.OData"/>
+    </js-module>
+    <js-module src="www/OfflineStore.js" name="OfflineStore">
+        <clobbers target="window.sap.OfflineStore"/>
+    </js-module>
+    <platform name="android">
+        <source-file target-dir="libs" src="android/libs/ODataAPI-3.11.3-SNAPSHOT.jar" />
+        <source-file target-dir="libs" src="android/libs/ODataOffline-17.0.2.4482.jar" />
+        <source-file target-dir="libs/armeabi-v7a" src="android/libs/armeabi-v7a/libodataofflinejni.so" />
+        <source-file target-dir="libs/armeabi-v7a" src="android/libs/armeabi-v7a/libmlcrsa17.so" />
+        <source-file target-dir="libs/x86" src="android/libs/x86/libodataofflinejni.so" />
+        <source-file target-dir="libs/x86" src="android/libs/x86/libmlcrsa17.so" />
+        <source-file target-dir="libs" src="android/libs/odata-android-3.11.4-SNAPSHOT.jar" />
+        
+        <framework src="cz.msebera.android:httpclient:4.4.1.1" />
+        
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="OData">
+        		<param name="android-package" value="com.sap.mp.cordova.plugins.odata.OData"/>
+        	</feature>
+        </config-file>
+    </platform>
+    <platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+            <feature name="OData">
+                <param name="ios-package" value="SMPODataPlugin" />
+            </feature>
+		</config-file>
+        
+        <source-file framework="true" src="ios/libs/libODataAPI.a"/>
+        <source-file framework="true" src="ios/libs/libODataOffline.a"/>
+        <source-file framework="true" src="ios/libs/libSMPODataPlugin.a"/>
+    </platform>
+   <platform name="windows">
+		<dependency id="kapsel-plugin-xhook" />
+		<js-module name="odata_proxy_win" src="windows/src/odata_proxy_win.js">
+			<merges target="odata_proxy_win"/>
+        </js-module>
+		<js-module name="MimeTypes" src="windows/src/mimetypes.js">
+			<merges target="MimeTypes" />
+		</js-module>
+		<js-module name="MimeExtensionHandler" src="windows/src/mimeExtensions.js">
+			<clobbers target="sap.MimeExtensionHandler" />
+		</js-module>
+		
+		<hook type="after_plugin_install" src="windows/scripts/afterPluginInstall.js" />
+		<hook type="before_plugin_uninstall" src="windows/scripts/beforePluginUninstall.js" />
+		
+		<lib-file src="Microsoft.VCLibs, Version=12.0" target="all"/>
+	</platform>
+
+</plugin>

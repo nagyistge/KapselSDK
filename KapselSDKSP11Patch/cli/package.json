@@ -1,0 +1,39 @@
+{
+  "name": "kapsel",
+  "description": "A helper for creating Kapsel applications.",
+  "version": "3.11.4-SNAPSHOT",
+  "homepage": "",
+  "author": {
+    "name": "SAP",
+    "email": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "",
+      "url": ""
+    }
+  ],
+  "main": "lib/kapsel_commands",
+  "engines": {
+    "node": ">=0.9.9"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "dependencies" :
+  {
+  	"archiver" : "~0.15.1",
+  	"progress" : "~1.1.8",
+    "request": "~2.63.0",
+    "q" : "~1.4.1"
+  },
+  "keywords": [],
+  "preferGlobal": "true",
+  "bin": {
+    "kapsel" : "bin/kapsel.js"
+  }
+}

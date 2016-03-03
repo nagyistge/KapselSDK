@@ -1,0 +1,1 @@
+(function(){"use strict";sap.ui.controller("sap.ovp.cards.table.Table",{onInit:function(){},onColumnListItemPress:function(e){this.doIntentBasedNavigation(e.getSource().getBindingContext());},getCardItemsBinding:function(){var t=this.getView().byId("ovpTable");return t.getBinding("items");}});})();
